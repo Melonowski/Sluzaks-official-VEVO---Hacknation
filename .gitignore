@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Środowiska wirtualne (Linux i Windows)
 .venv/
 venv/
@@ -57,3 +58,4 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+.env*
