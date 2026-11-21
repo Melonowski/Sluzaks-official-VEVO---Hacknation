@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prawdowid — Pełna analiza i wizualizacja dowodów</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=2" />
 </head>
 <body>
   <div class="page-shell">
@@ -64,7 +64,15 @@
         <section class="panel-box analysis-box">
           <div class="analysis-top">
             <span id="verdictBadge" class="verdict-badge">W TRAKCIE ANALIZY</span>
-            <span id="confidenceText" class="confidence-pill">Pewność: --%</span>
+            <button
+              id="confidenceBtn"
+              class="confidence-pill confidence-btn"
+              type="button"
+              title="Kliknij, aby zobaczyć skąd wynika ten wynik"
+            >
+              <span id="confidenceText">Siła werdyktu: --%</span>
+              <span class="info-icon">ⓘ</span>
+            </button>
           </div>
           <h2 id="analysisTitle">Szczegóły weryfikacji</h2>
           <p id="analysisSummary" class="analysis-summary">
@@ -117,6 +125,36 @@
     </button>
   </div>
 
-  <script src="app.js"></script>
+  <!-- MODAL ZE SZCZEGÓŁAMI SIŁY WERDYKTU -->
+  <div id="confidenceModal" class="modal-backdrop" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-header">
+        <div>
+          <span class="modal-tag">METRYKA CONFIDENCE_SCORE</span>
+          <h3 id="modalTitle">Skąd wynika siła werdyktu?</h3>
+        </div>
+        <button id="closeConfidenceModal" class="modal-close" type="button" aria-label="Zamknij">✕</button>
+      </div>
+
+      <div class="modal-score-banner">
+        <div>
+          <span class="modal-score-label">Aktualna pewność klasyfikacji</span>
+          <div id="modalVerdictName" class="modal-verdict-sub">—</div>
+        </div>
+        <div id="modalScoreValue" class="modal-score-big">--%</div>
+      </div>
+
+      <p id="modalExplanation" class="modal-explanation"></p>
+
+      <div class="modal-factors-title">Składowe wpływające na ocenę:</div>
+      <div id="modalFactorsList" class="modal-factors-list"></div>
+
+      <div class="modal-note">
+        <strong>Wskazówka:</strong> Wysoka siła werdyktu przy statusie <em>„NIE PODLEGA WERYFIKACJI”</em> oznacza pewność modelu, że tekst jest opinią/etykietą, a nie twierdzeniem wymagającym źródeł.
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js?v=2"></script>
 </body>
 </html>

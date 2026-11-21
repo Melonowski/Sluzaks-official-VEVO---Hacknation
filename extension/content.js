@@ -3,8 +3,8 @@
   window.__prawdowidInjected = true;
 
   const extApi = typeof browser !== "undefined" && browser.runtime ? browser : chrome;
-  const API_URL = "https://salvador-enquiries-tract-defining.trycloudflare.com/api/verify";
-  const WEB_APP_URL = "http://localhost:3000";
+  const API_URL = "https://sorted-sri-increase-sega.trycloudflare.com/api/verify";
+  const WEB_APP_URL = "https://sorted-sri-increase-sega.trycloudflare.com";
 
   function init() {
     if (!document.body) {

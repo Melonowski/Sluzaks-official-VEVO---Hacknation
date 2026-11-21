@@ -237,5 +237,134 @@
     "sources": [],
     "latency_ms": 28157,
     "security_alert": null
+  },
+  {
+    "session_id": "sess-1795292356",
+    "timestamp": "2026-11-21T20:19:16.205774Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://pl.wikipedia.org/wiki/Wikipedia:Strona_g%C5%82%C3%B3wna]",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [],
+    "latency_ms": 22804,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795292788",
+    "timestamp": "2026-11-21T20:26:28.743468Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://pl.wikipedia.org/wiki/Wikipedia:Strona_g%C5%82%C3%B3wna]",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [],
+    "latency_ms": 12370,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795293006",
+    "timestamp": "2026-11-21T20:30:06.775973Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://pl.wikipedia.org/wiki/Wikipedia:Strona_g%C5%82%C3%B3wna]",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [],
+    "latency_ms": 11354,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795293223",
+    "timestamp": "2026-11-21T20:33:43.178189Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://pl.wikipedia.org/wiki/Wikipedia:Strona_g%C5%82%C3%B3wna]",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [],
+    "latency_ms": 15857,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795293400",
+    "timestamp": "2026-11-21T20:36:40.057136Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://pl.wikipedia.org/wiki/Wikipedia:Strona_g%C5%82%C3%B3wna]",
+    "verdict": "NIE PODLEGA WERYFIKACJI",
+    "sources": [],
+    "latency_ms": 9024,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795293621",
+    "timestamp": "2026-11-21T20:40:21.567469Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://pl.wikipedia.org/wiki/Wikipedia:Strona_g%C5%82%C3%B3wna]",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [],
+    "latency_ms": 13230,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795293817",
+    "timestamp": "2026-11-21T20:43:37.102927Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://jpg-used-damaged-displayed.trycloudflare.com/?session=sess-1795293621&source=screenshot]",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [
+      "https://dane.gov.pl/pl/common/66357",
+      "https://dane.gov.pl/pl/common/1650425"
+    ],
+    "latency_ms": 13574,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795293903",
+    "timestamp": "2026-11-21T20:45:03.408354Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://pl.wikipedia.org/wiki/Wikipedia:Strona_g%C5%82%C3%B3wna]",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [
+      "https://dane.gov.pl/pl/common/53615",
+      "https://dane.gov.pl/pl/common/63905"
+    ],
+    "latency_ms": 13779,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795303355",
+    "timestamp": "2026-11-21T23:22:35.253140Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://pl.wikipedia.org/wiki/Wikipedia:Strona_g%C5%82%C3%B3wna]",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [],
+    "latency_ms": 10802,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795303582",
+    "timestamp": "2026-11-21T23:26:22.106277Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://pl.wikipedia.org/wiki/Wikipedia:Strona_g%C5%82%C3%B3wna]",
+    "verdict": "NIE PODLEGA WERYFIKACJI",
+    "sources": [],
+    "latency_ms": 13733,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795303858",
+    "timestamp": "2026-11-21T23:30:58.289928Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://pl.wikipedia.org/wiki/Wikipedia:Strona_g%C5%82%C3%B3wna]",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [
+      "https://dane.gov.pl/pl/common/53615",
+      "https://dane.gov.pl/pl/common/63905"
+    ],
+    "latency_ms": 17935,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795304202",
+    "timestamp": "2026-11-21T23:36:42.880092Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://pl.wikipedia.org/wiki/Wikipedia:Strona_g%C5%82%C3%B3wna]",
+    "verdict": "NIE PODLEGA WERYFIKACJI",
+    "sources": [],
+    "latency_ms": 12313,
+    "security_alert": null
   }
 ]

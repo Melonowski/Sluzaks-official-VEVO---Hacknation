@@ -1,12 +1,17 @@
 import os
+import csv
+import io
 import json
 from datetime import datetime
 from pathlib import Path
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import StreamingResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from dotenv import load_dotenv
-from app.pipeline import run_verification_pipeline
+from groq import AsyncGroq
+from app.pipeline import run_verification_pipeline, get_available_models
 
 load_dotenv()
 
@@ -22,12 +27,19 @@ app.add_middleware(
 LOGS_PATH = Path(__file__).resolve().parent.parent / "data" / "logs.json"
 SESSIONS_STORE: dict[str, dict] = {}
 
+
 class VerifyRequest(BaseModel):
     input_text: str | None = None
     image_base64: str | None = None
     page_url: str | None = None
     selection_rect: dict | None = None
     channel: str = "web"
+
+
+class ChatRequest(BaseModel):
+    session_id: str | None = None
+    question: str
+
 
 def save_audit_log(session_data: dict, channel: str, query_preview: str):
     LOGS_PATH.parent.mkdir(parents=True, exist_ok=True)
@@ -57,9 +69,11 @@ def save_audit_log(session_data: dict, channel: str, query_preview: str):
     with open(LOGS_PATH, "w", encoding="utf-8") as f:
         json.dump(logs[-200:], f, ensure_ascii=False, indent=2)
 
+
 @app.get("/health")
 def health():
     return {"status": "ok"}
+
 
 @app.post("/api/verify")
 async def verify(req: VerifyRequest):
@@ -82,11 +96,20 @@ async def verify(req: VerifyRequest):
             page_url=req.page_url
         )
         sid = result["session_id"]
-        SESSIONS_STORE[sid] = result
-        save_audit_log(result, req.channel, req.input_text or f"[OCR zrzutu z {req.page_url or 'strony'}]")
+        session_full = dict(result)
+        if req.image_base64:
+            session_full["image_base64"] = req.image_base64
+        SESSIONS_STORE[sid] = session_full
+
+        save_audit_log(
+            result,
+            req.channel,
+            req.input_text or f"[OCR zrzutu z {req.page_url or 'strony'}]"
+        )
         return result
     except Exception as e:
         raise HTTPException(status_code=502, detail=f"Błąd komunikacji z usługą AI: {str(e)}")
+
 
 @app.get("/api/session/{session_id}")
 def get_session(session_id: str):
@@ -94,7 +117,102 @@ def get_session(session_id: str):
         raise HTTPException(status_code=404, detail="Nie znaleziono sesji lub została usunięta.")
     return SESSIONS_STORE[session_id]
 
+
 @app.delete("/api/session/{session_id}")
 def delete_session(session_id: str):
     SESSIONS_STORE.pop(session_id, None)
     return {"status": "deleted", "session_id": session_id}
+
+
+@app.post("/api/chat")
+async def chat_about_session(req: ChatRequest):
+    api_key = os.getenv("GROQ_API_KEY")
+    if not api_key:
+        raise HTTPException(status_code=503, detail="Brak klucza API.")
+
+    session_ctx = SESSIONS_STORE.get(req.session_id or "", {})
+    safe_ctx = {k: v for k, v in session_ctx.items() if k != "image_base64"}
+
+    client = AsyncGroq(api_key=api_key)
+    fast_model, _ = await get_available_models(client)
+
+    resp = await client.chat.completions.create(
+        model=fast_model,
+        messages=[
+            {
+                "role": "system",
+                "content": (
+                    "Jesteś asystentem Profesorek Prawdowid (MSZ). Odpowiadasz prostym językiem polskim "
+                    "na pytania użytkownika dotyczące konkretnego wyniku weryfikacji. Nie zmyślaj nowych faktów spoza kontekstu sesji."
+                )
+            },
+            {
+                "role": "user",
+                "content": f"KONTEKST SESJI:\n{json.dumps(safe_ctx, ensure_ascii=False)}\n\nPYTANIE UŻYTKOWNIKA: {req.question}"
+            }
+        ],
+        temperature=0.2,
+        max_tokens=450
+    )
+    return {"answer": resp.choices[0].message.content}
+
+
+@app.get("/api/export/logs")
+def export_logs(format: str = "json"):
+    logs = []
+    if LOGS_PATH.exists():
+        with open(LOGS_PATH, "r", encoding="utf-8") as f:
+            logs = json.load(f)
+
+    if format.lower() == "csv":
+        output = io.StringIO()
+        writer = csv.DictWriter(
+            output,
+            fieldnames=[
+                "session_id",
+                "timestamp",
+                "channel",
+                "query_masked",
+                "verdict",
+                "latency_ms",
+                "security_alert"
+            ]
+        )
+        writer.writeheader()
+        for row in logs:
+            writer.writerow({k: row.get(k, "") for k in writer.fieldnames})
+        output.seek(0)
+        return StreamingResponse(
+            iter([output.getvalue()]),
+            media_type="text/csv",
+            headers={"Content-Disposition": "attachment; filename=prawdowid_audit_logs.csv"}
+        )
+    return logs
+
+
+BASE_PROJECT_DIR = Path(__file__).resolve().parent.parent.parent
+
+STATIC_ASSETS_DIR = BASE_PROJECT_DIR / "frontend" / "static"
+if STATIC_ASSETS_DIR.exists():
+    app.mount("/static", StaticFiles(directory=str(STATIC_ASSETS_DIR)), name="static_assets")
+
+FRONTEND_DIR = next(
+    (
+        candidate for candidate in [
+            BASE_PROJECT_DIR / "frontend" / "web",
+            BASE_PROJECT_DIR / "frontend" / "static",
+            BASE_PROJECT_DIR / "frontend" / "public",
+            BASE_PROJECT_DIR / "frontend",
+            BASE_PROJECT_DIR / "web",
+            BASE_PROJECT_DIR,
+        ]
+        if (candidate / "index.html").exists()
+    ),
+    None
+)
+
+if FRONTEND_DIR:
+    print(f"[INFO] Serwowanie frontendu z: {FRONTEND_DIR}")
+    app.mount("/", StaticFiles(directory=str(FRONTEND_DIR), html=True), name="frontend")
+else:
+    print(f"[UWAGA] Nie znaleziono pliku index.html w {BASE_PROJECT_DIR}")

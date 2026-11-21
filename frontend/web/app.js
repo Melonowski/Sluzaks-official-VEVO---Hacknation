@@ -1,5 +1,8 @@
-const API_BASE = "http://127.0.0.1:8000";
+const API_BASE = window.location.origin;
 const MSZ_THRESHOLD_MS = 30000;
+
+let currentSessionData = null;
+let uiListenersBound = false;
 
 const MOCK_SESSION = {
   session_id: "demo-session-01",
@@ -84,14 +87,29 @@ function getVerdictBadgeClass(verdict = "") {
 }
 
 async function fetchSessionData(sessionId) {
-  if (!sessionId) return { data: MOCK_SESSION, isMock: true };
+  let targetId = sessionId;
+
+  if (!targetId) {
+    try {
+      const logsResp = await fetch(`${API_BASE}/api/export/logs`);
+      if (logsResp.ok) {
+        const logs = await logsResp.json();
+        if (Array.isArray(logs) && logs.length > 0) {
+          targetId = logs[logs.length - 1].session_id || "";
+        }
+      }
+    } catch (_) {}
+  }
+
+  if (!targetId) return { data: MOCK_SESSION, isMock: true };
+
   try {
-    const resp = await fetch(`${API_BASE}/api/sessions/${encodeURIComponent(sessionId)}`);
-    if (!resp.ok) throw new Error("Brak endpointu sesji");
+    const resp = await fetch(`${API_BASE}/api/session/${encodeURIComponent(targetId)}`);
+    if (!resp.ok) throw new Error("Brak sesji w pamięci serwera");
     const json = await resp.json();
     return { data: { ...MOCK_SESSION, ...json }, isMock: false };
   } catch (_) {
-    return { data: { ...MOCK_SESSION, session_id: sessionId }, isMock: true };
+    return { data: { ...MOCK_SESSION, session_id: targetId }, isMock: true };
   }
 }
 
@@ -140,6 +158,7 @@ async function fetchAuditLogs() {
 function renderW1Radar(premises) {
   const canvas = document.getElementById("w1Chart");
   const legend = document.getElementById("w1Legend");
+  if (!canvas || !legend) return;
   const ctx = canvas.getContext("2d");
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -229,34 +248,45 @@ function renderW1Radar(premises) {
 function renderW2Donut(breakdown) {
   const canvas = document.getElementById("w2Chart");
   const legend = document.getElementById("w2Legend");
+  if (!canvas || !legend) return;
   const ctx = canvas.getContext("2d");
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   const items = Array.isArray(breakdown) && breakdown.length ? breakdown : MOCK_SESSION.source_breakdown;
-  const total = items.reduce((acc, it) => acc + Math.max(0, Number(it.count || 0)), 0) || 1;
+  const total = items.reduce((acc, it) => acc + Math.max(0, Number(it.count || 0)), 0);
 
   const cx = canvas.width / 2;
   const cy = canvas.height / 2;
   const outerR = 88;
   const innerR = 52;
 
-  let startAngle = -Math.PI / 2;
-  for (const item of items) {
-    const val = Math.max(0, Number(item.count || 0));
-    const slice = (val / total) * Math.PI * 2;
-    const endAngle = startAngle + slice;
-
+  if (total === 0) {
     ctx.beginPath();
-    ctx.arc(cx, cy, outerR, startAngle, endAngle);
-    ctx.arc(cx, cy, innerR, endAngle, startAngle, true);
+    ctx.arc(cx, cy, outerR, 0, Math.PI * 2);
+    ctx.arc(cx, cy, innerR, Math.PI * 2, 0, true);
     ctx.closePath();
-    ctx.fillStyle = item.color || "#ef4444";
+    ctx.fillStyle = "rgba(255, 255, 255, 0.12)";
     ctx.fill();
-    ctx.strokeStyle = "#080808";
-    ctx.lineWidth = 2;
-    ctx.stroke();
+  } else {
+    let startAngle = -Math.PI / 2;
+    for (const item of items) {
+      const val = Math.max(0, Number(item.count || 0));
+      if (val === 0) continue;
+      const slice = (val / total) * Math.PI * 2;
+      const endAngle = startAngle + slice;
 
-    startAngle = endAngle;
+      ctx.beginPath();
+      ctx.arc(cx, cy, outerR, startAngle, endAngle);
+      ctx.arc(cx, cy, innerR, endAngle, startAngle, true);
+      ctx.closePath();
+      ctx.fillStyle = item.color || "#ef4444";
+      ctx.fill();
+      ctx.strokeStyle = "#080808";
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      startAngle = endAngle;
+    }
   }
 
   ctx.fillStyle = "#ffffff";
@@ -268,20 +298,139 @@ function renderW2Donut(breakdown) {
   ctx.font = "600 11px system-ui, sans-serif";
   ctx.fillText("źródeł", cx, cy + 12);
 
+  const safeTotal = total || 1;
   legend.innerHTML = items
     .map((it) => {
-      const pct = Math.round(((Number(it.count || 0)) / total) * 100);
+      const count = Number(it.count || 0);
+      const pct = total ? Math.round((count / safeTotal) * 100) : 0;
       return `
         <li class="metric-item">
           <div class="metric-dot-wrap">
             <span class="dot" style="background:${it.color || "#ef4444"}"></span>
             <span>${it.label}</span>
           </div>
-          <strong>${it.count} (${pct}%)</strong>
+          <strong>${count} (${pct}%)</strong>
         </li>
       `;
     })
     .join("");
+}
+
+function ensureConfidenceModalExists() {
+  let modal = document.getElementById("confidenceModal");
+  if (modal) return modal;
+
+  const wrapper = document.createElement("div");
+  wrapper.innerHTML = `
+    <div id="confidenceModal" class="modal-backdrop" aria-hidden="true">
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-header">
+          <div>
+            <span class="modal-tag">METRYKA CONFIDENCE_SCORE</span>
+            <h3 id="modalTitle">Skąd wynika siła werdyktu?</h3>
+          </div>
+          <button id="closeConfidenceModal" class="modal-close" type="button" aria-label="Zamknij">✕</button>
+        </div>
+        <div class="modal-score-banner">
+          <div>
+            <span class="modal-score-label">Aktualna pewność klasyfikacji</span>
+            <div id="modalVerdictName" class="modal-verdict-sub">—</div>
+          </div>
+          <div id="modalScoreValue" class="modal-score-big">--%</div>
+        </div>
+        <p id="modalExplanation" class="modal-explanation"></p>
+        <div class="modal-factors-title">Składowe wpływające na ocenę:</div>
+        <div id="modalFactorsList" class="modal-factors-list"></div>
+        <div class="modal-note">
+          <strong>Wskazówka:</strong> Wysoka siła werdyktu przy statusie <em>„NIE PODLEGA WERYFIKACJI”</em> oznacza pewność modelu, że tekst jest opinią/etykietą, a nie twierdzeniem wymagającym źródeł.
+        </div>
+      </div>
+    </div>
+  `;
+  modal = wrapper.firstElementChild;
+  document.body.appendChild(modal);
+
+  modal.querySelector("#closeConfidenceModal").addEventListener("click", closeConfidenceModal);
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeConfidenceModal();
+  });
+  return modal;
+}
+
+function openConfidenceModal() {
+  const modal = ensureConfidenceModalExists();
+  const data = currentSessionData || MOCK_SESSION;
+  const pct = Math.round(Number(data.confidence_score || 0) * 100);
+  const verdict = String(data.verdict || "BRAK WERYFIKACJI").toUpperCase();
+  const sources = (data.claims || []).flatMap((c) => c.sources || []);
+  const premises = data.premises || {};
+
+  document.getElementById("modalVerdictName").textContent = verdict;
+  document.getElementById("modalScoreValue").textContent = `${pct}%`;
+
+  const explanationEl = document.getElementById("modalExplanation");
+  const factorsEl = document.getElementById("modalFactorsList");
+
+  if (verdict.includes("NIE PODLEGA")) {
+    explanationEl.textContent =
+      `Wynik ${pct}% określa pewność klasyfikacji typu wypowiedzi. Model jednoznacznie rozpoznał, że analizowany tekst jest opinią, hasłem lub etykietą bez weryfikowalnego faktu — dlatego nie wymagano do niego źródeł zewnętrznych.`;
+    factorsEl.innerHTML = `
+      <div class="modal-factor-row">
+        <div class="modal-factor-top"><span>Pewność rozpoznania kategorii (opinia / etykieta)</span><strong>${pct}%</strong></div>
+        <div class="v-track"><div class="v-fill" style="width:${pct}%;"></div></div>
+      </div>
+      <div class="modal-factor-row">
+        <div class="modal-factor-top"><span>Liczba weryfikowalnych twierdzeń faktograficznych</span><strong>0</strong></div>
+        <div class="v-track"><div class="v-fill" style="width:0%;"></div></div>
+      </div>
+    `;
+  } else if (verdict.includes("BRAK WYSTARCZAJĄCYCH")) {
+    explanationEl.textContent =
+      `Wynik ${pct}% odzwierciedla brak jednoznacznego pokrycia w zaufanych rejestrach. System wstrzymał się od rozstrzygnięcia, ponieważ znalezione dokumenty nie potwierdzają ani nie obalają tezy wprost.`;
+    factorsEl.innerHTML = `
+      <div class="modal-factor-row">
+        <div class="modal-factor-top"><span>Pokrycie w źródłach pierwotnych</span><strong>${clampPct(premises.source_authority)}%</strong></div>
+        <div class="v-track"><div class="v-fill" style="width:${clampPct(premises.source_authority)}%;"></div></div>
+      </div>
+      <div class="modal-factor-row">
+        <div class="modal-factor-top"><span>Zgodność cytatów z tezą</span><strong>${clampPct(premises.quote_alignment)}%</strong></div>
+        <div class="v-track"><div class="v-fill" style="width:${clampPct(premises.quote_alignment)}%;"></div></div>
+      </div>
+    `;
+  } else {
+    explanationEl.textContent =
+      `Wynik ${pct}% to wypadkowa jakości użytych źródeł (${sources.length} cytowań), ich aktualności (2024–2026) oraz spójności znalezionych cytatów z badanym twierdzeniem.`;
+    factorsEl.innerHTML = `
+      <div class="modal-factor-row">
+        <div class="modal-factor-top"><span>Autorytet źródeł (ISAP, Sejm, CERT, Demagog)</span><strong>${clampPct(premises.source_authority)}%</strong></div>
+        <div class="v-track"><div class="v-fill" style="width:${clampPct(premises.source_authority)}%;"></div></div>
+      </div>
+      <div class="modal-factor-row">
+        <div class="modal-factor-top"><span>Aktualność danych (2024–2026)</span><strong>${clampPct(premises.data_freshness)}%</strong></div>
+        <div class="v-track"><div class="v-fill" style="width:${clampPct(premises.data_freshness)}%;"></div></div>
+      </div>
+      <div class="modal-factor-row">
+        <div class="modal-factor-top"><span>Zgodność cytatów z twierdzeniem</span><strong>${clampPct(premises.quote_alignment)}%</strong></div>
+        <div class="v-track"><div class="v-fill" style="width:${clampPct(premises.quote_alignment)}%;"></div></div>
+      </div>
+      <div class="modal-factor-row">
+        <div class="modal-factor-top"><span>Niezależne potwierdzenia domenowe</span><strong>${clampPct(premises.independent_confirmations)}%</strong></div>
+        <div class="v-track"><div class="v-fill" style="width:${clampPct(premises.independent_confirmations)}%;"></div></div>
+      </div>
+    `;
+  }
+
+  modal.style.display = "flex";
+  modal.classList.add("is-open");
+  modal.setAttribute("aria-hidden", "false");
+}
+
+function closeConfidenceModal() {
+  const modal = document.getElementById("confidenceModal");
+  if (!modal) return;
+  modal.style.display = "none";
+  modal.classList.remove("is-open");
+  modal.setAttribute("aria-hidden", "true");
 }
 
 function renderAnalysis(sessionData, isMock) {
@@ -296,7 +445,10 @@ function renderAnalysis(sessionData, isMock) {
   badge.className = getVerdictBadgeClass(sessionData.verdict);
 
   const pct = Math.round(Number(sessionData.confidence_score || 0) * 100);
-  document.getElementById("confidenceText").textContent = `Siła werdyktu: ${pct}%`;
+  const confTextEl = document.getElementById("confidenceText");
+  if (confTextEl) {
+    confTextEl.textContent = `Siła werdyktu: ${pct}%`;
+  }
   document.getElementById("analysisSummary").textContent = sessionData.summary || "";
 
   const sources = (sessionData.claims || []).flatMap((c) => c.sources || []);
@@ -314,16 +466,20 @@ function renderAnalysis(sessionData, isMock) {
       )
       .join("");
   } else {
-    sourcesEl.innerHTML = `<div class="source-item">Brak cytatów w tej sesji.</div>`;
+    sourcesEl.innerHTML = `<div class="source-item">Brak bezpośrednich cytatów w tej sesji.</div>`;
   }
 
   document.querySelector("#limitationsBox span").textContent =
     sessionData.limitations || "Brak dodatkowych uwag.";
 
-  const cachedShot = sessionStorage.getItem("prawdowid_last_shot");
-  if (cachedShot) {
-    document.getElementById("previewBox").style.display = "block";
-    document.getElementById("previewImg").src = cachedShot;
+  const previewBox = document.getElementById("previewBox");
+  const previewImg = document.getElementById("previewImg");
+  const shotSrc = sessionData.image_base64 || sessionStorage.getItem("prawdowid_last_shot");
+  if (shotSrc) {
+    previewBox.style.display = "block";
+    previewImg.src = shotSrc;
+  } else {
+    previewBox.style.display = "none";
   }
 }
 
@@ -382,8 +538,9 @@ function appendChatMessage(role, text) {
   box.scrollTop = box.scrollHeight;
 }
 
-async function askAiChat(question, sessionData) {
+async function askAiChat(question) {
   const statusEl = document.getElementById("chatStatus");
+  const sessionData = currentSessionData || MOCK_SESSION;
   statusEl.textContent = "Myśli...";
   try {
     const resp = await fetch(`${API_BASE}/api/chat`, {
@@ -394,7 +551,7 @@ async function askAiChat(question, sessionData) {
         question,
       }),
     });
-    if (!resp.ok) throw new Error("Brak endpointu /api/chat");
+    if (!resp.ok) throw new Error("Błąd /api/chat");
     const data = await resp.json();
     appendChatMessage("ai", data.answer || "Brak odpowiedzi z serwera.");
   } catch (_) {
@@ -407,17 +564,9 @@ async function askAiChat(question, sessionData) {
   }
 }
 
-async function initPage() {
-  const { session } = getQueryParams();
-  const [{ data: sessionData, isMock }, { data: logsData }] = await Promise.all([
-    fetchSessionData(session),
-    fetchAuditLogs(),
-  ]);
-
-  renderAnalysis(sessionData, isMock);
-  renderW1Radar(sessionData.premises || MOCK_SESSION.premises);
-  renderW2Donut(sessionData.source_breakdown || MOCK_SESSION.source_breakdown);
-  renderAudit(logsData);
+function bindUiListenersOnce() {
+  if (uiListenersBound) return;
+  uiListenersBound = true;
 
   appendChatMessage(
     "ai",
@@ -431,10 +580,10 @@ async function initPage() {
     if (!qText) return;
     input.value = "";
     appendChatMessage("user", qText);
-    await askAiChat(qText, sessionData);
+    await askAiChat(qText);
   });
 
-  document.getElementById("reloadDataBtn").addEventListener("click", initPage);
+  document.getElementById("reloadDataBtn").addEventListener("click", loadAndRenderPage);
 
   document.getElementById("toggleAuditBtn").addEventListener("click", () => {
     const panel = document.getElementById("auditPanel");
@@ -447,6 +596,42 @@ async function initPage() {
       "Profesorek przypomina: zawsze sprawdzaj datę aktu lub komunikatu oraz niezależne potwierdzenia."
     );
   });
+
+  const confBtn = document.getElementById("confidenceBtn") || document.getElementById("confidenceText");
+  if (confBtn) {
+    confBtn.style.cursor = "pointer";
+    confBtn.onclick = openConfidenceModal;
+  }
+
+  const closeBtn = document.getElementById("closeConfidenceModal");
+  if (closeBtn) closeBtn.onclick = closeConfidenceModal;
+
+  const modal = document.getElementById("confidenceModal");
+  if (modal) {
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) closeConfidenceModal();
+    });
+  }
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeConfidenceModal();
+  });
 }
 
-initPage();
+async function loadAndRenderPage() {
+  const { session } = getQueryParams();
+  const [{ data: sessionData, isMock }, { data: logsData }] = await Promise.all([
+    fetchSessionData(session),
+    fetchAuditLogs(),
+  ]);
+
+  currentSessionData = sessionData;
+
+  renderAnalysis(sessionData, isMock);
+  renderW1Radar(sessionData.premises || MOCK_SESSION.premises);
+  renderW2Donut(sessionData.source_breakdown || MOCK_SESSION.source_breakdown);
+  renderAudit(logsData);
+  bindUiListenersOnce();
+}
+
+loadAndRenderPage();

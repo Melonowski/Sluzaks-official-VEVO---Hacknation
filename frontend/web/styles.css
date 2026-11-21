@@ -387,8 +387,44 @@ button {
 
 .confidence-pill {
   font-size: 12px;
-  color: #ffffff;
+  color: #ffffff !important;
   font-weight: 700;
+}
+
+.confidence-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #1f1f1f !important;
+  color: #ffffff !important;
+  border: 1px solid #ffffff !important;
+  border-radius: 999px;
+  padding: 6px 12px;
+  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.12s ease;
+}
+
+.confidence-btn:hover {
+  background-color: var(--accent-red) !important;
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+  transform: translateY(-1px);
+}
+
+.confidence-btn span {
+  color: #ffffff !important;
+}
+
+.confidence-btn .info-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 800;
+  color: #ef4444 !important;
+}
+
+.confidence-btn:hover .info-icon {
+  color: #ffffff !important;
 }
 
 .analysis-box h2 {
@@ -589,6 +625,175 @@ button {
 .mascot-label {
   font-size: 12px;
   font-weight: 800;
+}
+
+/* MODAL SIŁY WERDYKTU */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(4px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 9999;
+}
+
+.modal-backdrop.is-open {
+  display: flex !important;
+}
+
+.modal-card {
+  width: 100%;
+  max-width: 540px;
+  background: var(--bg-panel);
+  border: 2px solid var(--accent-red);
+  border-radius: 20px;
+  padding: 22px;
+  color: #ffffff;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.9);
+  animation: modalPop 0.16s ease-out;
+}
+
+@keyframes modalPop {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.modal-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  background: var(--accent-red-dark);
+  color: #ffffff;
+  border: 1px solid var(--accent-red-bright);
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin-bottom: 6px;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.modal-close {
+  background: var(--bg-card);
+  color: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  width: 32px;
+  height: 32px;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close:hover {
+  background: var(--accent-red);
+  border-color: #ffffff;
+}
+
+.modal-score-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 12px 16px;
+  margin-bottom: 14px;
+}
+
+.modal-score-label {
+  display: block;
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.modal-verdict-sub {
+  font-size: 14px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-top: 3px;
+}
+
+.modal-score-big {
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--accent-red-bright);
+}
+
+.modal-explanation {
+  margin: 0 0 14px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #e5e5e5;
+}
+
+.modal-factors-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.modal-factors-list {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.modal-factor-row {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 9px 12px;
+}
+
+.modal-factor-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+
+.modal-note {
+  background: rgba(220, 38, 38, 0.12);
+  border: 1px solid var(--accent-red-dark);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 12px;
+  line-height: 1.45;
+  color: #e5e5e5;
+}
+
+.modal-note strong {
+  color: #ffffff;
 }
 
 @media (max-width: 980px) {
