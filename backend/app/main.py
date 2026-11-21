@@ -23,11 +23,13 @@ LOGS_PATH = Path(__file__).resolve().parent.parent / "data" / "logs.json"
 SESSIONS_STORE: dict[str, dict] = {}
 
 class VerifyRequest(BaseModel):
-    input_text: str
+    input_text: str | None = None
+    image_base64: str | None = None
+    page_url: str | None = None
+    selection_rect: dict | None = None
     channel: str = "web"
 
 def save_audit_log(session_data: dict, channel: str, query_preview: str):
-    """Zapisuje log przebiegu sprawdzenia zgodnie z wymogiem MVP MSZ."""
     LOGS_PATH.parent.mkdir(parents=True, exist_ok=True)
     logs = []
     if LOGS_PATH.exists():
@@ -67,29 +69,32 @@ async def verify(req: VerifyRequest):
             status_code=503,
             detail="Brak skonfigurowanego klucza API – sprawdzenie niemożliwe."
         )
-    if not req.input_text or len(req.input_text.strip()) < 5:
+    if (not req.input_text or len(req.input_text.strip()) < 5) and not req.image_base64:
         raise HTTPException(
             status_code=400,
-            detail="Pytanie jest zbyt krótkie lub niejasne – doprecyzuj treść do weryfikacji."
+            detail="Brak treści do weryfikacji – wpisz tekst, podaj URL lub zaznacz fragment ekranu."
         )
     try:
-        result = await run_verification_pipeline(req.input_text, req.channel)
+        result = await run_verification_pipeline(
+            raw_text=req.input_text or "",
+            channel=req.channel,
+            image_base64=req.image_base64,
+            page_url=req.page_url
+        )
         sid = result["session_id"]
         SESSIONS_STORE[sid] = result
-        save_audit_log(result, req.channel, req.input_text)
+        save_audit_log(result, req.channel, req.input_text or f"[OCR zrzutu z {req.page_url or 'strony'}]")
         return result
     except Exception as e:
         raise HTTPException(status_code=502, detail=f"Błąd komunikacji z usługą AI: {str(e)}")
 
 @app.get("/api/session/{session_id}")
 def get_session(session_id: str):
-    """Pobiera wynik konkretnej sesji (np. po kliknięciu 'Pełna analiza' we wtyczce)."""
     if session_id not in SESSIONS_STORE:
         raise HTTPException(status_code=404, detail="Nie znaleziono sesji lub została usunięta.")
     return SESSIONS_STORE[session_id]
 
 @app.delete("/api/session/{session_id}")
 def delete_session(session_id: str):
-    """Usuwa sesję demonstracyjną (wymóg prywatności MSZ)."""
     SESSIONS_STORE.pop(session_id, None)
     return {"status": "deleted", "session_id": session_id}

@@ -30,8 +30,21 @@ def safe_parse_json(raw_content: str | None) -> dict:
     except Exception:
         return {}
 
+import base64
+from rapidocr_onnxruntime import RapidOCR
+
+_ocr_engine = RapidOCR()
+
+async def extract_text_from_image(client: AsyncGroq, image_base64: str, all_models: list[str]) -> str:
+    """Lokalny OCR (bez zewnętrznego API i bez wysyłania zrzutów ekranu poza serwer)."""
+    b64_data = image_base64.split(",", 1)[1] if "," in image_base64 else image_base64
+    img_bytes = base64.b64decode(b64_data)
+    result, _ = _ocr_engine(img_bytes)
+    if not result:
+        return ""
+    return " ".join([line[1] for line in result]).strip()
+
 async def extract_text_if_url(raw_input: str) -> tuple[str, str | None, bool]:
-    """Jeśli wejście to URL (wymóg MVP), pobiera jawny tekst strony bez obchodzenia zabezpieczeń."""
     trimmed = raw_input.strip()
     if re.match(r"^https?://\S+$", trimmed):
         try:
@@ -49,7 +62,6 @@ async def extract_text_if_url(raw_input: str) -> tuple[str, str | None, bool]:
     return trimmed, None, False
 
 def check_known_incidents(text: str, source_url: str | None) -> str | None:
-    """Scenariusz I: Dopasowanie do katalogu znanych incydentów (kontekst, NIGDY samodzielny werdykt)."""
     if not INCIDENTS_PATH.exists():
         return None
     try:
@@ -70,7 +82,6 @@ def check_known_incidents(text: str, source_url: str | None) -> str | None:
     return None
 
 def register_moderator_case(claim_text: str, verdict: str) -> dict | None:
-    """Scenariusz H: Zamknięta pętla informacji z deduplikacją nierozstrzygniętych spraw."""
     if verdict != "BRAK WYSTARCZAJĄCYCH DOWODÓW":
         return None
     MODERATOR_QUEUE_PATH.parent.mkdir(parents=True, exist_ok=True)
@@ -115,33 +126,59 @@ def register_moderator_case(claim_text: str, verdict: str) -> dict | None:
         "notice": "Rekomendacja przekazania do analityka FIMI (sprawa oczekuje w kolejce lokalnej; nie została jeszcze wysłana na zewnątrz)."
     }
 
-async def get_available_models(client: AsyncGroq) -> tuple[str, str]:
+async def get_available_models(client: AsyncGroq) -> tuple[str, str, list[str]]:
     models_resp = await client.models.list()
+    all_ids = [m.id for m in models_resp.data]
     allowed_families = ("llama", "qwen", "gemma", "deepseek", "mixtral", "gpt")
     blocked_keywords = ("whisper", "guard", "orpheus", "tts", "playai", "vision", "audio", "think")
 
     text_models = [
-        m.id for m in models_resp.data
-        if any(f in m.id.lower() for f in allowed_families)
-        and not any(b in m.id.lower() for b in blocked_keywords)
+        m_id for m_id in all_ids
+        if any(f in m_id.lower() for f in allowed_families)
+        and not any(b in m_id.lower() for b in blocked_keywords)
     ]
     if not text_models:
-        all_ids = [m.id for m in models_resp.data]
         raise RuntimeError(f"Brak pasujących modeli tekstowych. Dostępne: {all_ids}")
 
     fast_model = next((m for m in text_models if any(k in m.lower() for k in ("8b", "mini", "flash", "instant", "9b", "7b"))), text_models[0])
     smart_model = next((m for m in text_models if "llama" in m.lower() and any(k in m.lower() for k in ("70b", "versatile", "3.3", "4"))), None)
     if not smart_model:
         smart_model = next((m for m in text_models if any(k in m.lower() for k in ("70b", "32b", "versatile", "pro", "27b", "120b"))), text_models[-1])
-    return fast_model, smart_model
+    return fast_model, smart_model, all_ids
 
-async def run_verification_pipeline(raw_text: str, channel: str) -> dict:
+async def run_verification_pipeline(
+    raw_text: str,
+    channel: str,
+    image_base64: str | None = None,
+    page_url: str | None = None
+) -> dict:
     start_time = time.time()
     client = AsyncGroq(api_key=os.getenv("GROQ_API_KEY"))
 
-    fast_model, smart_model = await get_available_models(client)
+    fast_model, smart_model, all_ids = await get_available_models(client)
+    ocr_used = False
 
-    # 1. Obsługa URL na wejściu (MVP) + Bezpieczeństwo (RODO + Prompt Injection)
+    # 0. Jeśli przesłano zrzut ekranu z wtyczki -> wykonaj OCR (Scenariusz F)
+    if image_base64:
+        ocr_text = await extract_text_from_image(client, image_base64, all_ids)
+        if not ocr_text or len(ocr_text) < 5:
+            latency = int((time.time() - start_time) * 1000)
+            return {
+                "session_id": f"sess-{int(time.time())}",
+                "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+                "confidence_score": 0.0,
+                "summary": "Nie udało się odczytać czytelnego tekstu z zaznaczonego wycinka obrazu.",
+                "claims": [],
+                "limitations": "Ograniczenie analizy obrazu (OCR): brak wyraźnego tekstu na wycinku.",
+                "incident_context": check_known_incidents("", page_url),
+                "moderator_case": None,
+                "security_alert": None,
+                "metrics": {"latency_ms": latency, "estimated_cost_pln": 0.002, "models_used": []}
+            }
+        raw_text = f"{raw_text} {ocr_text}".strip()
+        ocr_used = True
+
+    # 1. Obsługa URL na wejściu + Bezpieczeństwo (RODO + Prompt Injection)
     extracted_text, source_url, url_fetched = await extract_text_if_url(raw_text)
     if source_url and not url_fetched:
         latency = int((time.time() - start_time) * 1000)
@@ -160,7 +197,7 @@ async def run_verification_pipeline(raw_text: str, channel: str) -> dict:
 
     injection_in_input = detect_prompt_injection(raw_text) or detect_prompt_injection(extracted_text)
     clean_text = mask_pii(extracted_text)
-    incident_context = check_known_incidents(clean_text, source_url)
+    incident_context = check_known_incidents(clean_text, source_url or page_url)
 
     # 2. AI #1 (Ekstraktor twierdzeń i słów kluczowych do API)
     extractor_prompt = (
@@ -185,7 +222,6 @@ async def run_verification_pipeline(raw_text: str, channel: str) -> dict:
     # 3. Pobranie źródeł na żywo + z korpusu
     sources = await gather_all_sources(keywords)
 
-    # Scenariusz E: sprawdzamy czy któreś ze źródeł zewnętrznych zawiera próbę prompt injection
     injection_in_sources = any(detect_prompt_injection(s.get("content", "")) for s in sources)
     injection_detected = injection_in_input or injection_in_sources
 
@@ -291,6 +327,10 @@ Zwróć ZAWSZE niepusty, poprawny obiekt JSON o strukturze:
             "System wstrzymuje się od rozstrzygnięcia, ponieważ stan prawny lub faktyczny mógł ulec zmianie."
         )
 
+    if ocr_used:
+        ocr_note = "Tekst odczytany automatycznie ze zrzutu ekranu (OCR) – brak pełnego wyszukiwania odwrotnego obrazu i metadanych EXIF pliku."
+        result["limitations"] = f"{ocr_note} {result.get('limitations', '')}".strip()
+
     mod_case = register_moderator_case(main_claim, result["verdict"])
 
     latency = int((time.time() - start_time) * 1000)
@@ -300,7 +340,7 @@ Zwróć ZAWSZE niepusty, poprawny obiekt JSON o strukturze:
     result["security_alert"] = "Wykryto próbę prompt injection – polecenie zostało zignorowane." if injection_detected else None
     result["metrics"] = {
         "latency_ms": latency,
-        "estimated_cost_pln": 0.004,
+        "estimated_cost_pln": 0.005 if ocr_used else 0.004,
         "models_used": [fast_model, smart_model]
     }
     return result

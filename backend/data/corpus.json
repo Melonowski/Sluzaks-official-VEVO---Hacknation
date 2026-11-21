@@ -2378,5 +2378,45 @@
     "url": "https://dane.gov.pl/pl/common/18021",
     "content": "Liczba wydanych <mark>opinii</mark>  przez poszczególne komórki organizacyjne Instytutu Ekspertyz Sądowych</mark>. Tabela przedstawia zestawienie wydanych opinii w 2018 roku przez poszczególne komórki … w poszczególnych komórkach Instytutu, część zakończona jest bez opinii np. na skutek wycofania przez zleceniodawcę sprawy z badań.",
     "fetched_at": "2026-11-21T17:02:47.887314Z"
+  },
+  {
+    "title": "Zachorowania i podejrzenia zachorowań na grypę <mark>2006</mark></mark>",
+    "publisher": "Portal Otwartych Danych dane.gov.pl (Źródło urzędowe)",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2021-08-20",
+    "url": "https://dane.gov.pl/pl/common/32024",
+    "content": "Zachorowania i podejrzenia zachorowań na grypę <mark>2006</mark></mark>. Zachorowania i podejrzenia zachorowań na grypę 2006",
+    "fetched_at": "2026-11-21T17:50:29.401211Z"
+  },
+  {
+    "title": "Certyfikaty <mark>2006</mark>/42/WE – maszyny</mark>",
+    "publisher": "Portal Otwartych Danych dane.gov.pl (Źródło urzędowe)",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2023-05-24",
+    "url": "https://dane.gov.pl/pl/common/48002",
+    "content": "Certyfikaty <mark>2006</mark>/42/WE – maszyny</mark>. Wykaz obejmuje certyfikaty wydane do dyrektywy 2006 /42/WE maszyny, od roku 2010.",
+    "fetched_at": "2026-11-21T17:50:29.401211Z"
+  },
+  {
+    "title": "Liczba postanowień Prezydenta RP - nadanie obywatelstwa polskiego w <mark>2006</mark> roku.</mark>",
+    "publisher": "Portal Otwartych Danych dane.gov.pl (Źródło urzędowe)",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2023-07-17",
+    "url": "https://dane.gov.pl/pl/common/49473",
+    "content": "Liczba postanowień Prezydenta RP - nadanie obywatelstwa polskiego w <mark>2006</mark> roku.</mark>. Liczba osób, którym Prezydent RP nadał obywatelstwo polskie w 2006 r.",
+    "fetched_at": "2026-11-21T17:50:29.401211Z"
+  },
+  {
+    "title": "Liczba postanowień Prezydenta RP - odmowa nadania obywatelstwa polskiego w <mark>2006</mark> roku.</mark>",
+    "publisher": "Portal Otwartych Danych dane.gov.pl (Źródło urzędowe)",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2023-07-17",
+    "url": "https://dane.gov.pl/pl/common/49489",
+    "content": "Liczba postanowień Prezydenta RP - odmowa nadania obywatelstwa polskiego w <mark>2006</mark> roku.</mark>. Liczba osób, którym Prezydent RP odmówił nadania obywatelstwa polskiego w 2006 r.",
+    "fetched_at": "2026-11-21T17:50:29.401211Z"
   }
 ]
