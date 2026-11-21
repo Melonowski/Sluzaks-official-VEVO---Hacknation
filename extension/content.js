@@ -3,7 +3,7 @@
   window.__prawdowidInjected = true;
 
   const extApi = typeof browser !== "undefined" && browser.runtime ? browser : chrome;
-  const API_URL = "http://127.0.0.1:8000/api/verify";
+  const API_URL = "https://salvador-enquiries-tract-defining.trycloudflare.com/api/verify";
   const WEB_APP_URL = "http://localhost:3000";
 
   function init() {
@@ -24,31 +24,56 @@
     document.body.appendChild(host);
     const shadow = host.attachShadow({ mode: "open" });
 
-    const profImgUrl = extApi.runtime.getURL("assets/profesorek.png");
+    const SPRITES = {
+      idle: extApi.runtime.getURL("assets/profesorek.png"),
+      thinking: extApi.runtime.getURL("assets/ProfesorekMysli.png"),
+      answered: extApi.runtime.getURL("assets/ProfesorekMaOdp.png")
+    };
 
     shadow.innerHTML = `
       <style>
+        @keyframes profPulse {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.04) translateY(-3px); }
+        }
+
         .prof-btn {
           position: fixed;
-          bottom: 22px;
-          right: 22px;
-          width: 68px;
-          height: 68px;
-          border-radius: 50%;
-          background: linear-gradient(135deg, #1e293b, #0f172a);
-          border: 2px solid #38bdf8;
-          box-shadow: 0 10px 25px rgba(0,0,0,0.45);
+          bottom: -8px;
+          right: 20px;
+          width: 120px;
+          height: auto;
+          background: transparent;
+          border: none;
+          padding: 0;
+          margin: 0;
           cursor: pointer;
           z-index: 2147483646;
           display: flex;
-          align-items: center;
+          align-items: flex-end;
           justify-content: center;
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
-          overflow: hidden;
+          transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.25s ease;
+          filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.55));
         }
-        .prof-btn:hover { transform: scale(1.08); box-shadow: 0 12px 30px rgba(56, 189, 248, 0.4); }
-        .prof-btn img { width: 100%; height: 100%; object-fit: cover; }
-        .prof-fallback { font-size: 32px; user-select: none; }
+        .prof-btn:hover {
+          transform: translateY(-6px) scale(1.06);
+          filter: drop-shadow(0 14px 24px rgba(56, 189, 248, 0.45));
+        }
+        .prof-btn.thinking {
+          animation: profPulse 1.4s ease-in-out infinite;
+          filter: drop-shadow(0 10px 22px rgba(56, 189, 248, 0.65));
+        }
+        .prof-btn img {
+          width: 100%;
+          height: auto;
+          display: block;
+          object-fit: contain;
+          pointer-events: none;
+        }
+        .prof-fallback {
+          font-size: 46px;
+          user-select: none;
+        }
 
         .backdrop {
           display: none;
@@ -101,10 +126,10 @@
         .card {
           display: none;
           position: fixed;
-          bottom: 102px;
+          bottom: 155px;
           right: 22px;
           width: 390px;
-          max-height: 80vh;
+          max-height: 75vh;
           overflow-y: auto;
           background: #0f172a;
           color: #f8fafc;
@@ -176,13 +201,14 @@
         <div id="cardBody"></div>
       </div>
 
-      <button class="prof-btn" id="profBtn" title="Kliknij, aby zaznaczyć obszar strony">
-        <img src="${profImgUrl}" alt="Profesorek" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+      <button class="prof-btn" id="profBtn" title="Kliknij Profesorka, aby zaznaczyć obszar strony do weryfikacji">
+        <img id="profImg" src="${SPRITES.idle}" alt="Profesorek" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
         <span class="prof-fallback" style="display:none;">🧐☕</span>
       </button>
     `;
 
     const profBtn = shadow.getElementById("profBtn");
+    const profImg = shadow.getElementById("profImg");
     const backdrop = shadow.getElementById("backdrop");
     const selectionBox = shadow.getElementById("selectionBox");
     const banner = shadow.getElementById("banner");
@@ -190,6 +216,17 @@
     const resultCard = shadow.getElementById("resultCard");
     const cardBody = shadow.getElementById("cardBody");
     const closeCard = shadow.getElementById("closeCard");
+
+    function setProfState(state) {
+      profImg.style.display = "block";
+      profImg.nextElementSibling.style.display = "none";
+      profImg.src = SPRITES[state] || SPRITES.idle;
+      if (state === "thinking") {
+        profBtn.classList.add("thinking");
+      } else {
+        profBtn.classList.remove("thinking");
+      }
+    }
 
     function applyEnabledState(enabled) {
       host.style.display = enabled === false ? "none" : "block";
@@ -228,6 +265,7 @@
       resetSelectionBox();
       backdrop.classList.remove("active", "dimmed");
       banner.classList.remove("active");
+      setProfState("idle");
     }
 
     function enterSelectMode() {
@@ -237,6 +275,7 @@
       backdrop.classList.remove("dimmed");
       backdrop.classList.add("active");
       banner.classList.add("active");
+      setProfState("thinking");
     }
 
     profBtn.addEventListener("click", () => {
@@ -261,6 +300,7 @@
     closeCard.addEventListener("click", () => {
       resultCard.classList.remove("active");
       backdrop.classList.remove("active", "dimmed");
+      setProfState("idle");
     });
 
     backdrop.addEventListener("mousedown", (e) => {
@@ -304,6 +344,7 @@
 
       if (!rect || rect.width < 12 || rect.height < 12) {
         backdrop.classList.remove("active");
+        setProfState("idle");
         return;
       }
 
@@ -315,6 +356,7 @@
         backdrop.classList.add("active", "dimmed");
         await verifySelectedArea(croppedDataUrl, rect);
       } catch (err) {
+        setProfState("answered");
         backdrop.classList.add("active", "dimmed");
         resultCard.classList.add("active");
         cardBody.innerHTML = `
@@ -393,6 +435,7 @@
     }
 
     async function verifySelectedArea(imageDataUrl, rect) {
+      setProfState("thinking");
       resultCard.classList.add("active");
       cardBody.innerHTML = `
         <div style="padding: 16px 0; text-align: center;">
@@ -426,6 +469,8 @@
         }
 
         const data = await resp.json();
+        setProfState("answered");
+
         const confidencePct = Math.round((data.confidence_score || 0) * 100);
         const vClass = getVerdictClass(data.verdict);
 
@@ -477,6 +522,7 @@
           </div>
         `;
       } catch (e) {
+        setProfState("answered");
         cardBody.innerHTML = `
           <img src="${imageDataUrl}" alt="Zaznaczony wycinek" class="preview-thumb" />
           <div class="alert-sec">

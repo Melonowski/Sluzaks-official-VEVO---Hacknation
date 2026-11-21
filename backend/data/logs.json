@@ -122,5 +122,120 @@
     ],
     "latency_ms": 11378,
     "security_alert": null
+  },
+  {
+    "session_id": "sess-1795283848",
+    "timestamp": "2026-11-21T17:57:28.587341Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://gemini.google.com/app/9f335ab4d8b78691?pli=1]",
+    "verdict": "POTWIERDZONE",
+    "sources": [
+      "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20240001907",
+      "https://dane.gov.pl/pl/common/28058"
+    ],
+    "latency_ms": 18119,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795285042",
+    "timestamp": "2026-11-21T18:17:22.708999Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://gemini.google.com/app/9f335ab4d8b78691?pli=1]",
+    "verdict": "POTWIERDZONE",
+    "sources": [
+      "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20240001907"
+    ],
+    "latency_ms": 8808,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795285822",
+    "timestamp": "2026-11-21T18:30:22.473388Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://pl.wikipedia.org/wiki/Wikipedia:Strona_g%C5%82%C3%B3wna]",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [],
+    "latency_ms": 19152,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795286403",
+    "timestamp": "2026-11-21T18:40:03.057909Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://pl.wikipedia.org/wiki/Wikipedia:Strona_g%C5%82%C3%B3wna]",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [],
+    "latency_ms": 14077,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795286455",
+    "timestamp": "2026-11-21T18:40:55.043577Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://pl.wikipedia.org/wiki/Wikipedia:Strona_g%C5%82%C3%B3wna]",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [],
+    "latency_ms": 15814,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795287096",
+    "timestamp": "2026-11-21T18:51:36.538500Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://pl.wikipedia.org/wiki/Wikipedia:Strona_g%C5%82%C3%B3wna]",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [],
+    "latency_ms": 8980,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795287203",
+    "timestamp": "2026-11-21T18:53:23.594696Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://hacknation2026.hacktribe.co/prawdowid-asystent-weryfikacji-informacji-www-wtyczka-przegladarkowa/#]",
+    "verdict": "NIE PODLEGA WERYFIKACJI",
+    "sources": [],
+    "latency_ms": 6432,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795287488",
+    "timestamp": "2026-11-21T18:58:08.929656Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://pl.wikipedia.org/wiki/Wikipedia:Strona_g%C5%82%C3%B3wna]",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [],
+    "latency_ms": 35921,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795287489",
+    "timestamp": "2026-11-21T18:58:09.783452Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://pl.wikipedia.org/wiki/Wikipedia:Strona_g%C5%82%C3%B3wna]",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [],
+    "latency_ms": 21143,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795287526",
+    "timestamp": "2026-11-21T18:58:46.810938Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://pl.wikipedia.org/wiki/Wikipedia:Strona_g%C5%82%C3%B3wna]",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [],
+    "latency_ms": 24282,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795287856",
+    "timestamp": "2026-11-21T19:04:16.981077Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://pl.wikipedia.org/wiki/Wikipedia:Strona_g%C5%82%C3%B3wna]",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [],
+    "latency_ms": 28157,
+    "security_alert": null
   }
 ]
