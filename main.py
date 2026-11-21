@@ -1,16 +1,26 @@
-# This is a sample Python script.
+import os
+from fastapi import FastAPI
+from fastapi.responses import FileResponse, HTMLResponse
+from fastapi.staticfiles import StaticFiles
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+app = FastAPI(title="Służaks VEVO Landing Page")
+
+STATIC_DIR = os.path.join(os.path.dirname(__file__), "frontend", "static")
+app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+@app.get("/", response_class=HTMLResponse)
+async def read_index():
+    index_path = os.path.join(STATIC_DIR, "index.html")
+    if os.path.exists(index_path):
+        return FileResponse(index_path)
+    return HTMLResponse(
+        content="<h1>Brak pliku index.html w frontend/static/</h1>",
+        status_code=404,
+    )
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+if __name__ == "__main__":
+    import uvicorn
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
