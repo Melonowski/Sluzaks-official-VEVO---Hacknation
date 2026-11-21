@@ -2,12 +2,61 @@ import os
 import json
 import httpx
 import asyncio
+import xml.etree.ElementTree as ET
+from bs4 import BeautifulSoup
 from pathlib import Path
+from datetime import datetime
+from urllib.parse import quote_plus
 
 CORPUS_PATH = Path(__file__).resolve().parent.parent / "data" / "corpus.json"
 
+# Kanały RSS wiarygodnych źródeł fact-checkingowych i instytucjonalnych (zgodne z sekcją 7 MSZ)
+LIVE_RSS_FEEDS = [
+    {"url": "https://demagog.org.pl/feed/", "publisher": "Stowarzyszenie Demagog (IFCN/EFCSN)", "domain": "demagog.org.pl", "type": "wiarygodne wtórne"},
+    {"url": "https://fakenews.pl/feed/", "publisher": "FakeNews.pl (IFCN)", "domain": "fakenews.pl", "type": "wiarygodne wtórne"},
+    {"url": "https://konkret24.tvn24.pl/najnowsze.xml", "publisher": "Konkret24 TVN24 (IFCN)", "domain": "konkret24.tvn24.pl", "type": "wiarygodne wtórne"},
+    {"url": "https://cert.pl/feed/", "publisher": "CERT Polska / NASK", "domain": "cert.pl", "type": "urzędowe"},
+    {"url": "https://www.pap.pl/rss.xml", "publisher": "Polska Agencja Prasowa (PAP)", "domain": "pap.pl", "type": "wiarygodne wtórne"},
+]
+
+def _clean_html(raw_html: str) -> str:
+    if not raw_html:
+        return ""
+    soup = BeautifulSoup(raw_html, "html.parser")
+    return " ".join(soup.get_text(" ").split())
+
+def _append_to_live_corpus(new_docs: list[dict]):
+    """Na bieżąco dopisuje nowe pobrane fakty do lokalnego korpusu (spełnia wymóg audytu i aktualności MSZ)."""
+    if not new_docs:
+        return
+    CORPUS_PATH.parent.mkdir(parents=True, exist_ok=True)
+    existing = []
+    if CORPUS_PATH.exists():
+        try:
+            with open(CORPUS_PATH, "r", encoding="utf-8") as f:
+                existing = json.load(f)
+        except Exception:
+            existing = []
+
+    seen_urls = {d.get("url") for d in existing if d.get("url")}
+    now_iso = datetime.utcnow().isoformat() + "Z"
+    added = 0
+
+    for doc in new_docs:
+        u = doc.get("url")
+        if u and u not in seen_urls:
+            seen_urls.add(u)
+            doc_copy = dict(doc)
+            doc_copy["fetched_at"] = now_iso
+            existing.append(doc_copy)
+            added += 1
+
+    if added > 0:
+        with open(CORPUS_PATH, "w", encoding="utf-8") as f:
+            json.dump(existing, f, ensure_ascii=False, indent=2)
+
 def search_local_corpus(keywords: str, limit: int = 4) -> list[dict]:
-    """Przeszukuje lokalny korpus z prostym stemmingiem (pierwsze 6 liter słowa)."""
+    """Przeszukuje rosnący na bieżąco korpus lokalny."""
     if not CORPUS_PATH.exists():
         return []
     try:
@@ -27,6 +76,82 @@ def search_local_corpus(keywords: str, limit: int = 4) -> list[dict]:
     except Exception:
         return []
 
+async def fetch_live_rss_factchecks(query: str) -> list[dict]:
+    """Pobiera na żywo najnowsze artykuły z kanałów RSS (Demagog, FakeNews, Konkret24, CERT, PAP) i filtruje pod temat."""
+    stems = [t.lower()[:5] for t in query.split() if len(t) > 3]
+    results = []
+    all_fetched = []
+
+    async with httpx.AsyncClient(timeout=6.0, follow_redirects=True) as client:
+        tasks = [client.get(feed["url"]) for feed in LIVE_RSS_FEEDS]
+        responses = await asyncio.gather(*tasks, return_exceptions=True)
+
+        for feed, resp in zip(LIVE_RSS_FEEDS, responses):
+            if isinstance(resp, Exception) or resp.status_code != 200:
+                continue
+            try:
+                root = ET.fromstring(resp.text)
+                for item in root.findall(".//item")[:25]:
+                    title = _clean_html(item.findtext("title") or "")
+                    link = (item.findtext("link") or "").strip()
+                    desc = _clean_html(item.findtext("description") or "")
+                    pub_date = (item.findtext("pubDate") or "")[:16]
+
+                    doc = {
+                        "title": title,
+                        "publisher": feed["publisher"],
+                        "domain": feed["domain"],
+                        "type": feed["type"],
+                        "date": pub_date or datetime.utcnow().strftime("%Y-%m-%d"),
+                        "url": link,
+                        "content": f"{title}. {desc}"[:1500]
+                    }
+                    all_fetched.append(doc)
+
+                    haystack = f"{title} {desc}".lower()
+                    if any(s in haystack for s in stems):
+                        results.append(doc)
+            except Exception:
+                continue
+
+    # Automatycznie zasilamy korpus wszystkimi najnowszymi wpisami z RSS
+    _append_to_live_corpus(all_fetched)
+    return results[:5]
+
+async def fetch_demagog_live_search(query: str) -> list[dict]:
+    """Bezpośrednie wyszukiwanie na żywo w archiwum Demagog.org.pl."""
+    url = f"https://demagog.org.pl/?s={quote_plus(query)}"
+    try:
+        async with httpx.AsyncClient(timeout=6.0, follow_redirects=True) as client:
+            r = await client.get(url, headers={"User-Agent": "PrawdowidBot/1.0"})
+            if r.status_code != 200:
+                return []
+            soup = BeautifulSoup(r.text, "html.parser")
+            results = []
+            for article in soup.select("article")[:4]:
+                a_tag = article.select_one("h2 a, h3 a")
+                if not a_tag:
+                    continue
+                title = _clean_html(a_tag.get_text())
+                link = a_tag.get("href", "")
+                excerpt_el = article.select_one("p")
+                excerpt = _clean_html(excerpt_el.get_text()) if excerpt_el else ""
+                time_el = article.select_one("time")
+                date_str = time_el.get("datetime", "")[:10] if time_el else datetime.utcnow().strftime("%Y-%m-%d")
+
+                results.append({
+                    "title": title,
+                    "publisher": "Stowarzyszenie Demagog (IFCN/EFCSN)",
+                    "domain": "demagog.org.pl",
+                    "type": "wiarygodne wtórne",
+                    "date": date_str,
+                    "url": link,
+                    "content": f"{title}. {excerpt}"[:1500]
+                })
+            return results
+    except Exception:
+        return []
+
 async def fetch_dane_gov(query: str) -> list[dict]:
     url = "https://api.dane.gov.pl/1.4/search"
     params = {"q": query, "per_page": 4}
@@ -41,11 +166,12 @@ async def fetch_dane_gov(query: str) -> list[dict]:
                 attrs = item.get("attributes", {})
                 item_type = item.get("type", "dataset")
                 title = attrs.get("title", "Zasób dane.gov.pl")
-                notes = attrs.get("notes") or attrs.get("description") or ""
-                clean_notes = notes.replace("<p>", "").replace("</p>", " ").strip()
+                clean_notes = _clean_html(attrs.get("notes") or attrs.get("description") or "")
                 results.append({
                     "title": title,
                     "publisher": "Portal Otwartych Danych dane.gov.pl (Źródło urzędowe)",
+                    "domain": "dane.gov.pl",
+                    "type": "urzędowe",
                     "date": str(attrs.get("created", ""))[:10] or "brak daty",
                     "url": f"https://dane.gov.pl/pl/{item_type}/{item.get('id', '')}",
                     "content": f"{title}. {clean_notes}"[:1500]
@@ -56,9 +182,11 @@ async def fetch_dane_gov(query: str) -> list[dict]:
 
 async def fetch_sejm_acts(query: str) -> list[dict]:
     clean_q = query.lower()
-    for stop in ["ustawa", "ustawę", "ustawy", "w polsce", "wprowadzono", "uchwalono", "z dnia"]:
+    for stop in ["ustawa", "ustawę", "ustawy", "w polsce", "wprowadzono", "uchwalono", "z dnia", "czy", "jest"]:
         clean_q = clean_q.replace(stop, "")
     clean_q = " ".join(clean_q.split())[:60]
+    if len(clean_q) < 3:
+        return []
 
     url = "https://api.sejm.gov.pl/eli/acts/search"
     params = {"title": clean_q, "limit": 5}
@@ -78,6 +206,8 @@ async def fetch_sejm_acts(query: str) -> list[dict]:
                 results.append({
                     "title": title,
                     "publisher": "ISAP / Kancelaria Sejmu RP (Źródło pierwotne)",
+                    "domain": "isap.sejm.gov.pl",
+                    "type": "urzędowe",
                     "date": promulgation,
                     "url": f"https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id={eli}",
                     "content": f"Akt prawny: {title}. Status aktu: {status}. Data ogłoszenia: {promulgation}. Oznaczenie ELI: {eli}."
@@ -100,13 +230,14 @@ async def fetch_sejm_interpellations(query: str) -> list[dict]:
                 num = item.get("num", "")
                 title = item.get("title", f"Interpelacja nr {num}")
                 sent_date = item.get("sentDate", "brak daty")
-                to_whom = ", ".join(item.get("to", [])) if isinstance(item.get("to"), list) else str(item.get("to", ""))
                 results.append({
                     "title": f"Interpelacja poselska nr {num}: {title}",
                     "publisher": "Sejm RP X kadencji (Źródło urzędowe)",
+                    "domain": "sejm.gov.pl",
+                    "type": "urzędowe",
                     "date": sent_date,
                     "url": f"https://www.sejm.gov.pl/sejm10.nsf/interpelacja.xsp?typ=INT&nr={num}",
-                    "content": f"Interpelacja nr {num} w sprawie: {title}. Adresat: {to_whom}. Data wpływu: {sent_date}."
+                    "content": f"Interpelacja nr {num} w sprawie: {title}. Data wpływu: {sent_date}."
                 })
             return results
     except Exception:
@@ -117,7 +248,7 @@ async def fetch_google_factcheck(query: str, lang: str = "pl") -> list[dict]:
     if not api_key or "twoj_klucz" in api_key:
         return []
     url = "https://factchecktools.googleapis.com/v1alpha1/claims:search"
-    params = {"query": query, "languageCode": lang, "pageSize": 4, "key": api_key}
+    params = {"query": query, "languageCode": lang, "pageSize": 5, "key": api_key}
     try:
         async with httpx.AsyncClient(timeout=6.0) as client:
             r = await client.get(url, params=params)
@@ -133,6 +264,8 @@ async def fetch_google_factcheck(query: str, lang: str = "pl") -> list[dict]:
                 results.append({
                     "title": review_title,
                     "publisher": f"{publisher} (Wiarygodne źródło wtórne - IFCN/EFCSN)",
+                    "domain": "factchecktools.googleapis.com",
+                    "type": "wiarygodne wtórne",
                     "date": str(review.get("reviewDate", ""))[:10] or "brak daty",
                     "url": review.get("url", ""),
                     "content": f"Sprawdzane twierdzenie: \"{c.get('text', '')}\". Werdykt organizacji {publisher}: {rating}. Podsumowanie: {review_title}."
@@ -141,17 +274,57 @@ async def fetch_google_factcheck(query: str, lang: str = "pl") -> list[dict]:
     except Exception:
         return []
 
+async def fetch_wikipedia_pl(query: str) -> list[dict]:
+    """Szybki kontekst encyklopedyczny z Wikipedii PL dla faktów ogólnych i dat."""
+    url = "https://pl.wikipedia.org/w/api.php"
+    params = {
+        "action": "query",
+        "list": "search",
+        "srsearch": query,
+        "format": "json",
+        "srlimit": 2
+    }
+    try:
+        async with httpx.AsyncClient(timeout=5.0) as client:
+            r = await client.get(url, params=params, headers={"User-Agent": "PrawdowidBot/1.0"})
+            if r.status_code != 200:
+                return []
+            items = r.json().get("query", {}).get("search", [])
+            results = []
+            for item in items:
+                title = item.get("title", "")
+                snippet = _clean_html(item.get("snippet", ""))
+                results.append({
+                    "title": f"Wikipedia: {title}",
+                    "publisher": "Wikipedia (Źródło encyklopedyczne pomocnicze)",
+                    "domain": "pl.wikipedia.org",
+                    "type": "wiarygodne wtórne",
+                    "date": str(item.get("timestamp", ""))[:10] or "2026",
+                    "url": f"https://pl.wikipedia.org/wiki/{quote_plus(title.replace(' ', '_'))}",
+                    "content": f"Hasło encyklopedyczne {title}: {snippet}"
+                })
+            return results
+    except Exception:
+        return []
+
 async def gather_all_sources(keywords: str) -> list[dict]:
     local_docs = search_local_corpus(keywords)
     api_results = await asyncio.gather(
+        fetch_live_rss_factchecks(keywords),
+        fetch_demagog_live_search(keywords),
         fetch_sejm_acts(keywords),
         fetch_dane_gov(keywords),
         fetch_sejm_interpellations(keywords),
         fetch_google_factcheck(keywords, lang="pl"),
-        fetch_google_factcheck(keywords, lang="en")
+        fetch_google_factcheck(keywords, lang="en"),
+        fetch_wikipedia_pl(keywords)
     )
-    combined = local_docs + [doc for sublist in api_results for doc in sublist]
-    
+    live_docs = [doc for sublist in api_results for doc in sublist]
+
+    # Zapisujemy nowe trafienia na bieżąco do korpusu na dysku!
+    _append_to_live_corpus(live_docs)
+
+    combined = live_docs + local_docs
     seen_urls = set()
     unique_sources = []
     for doc in combined:
@@ -159,4 +332,4 @@ async def gather_all_sources(keywords: str) -> list[dict]:
         if u and u not in seen_urls:
             seen_urls.add(u)
             unique_sources.append(doc)
-    return unique_sources[:8]
+    return unique_sources[:10]

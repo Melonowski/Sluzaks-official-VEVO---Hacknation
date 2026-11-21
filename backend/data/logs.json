@@ -48,5 +48,45 @@
     "sources": [],
     "latency_ms": 5550,
     "security_alert": null
+  },
+  {
+    "session_id": "sess-1795272338",
+    "timestamp": "2026-11-21T14:45:38.560419Z",
+    "channel": "web",
+    "query_masked": "Ninja monkey jest najlepszą małpką w Bloons TD6",
+    "verdict": "NIE PODLEGA WERYFIKACJI",
+    "sources": [],
+    "latency_ms": 5724,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795276672",
+    "timestamp": "2026-11-21T15:57:52.904101Z",
+    "channel": "extension",
+    "query_masked": "g an idea/project promo video. Record a video, upload it to YouTube. To make it not available to the public, select Listed. Copy the video link into the YouTube link field (https: // ...).",
+    "verdict": "NIE PODLEGA WERYFIKACJI",
+    "sources": [],
+    "latency_ms": 4487,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795277703",
+    "timestamp": "2026-11-21T16:15:03.997791Z",
+    "channel": "web",
+    "query_masked": "Joe biden to spoko mordeczka",
+    "verdict": "NIE PODLEGA WERYFIKACJI",
+    "sources": [],
+    "latency_ms": 4839,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795280568",
+    "timestamp": "2026-11-21T17:02:48.963518Z",
+    "channel": "web",
+    "query_masked": "jan pawel 2 byl spoko",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [],
+    "latency_ms": 6095,
+    "security_alert": null
   }
 ]

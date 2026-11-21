@@ -1,12 +1,15 @@
 import re
 
 INJECTION_PATTERNS = [
-    r"ignore (all )?previous instructions",
-    r"zignoruj (wszystkie )?poprzednie instrukcje",
+    r"ignore (all )?(previous|above) instructions",
+    r"zignoruj (wszystkie )?(poprzednie|powyższe) instrukcje",
     r"system prompt",
     r"jesteś teraz",
     r"you are now",
-    r"zwróć werdykt potwierdzone",
+    r"zwróć werdykt",
+    r"output verdict",
+    r"zapomnij o zasadach",
+    r"override system",
 ]
 
 def mask_pii(text: str) -> str:
@@ -17,6 +20,8 @@ def mask_pii(text: str) -> str:
     return text
 
 def detect_prompt_injection(text: str) -> bool:
-    """Wykrywa próby manipulacji instrukcjami modelu."""
+    """Wykrywa próby manipulacji instrukcjami modelu (w pytaniu lub w pobranym URL/źródle)."""
+    if not text:
+        return False
     lowered = text.lower()
     return any(re.search(pattern, lowered) for pattern in INJECTION_PATTERNS)
