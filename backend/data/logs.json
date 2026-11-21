@@ -1,0 +1,52 @@
+[
+  {
+    "session_id": "sess-1795268486",
+    "timestamp": "2026-11-21T13:41:26.550223Z",
+    "channel": "extension",
+    "query_masked": "znacz myszką tekst posta na stronie, aby Prawdowid go spraw",
+    "verdict": "NIE PODLEGA WERYFIKACJI",
+    "sources": [],
+    "latency_ms": 2501,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795268526",
+    "timestamp": "2026-11-21T13:42:06.403098Z",
+    "channel": "extension",
+    "query_masked": "🔍 Zaznacz myszką tekst posta na str",
+    "verdict": "NIE PODLEGA WERYFIKACJI",
+    "sources": [],
+    "latency_ms": 2506,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795268532",
+    "timestamp": "2026-11-21T13:42:12.985277Z",
+    "channel": "extension",
+    "query_masked": "Casino Royale – brytyjski film szpiegowski z 2006 roku o przygodach Jamesa Bonda, wyprodukowany przez Eon Productions. Za reżyserię odpowiadał Martin Campbell, a za scenariusz Neal Purvis i Robert Wad",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [],
+    "latency_ms": 2714,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795268558",
+    "timestamp": "2026-11-21T13:42:38.826503Z",
+    "channel": "extension",
+    "query_masked": "Casino Royale – brytyjski film szpiegowski z 2006 roku o przygodach Jamesa Bonda, wyprodukowany przez Eon Productions. Za reżyserię odpowiadał Martin Campbell, a za scenariusz Neal Purvis i Robert Wad",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [],
+    "latency_ms": 5564,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795269193",
+    "timestamp": "2026-11-21T13:53:13.357666Z",
+    "channel": "extension",
+    "query_masked": "Artykuł na Medal\n\nCasino Royale – brytyjski film szpiegowski z 2006 roku o przygodach Jamesa Bonda, wyprodukowany przez Eon Productions. Za reżyserię odpowiadał Martin Campbell, a za scenariusz Neal P",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [],
+    "latency_ms": 5550,
+    "security_alert": null
+  }
+]
