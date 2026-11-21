@@ -38,7 +38,7 @@
 </head>
 <body>
   <h2>🛡️ Prawdowid Asystent</h2>
-  <p>Kliknij Profesorka w prawym dolnym rogu strony, aby aktywować tryb sprawdzania zaznaczonego posta.</p>
+  <p>Kliknij Profesorka w prawym dolnym rogu, a potem przeciągnij myszką, aby zaznaczyć fragment ekranu do weryfikacji.</p>
   <div class="row">
     <span style="font-size: 13px;">Pokaż Profesorka na stronach</span>
     <input type="checkbox" id="toggleOverlay" checked />
@@ -46,12 +46,26 @@
   <a class="btn" href="http://localhost:3000" target="_blank">Otwórz panel główny WWW</a>
 
   <script>
+    const extApi = typeof browser !== "undefined" && browser.storage ? browser : chrome;
     const toggle = document.getElementById("toggleOverlay");
-    chrome.storage.local.get(["prawdowid_enabled"], (res) => {
-      toggle.checked = res.prawdowid_enabled !== false;
-    });
+
+    try {
+      const res = extApi.storage.local.get(["prawdowid_enabled"]);
+      if (res && typeof res.then === "function") {
+        res.then((data) => {
+          toggle.checked = data?.prawdowid_enabled !== false;
+        });
+      } else {
+        extApi.storage.local.get(["prawdowid_enabled"], (data) => {
+          toggle.checked = data?.prawdowid_enabled !== false;
+        });
+      }
+    } catch (_) {}
+
     toggle.addEventListener("change", () => {
-      chrome.storage.local.set({ prawdowid_enabled: toggle.checked });
+      try {
+        extApi.storage.local.set({ prawdowid_enabled: toggle.checked });
+      } catch (_) {}
     });
   </script>
 </body>
