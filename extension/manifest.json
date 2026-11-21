@@ -1,10 +1,20 @@
 {
   "manifest_version": 3,
   "name": "Prawdowid - Asystent Weryfikacji MSZ",
-  "version": "1.0",
+  "version": "1.1",
   "description": "Szybka weryfikacja doniesień i postów w przeglądarce oparta o wiarygodne źródła.",
-  "permissions": ["activeTab", "storage"],
-  "host_permissions": ["http://127.0.0.1:8000/*", "http://localhost:8000/*"],
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1:8000/*",
+    "http://localhost:8000/*"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
   "action": {
     "default_popup": "popup.html"
   },
