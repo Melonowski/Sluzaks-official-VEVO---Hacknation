@@ -15,8 +15,7 @@ async def read_index():
     if os.path.exists(index_path):
         return FileResponse(index_path)
     return HTMLResponse(
-        content="<h1>Brak pliku index.html w frontend/static/</h1>",
-        status_code=404,
+        content="<h1>Brak pliku index.html w static/</h1>", status_code=404
     )
 
 

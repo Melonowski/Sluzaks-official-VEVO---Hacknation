@@ -3,6 +3,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from dotenv import load_dotenv
+from app.pipeline import run_verification_pipeline
 
 load_dotenv()
 
@@ -27,7 +28,11 @@ def health():
 def verify(req: VerifyRequest):
     api_key = os.getenv("GROQ_API_KEY")
     if not api_key or api_key == "tutaj_wklej_klucz_groq":
+        pass
         # Scenariusz J: brak klucza to komunikat techniczny, nie werdykt[cite: 6, 8]
+async def verify(req: VerifyRequest):
+    api_key = os.getenv("GROQ_API_KEY")
+    if not api_key or api_key == "tutaj_wklej_klucz_groq":
         raise HTTPException(
             status_code=503,
             detail="Brak skonfigurowanego klucza API – sprawdzenie niemożliwe."
@@ -44,3 +49,7 @@ def verify(req: VerifyRequest):
         "security_alert": None,
         "metrics": {"latency_ms": 15, "estimated_cost_pln": 0.0}
     }
+    try:
+        return await run_verification_pipeline(req.input_text, req.channel)
+    except Exception as e:
+        raise HTTPException(status_code=502, detail=f"Błąd komunikacji z usługą AI: {str(e)}")
