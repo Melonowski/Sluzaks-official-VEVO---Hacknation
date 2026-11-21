@@ -1,0 +1,1322 @@
+[
+  {
+    "title": "Ustawa o ochronie ludności i obronie cywilnej",
+    "publisher": "ISAP / Sejm RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2024-12-05",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20240001907",
+    "content": "Ustawa z dnia 5 grudnia 2024 r. o ochronie ludności i obronie cywilnej reguluje zadania organów administracji publicznej w zakresie ochrony ludności.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Komunikat MSZ ws. przeciwdziałania dezinformacji FIMI",
+    "publisher": "Ministerstwo Spraw Zagranicznych",
+    "domain": "gov.pl",
+    "type": "urzędowe",
+    "date": "2025-02-10",
+    "url": "https://www.gov.pl/web/dyplomacja/komunikaty",
+    "content": "Ministerstwo Spraw Zagranicznych monitoruje zagraniczne manipulacje informacyjne i ingerencje w środowisku informacyjnym (FIMI).",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Ostrzeżenie CERT Polska przed fałszywymi SMS-ami podszywającymi się pod instytucje",
+    "publisher": "CERT Polska / NASK",
+    "domain": "cert.pl",
+    "type": "urzędowe",
+    "date": "2025-03-01",
+    "url": "https://cert.pl/ostrzezenia/",
+    "content": "CERT Polska ostrzega przed kampaniami phishingowymi wykorzystującymi fałszywe komunikaty rządowe.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Analiza zjawiska dezinformacji w mediach społecznościowych",
+    "publisher": "NASK PIB",
+    "domain": "nask.pl",
+    "type": "urzędowe",
+    "date": "2025-01-15",
+    "url": "https://www.nask.pl/pl/aktualnosci",
+    "content": "NASK wskazuje na wzrost liczby zmanipulowanych materiałów wideo i fałszywych cytatów w przestrzeni publicznej.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Weryfikacja wypowiedzi i fact-checking w Polsce",
+    "publisher": "Stowarzyszenie Demagog",
+    "domain": "demagog.org.pl",
+    "type": "wiarygodne wtórne",
+    "date": "2025-02-20",
+    "url": "https://demagog.org.pl/analizy/",
+    "content": "Demagog weryfikuje wypowiedzi polityków oraz popularne doniesienia krążące w mediach społecznościowych zgodnie ze standardami IFCN.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Sprawdzamy doniesienia sieciowe i zmanipulowane nagrania",
+    "publisher": "Konkret24 TVN24",
+    "domain": "konkret24.tvn24.pl",
+    "type": "wiarygodne wtórne",
+    "date": "2025-02-18",
+    "url": "https://konkret24.tvn24.pl/",
+    "content": "Redakcja Konkret24 analizuje viralowe wpisy i kontekst archiwalnych zdjęć publikowanych jako aktualne.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Raport o fałszywych informacjach w sieci",
+    "publisher": "FakeNews.pl",
+    "domain": "fakenews.pl",
+    "type": "wiarygodne wtórne",
+    "date": "2025-02-12",
+    "url": "https://fakenews.pl/",
+    "content": "Portal FakeNews.pl dokumentuje powtarzające się narracje dezinformacyjne w polskojęzycznym internecie.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Depesze i komunikaty Polskiej Agencji Prasowej",
+    "publisher": "Polska Agencja Prasowa",
+    "domain": "pap.pl",
+    "type": "wiarygodne wtórne",
+    "date": "2025-03-05",
+    "url": "https://www.pap.pl/fake-hunter",
+    "content": "Serwis FakeHunter PAP służy do weryfikacji informacji publikowanych w internecie we współpracy z ekspertami.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Baza danych EUvsDisinfo - przypadki dezinformacji w Europie",
+    "publisher": "EEAS East StratCom Task Force",
+    "domain": "euvsdisinfo.eu",
+    "type": "wiarygodne wtórne",
+    "date": "2025-02-25",
+    "url": "https://euvsdisinfo.eu/disinformation-cases/",
+    "content": "Baza EUvsDisinfo kataloguje udokumentowane przypadki zagranicznych manipulacji informacyjnych wymierzonych w państwa UE.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Dziennik Urzędowy Unii Europejskiej - akty prawne",
+    "publisher": "EUR-Lex",
+    "domain": "eur-lex.europa.eu",
+    "type": "urzędowe",
+    "date": "2025-01-30",
+    "url": "https://eur-lex.europa.eu/homepage.html?locale=pl",
+    "content": "EUR-Lex zapewnia bezpośredni i bezpłatny dostęp do prawa Unii Europejskiej oraz aktów prawnych Wspólnoty.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Komunikaty Narodowego Banku Polskiego ws. stabilności finansowej",
+    "publisher": "Narodowy Bank Polski",
+    "domain": "nbp.pl",
+    "type": "urzędowe",
+    "date": "2025-02-14",
+    "url": "https://nbp.pl/aktualnosci/",
+    "content": "NBP publikuje oficjalne dane dotyczące stóp procentowych, rezerw walutowych oraz obiegu pieniądza w Polsce.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Dane statystyczne Głównego Urzędu Statystycznego",
+    "publisher": "Główny Urząd Statystyczny",
+    "domain": "stat.gov.pl",
+    "type": "urzędowe",
+    "date": "2025-02-28",
+    "url": "https://stat.gov.pl/obszary-tematyczne/",
+    "content": "GUS udostępnia oficjalne wskaźniki makroekonomiczne, demograficzne oraz dane o inflacji w Rzeczypospolitej Polskiej.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Obwieszczenie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 19 grudnia 2025 r. w sprawie ogłoszenia jednolitego tekstu ustawy o finansowaniu społecznościowym dla przedsięwzięć gospodarczych i pomocy kredytobiorcom",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2025-12-31",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2025/1900",
+    "content": "Akt prawny: Obwieszczenie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 19 grudnia 2025 r. w sprawie ogłoszenia jednolitego tekstu ustawy o finansowaniu społecznościowym dla przedsięwzięć gospodarczych i pomocy kredytobiorcom. Status: obowiązujący. Data ogłoszenia: 2025-12-31.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rozporządzenie Ministra Energii z dnia 30 grudnia 2025 r. w sprawie finansowania jednorazowych odpraw pieniężnych",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2025-12-31",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2025/1899",
+    "content": "Akt prawny: Rozporządzenie Ministra Energii z dnia 30 grudnia 2025 r. w sprawie finansowania jednorazowych odpraw pieniężnych. Status: obowiązujący. Data ogłoszenia: 2025-12-31.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rozporządzenie Ministra Energii z dnia 30 grudnia 2025 r. w sprawie finansowania rent wyrównawczych",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2025-12-31",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2025/1898",
+    "content": "Akt prawny: Rozporządzenie Ministra Energii z dnia 30 grudnia 2025 r. w sprawie finansowania rent wyrównawczych. Status: obowiązujący. Data ogłoszenia: 2025-12-31.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rozporządzenie Ministra Finansów i Gospodarki z dnia 29 grudnia 2025 r. w sprawie finansowego wsparcia udzielanego na realizację niektórych przedsięwzięć mieszkaniowych",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2025-12-31",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2025/1897",
+    "content": "Akt prawny: Rozporządzenie Ministra Finansów i Gospodarki z dnia 29 grudnia 2025 r. w sprawie finansowego wsparcia udzielanego na realizację niektórych przedsięwzięć mieszkaniowych. Status: obowiązujący. Data ogłoszenia: 2025-12-31.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rozporządzenie Ministra Energii z dnia 30 grudnia 2025 r. w sprawie finansowania likwidacji kopalni, zakładu górniczego lub jego oznaczonej części oraz działań podejmowanych po zakończeniu tej likwidacji",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2025-12-31",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2025/1896",
+    "content": "Akt prawny: Rozporządzenie Ministra Energii z dnia 30 grudnia 2025 r. w sprawie finansowania likwidacji kopalni, zakładu górniczego lub jego oznaczonej części oraz działań podejmowanych po zakończeniu tej likwidacji. Status: obowiązujący. Data ogłoszenia: 2025-12-31.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rozporządzenie Ministra Energii z dnia 30 grudnia 2025 r. w sprawie finansowania świadczeń przysługujących pracownikom przebywającym na urlopach górniczych albo urlopach dla pracowników zakładów przeróbki mechanicznej węgla oraz świadczeń z zakładowego funduszu świadczeń socjalnych dla tych pracowników",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2025-12-31",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2025/1895",
+    "content": "Akt prawny: Rozporządzenie Ministra Energii z dnia 30 grudnia 2025 r. w sprawie finansowania świadczeń przysługujących pracownikom przebywającym na urlopach górniczych albo urlopach dla pracowników zakładów przeróbki mechanicznej węgla oraz świadczeń z zakładowego funduszu świadczeń socjalnych dla tych pracowników. Status: obowiązujący. Data ogłoszenia: 2025-12-31.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rozporządzenie Ministra Finansów i Gospodarki z dnia 30 grudnia 2025 r. zmieniające rozporządzenie w sprawie szczególnych zasad rachunkowości zakładów ubezpieczeń i zakładów reasekuracji",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2025-12-31",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2025/1894",
+    "content": "Akt prawny: Rozporządzenie Ministra Finansów i Gospodarki z dnia 30 grudnia 2025 r. zmieniające rozporządzenie w sprawie szczególnych zasad rachunkowości zakładów ubezpieczeń i zakładów reasekuracji. Status: obowiązujący. Data ogłoszenia: 2025-12-31.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Obwieszczenie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 19 grudnia 2025 r. w sprawie ogłoszenia jednolitego tekstu ustawy o wyrobie alkoholu etylowego oraz wytwarzaniu wyrobów tytoniowych",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2025-12-31",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2025/1893",
+    "content": "Akt prawny: Obwieszczenie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 19 grudnia 2025 r. w sprawie ogłoszenia jednolitego tekstu ustawy o wyrobie alkoholu etylowego oraz wytwarzaniu wyrobów tytoniowych. Status: obowiązujący. Data ogłoszenia: 2025-12-31.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rozporządzenie Ministra Finansów i Gospodarki z dnia 23 grudnia 2025 r. zmieniające rozporządzenie w sprawie szczegółowych warunków przeprowadzenia przetargu dla podmiotów ubiegających się o udzielenie koncesji na prowadzenie kasyna gry lub zezwolenia na prowadzenie salonu gry bingo pieniężne",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2025-12-31",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2025/1892",
+    "content": "Akt prawny: Rozporządzenie Ministra Finansów i Gospodarki z dnia 23 grudnia 2025 r. zmieniające rozporządzenie w sprawie szczegółowych warunków przeprowadzenia przetargu dla podmiotów ubiegających się o udzielenie koncesji na prowadzenie kasyna gry lub zezwolenia na prowadzenie salonu gry bingo pieniężne. Status: obowiązujący. Data ogłoszenia: 2025-12-31.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Obwieszczenie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 7 listopada 2025 r. w sprawie ogłoszenia jednolitego tekstu ustawy o biegłych rewidentach, firmach audytorskich oraz nadzorze publicznym",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2025-12-31",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2025/1891",
+    "content": "Akt prawny: Obwieszczenie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 7 listopada 2025 r. w sprawie ogłoszenia jednolitego tekstu ustawy o biegłych rewidentach, firmach audytorskich oraz nadzorze publicznym. Status: obowiązujący. Data ogłoszenia: 2025-12-31.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rozporządzenie Ministra Finansów i Gospodarki z dnia 23 grudnia 2025 r. zmieniające rozporządzenie w sprawie nadania statutu Polskiej Agencji Kosmicznej",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2025-12-31",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2025/1890",
+    "content": "Akt prawny: Rozporządzenie Ministra Finansów i Gospodarki z dnia 23 grudnia 2025 r. zmieniające rozporządzenie w sprawie nadania statutu Polskiej Agencji Kosmicznej. Status: obowiązujący. Data ogłoszenia: 2025-12-31.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rozporządzenie Ministra Edukacji z dnia 22 grudnia 2025 r. zmieniające rozporządzenie w sprawie akredytacji kształcenia ustawicznego w formach pozaszkolnych",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2025-12-31",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2025/1889",
+    "content": "Akt prawny: Rozporządzenie Ministra Edukacji z dnia 22 grudnia 2025 r. zmieniające rozporządzenie w sprawie akredytacji kształcenia ustawicznego w formach pozaszkolnych. Status: akt objęty tekstem jednolitym. Data ogłoszenia: 2025-12-31.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rozporządzenie Ministra Rodziny, Pracy i Polityki Społecznej z dnia 29 grudnia 2025 r. zmieniające rozporządzenie w sprawie postępowania o świadczenia emerytalno-rentowe",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2025-12-31",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2025/1888",
+    "content": "Akt prawny: Rozporządzenie Ministra Rodziny, Pracy i Polityki Społecznej z dnia 29 grudnia 2025 r. zmieniające rozporządzenie w sprawie postępowania o świadczenia emerytalno-rentowe. Status: akt objęty tekstem jednolitym. Data ogłoszenia: 2025-12-31.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rozporządzenie Rady Ministrów z dnia 29 grudnia 2025 r. w sprawie określenia liczby osób, które w 2026 r. mogą być powołane do czynnej służby wojskowej, oraz liczby osób, które mogą pełnić służbę wojskową w rezerwie w ramach odbywania ćwiczeń wojskowych",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2025-12-31",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2025/1887",
+    "content": "Akt prawny: Rozporządzenie Rady Ministrów z dnia 29 grudnia 2025 r. w sprawie określenia liczby osób, które w 2026 r. mogą być powołane do czynnej służby wojskowej, oraz liczby osób, które mogą pełnić służbę wojskową w rezerwie w ramach odbywania ćwiczeń wojskowych. Status: obowiązujący. Data ogłoszenia: 2025-12-31.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rozporządzenie Rady Ministrów z dnia 29 grudnia 2025 r. zmieniające rozporządzenie w sprawie Narodowego Programu Zdrowia na lata 2021-2025",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2025-12-30",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2025/1886",
+    "content": "Akt prawny: Rozporządzenie Rady Ministrów z dnia 29 grudnia 2025 r. zmieniające rozporządzenie w sprawie Narodowego Programu Zdrowia na lata 2021-2025. Status: obowiązujący. Data ogłoszenia: 2025-12-30.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rozporządzenie Prezydenta Rzeczypospolitej Polskiej z dnia 23 grudnia 2025 r. zmieniające rozporządzenie w sprawie stanowisk i wymaganych kwalifikacji urzędników sądowych i innych pracowników oraz szczegółowych zasad wynagradzania referendarzy sądowych, starszych referendarzy sądowych, asystentów sędziów, starszych asystentów sędziów, urzędników oraz innych pracowników wojewódzkich sądów administracyjnych",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2025-12-30",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2025/1885",
+    "content": "Akt prawny: Rozporządzenie Prezydenta Rzeczypospolitej Polskiej z dnia 23 grudnia 2025 r. zmieniające rozporządzenie w sprawie stanowisk i wymaganych kwalifikacji urzędników sądowych i innych pracowników oraz szczegółowych zasad wynagradzania referendarzy sądowych, starszych referendarzy sądowych, asystentów sędziów, starszych asystentów sędziów, urzędników oraz innych pracowników wojewódzkich sądów administracyjnych. Status: obowiązujący. Data ogłoszenia: 2025-12-30.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Obwieszczenie Ministra Klimatu i Środowiska z dnia 11 grudnia 2025 r. w sprawie ogłoszenia jednolitego tekstu rozporządzenia Ministra Klimatu i Środowiska w sprawie wartości referencyjnych oszczędności energii finalnej dla przedsięwzięć służących poprawie efektywności energetycznej oraz w sprawie sposobu obliczania tych wartości",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2025-12-30",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2025/1884",
+    "content": "Akt prawny: Obwieszczenie Ministra Klimatu i Środowiska z dnia 11 grudnia 2025 r. w sprawie ogłoszenia jednolitego tekstu rozporządzenia Ministra Klimatu i Środowiska w sprawie wartości referencyjnych oszczędności energii finalnej dla przedsięwzięć służących poprawie efektywności energetycznej oraz w sprawie sposobu obliczania tych wartości. Status: obowiązujący. Data ogłoszenia: 2025-12-30.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Obwieszczenie Ministra Zdrowia z dnia 1 grudnia 2025 r. w sprawie ogłoszenia jednolitego tekstu rozporządzenia Ministra Zdrowia w sprawie programu pilotażowego w centrach zdrowia psychicznego",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2025-12-30",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2025/1883",
+    "content": "Akt prawny: Obwieszczenie Ministra Zdrowia z dnia 1 grudnia 2025 r. w sprawie ogłoszenia jednolitego tekstu rozporządzenia Ministra Zdrowia w sprawie programu pilotażowego w centrach zdrowia psychicznego. Status: obowiązujący. Data ogłoszenia: 2025-12-30.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Ustawa z dnia 4 grudnia 2025 r. o zmianie ustawy o doradztwie podatkowym oraz ustawy - Prawo o postępowaniu przed sądami administracyjnymi",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2025-12-30",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2025/1882",
+    "content": "Akt prawny: Ustawa z dnia 4 grudnia 2025 r. o zmianie ustawy o doradztwie podatkowym oraz ustawy - Prawo o postępowaniu przed sądami administracyjnymi. Status: obowiązujący. Data ogłoszenia: 2025-12-30.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Ustawa z dnia 4 grudnia 2025 r. o zmianie ustawy o dokumentach publicznych oraz ustawy o podatku akcyzowym",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2025-12-30",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2025/1881",
+    "content": "Akt prawny: Ustawa z dnia 4 grudnia 2025 r. o zmianie ustawy o dokumentach publicznych oraz ustawy o podatku akcyzowym. Status: obowiązujący. Data ogłoszenia: 2025-12-30.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rozporządzenie Ministra Finansów i Gospodarki z dnia 22 grudnia 2025 r. w sprawie prowadzenia uproszczonej ewidencji przychodów i kosztów przez niektóre organizacje pozarządowe oraz stowarzyszenia jednostek samorządu terytorialnego",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2025-12-30",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2025/1880",
+    "content": "Akt prawny: Rozporządzenie Ministra Finansów i Gospodarki z dnia 22 grudnia 2025 r. w sprawie prowadzenia uproszczonej ewidencji przychodów i kosztów przez niektóre organizacje pozarządowe oraz stowarzyszenia jednostek samorządu terytorialnego. Status: obowiązujący. Data ogłoszenia: 2025-12-30.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rozporządzenie Ministra Finansów i Gospodarki z dnia 23 grudnia 2025 r. w sprawie prowadzenia uproszczonej ewidencji przychodów i kosztów przez koła gospodyń wiejskich",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2025-12-30",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2025/1879",
+    "content": "Akt prawny: Rozporządzenie Ministra Finansów i Gospodarki z dnia 23 grudnia 2025 r. w sprawie prowadzenia uproszczonej ewidencji przychodów i kosztów przez koła gospodyń wiejskich. Status: obowiązujący. Data ogłoszenia: 2025-12-30.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Obwieszczenie Ministra Sprawiedliwości z dnia 16 grudnia 2025 r. w sprawie ogłoszenia jednolitego tekstu rozporządzenia Ministra Sprawiedliwości w sprawie konta w systemie teleinformatycznym obsługującym zgłoszenie na wolne stanowisko sędziowskie",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2025-12-30",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2025/1878",
+    "content": "Akt prawny: Obwieszczenie Ministra Sprawiedliwości z dnia 16 grudnia 2025 r. w sprawie ogłoszenia jednolitego tekstu rozporządzenia Ministra Sprawiedliwości w sprawie konta w systemie teleinformatycznym obsługującym zgłoszenie na wolne stanowisko sędziowskie. Status: obowiązujący. Data ogłoszenia: 2025-12-30.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Obwieszczenie Ministra Sprawiedliwości z dnia 20 grudnia 2025 r. w sprawie ogłoszenia jednolitego tekstu rozporządzenia Ministra Sprawiedliwości w sprawie przeprowadzania naboru na aplikację sędziowską i aplikację prokuratorską",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2025-12-30",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2025/1877",
+    "content": "Akt prawny: Obwieszczenie Ministra Sprawiedliwości z dnia 20 grudnia 2025 r. w sprawie ogłoszenia jednolitego tekstu rozporządzenia Ministra Sprawiedliwości w sprawie przeprowadzania naboru na aplikację sędziowską i aplikację prokuratorską. Status: obowiązujący. Data ogłoszenia: 2025-12-30.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rozporządzenie Ministra Energii z dnia 23 grudnia 2025 r. zmieniające rozporządzenie w sprawie szczegółowego wykazu paliw ciekłych, których wytwarzanie, magazynowanie lub przeładunek, przesyłanie lub dystrybucja, obrót, w tym obrót z zagranicą, wymaga koncesji oraz których przywóz wymaga wpisu do rejestru podmiotów przywożących",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2025-12-30",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2025/1876",
+    "content": "Akt prawny: Rozporządzenie Ministra Energii z dnia 23 grudnia 2025 r. zmieniające rozporządzenie w sprawie szczegółowego wykazu paliw ciekłych, których wytwarzanie, magazynowanie lub przeładunek, przesyłanie lub dystrybucja, obrót, w tym obrót z zagranicą, wymaga koncesji oraz których przywóz wymaga wpisu do rejestru podmiotów przywożących. Status: obowiązujący. Data ogłoszenia: 2025-12-30.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rozporządzenie Rady Ministrów z dnia 29 grudnia 2025 r. w sprawie stawki zwrotu podatku akcyzowego zawartego w cenie oleju napędowego wykorzystywanego do produkcji rolnej na 1 litr oleju w 2026 r.",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2025-12-30",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2025/1875",
+    "content": "Akt prawny: Rozporządzenie Rady Ministrów z dnia 29 grudnia 2025 r. w sprawie stawki zwrotu podatku akcyzowego zawartego w cenie oleju napędowego wykorzystywanego do produkcji rolnej na 1 litr oleju w 2026 r.. Status: akt jednorazowy. Data ogłoszenia: 2025-12-30.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Obwieszczenie Ministra Rodziny, Pracy i Polityki Społecznej z dnia 12 grudnia 2025 r. w sprawie ogłoszenia jednolitego tekstu rozporządzenia Ministra Pracy i Polityki Społecznej w sprawie różnicowania stopy procentowej składki na ubezpieczenie społeczne z tytułu wypadków przy pracy i chorób zawodowych w zależności od zagrożeń zawodowych i ich skutków",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2025-12-30",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2025/1874",
+    "content": "Akt prawny: Obwieszczenie Ministra Rodziny, Pracy i Polityki Społecznej z dnia 12 grudnia 2025 r. w sprawie ogłoszenia jednolitego tekstu rozporządzenia Ministra Pracy i Polityki Społecznej w sprawie różnicowania stopy procentowej składki na ubezpieczenie społeczne z tytułu wypadków przy pracy i chorób zawodowych w zależności od zagrożeń zawodowych i ich skutków. Status: obowiązujący. Data ogłoszenia: 2025-12-30.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rozporządzenie Ministra Finansów i Gospodarki z dnia 22 grudnia 2025 r. uchylające rozporządzenie w sprawie obowiązku badania sprawozdań finansowych organizacji pożytku publicznego",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2025-12-29",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2025/1873",
+    "content": "Akt prawny: Rozporządzenie Ministra Finansów i Gospodarki z dnia 22 grudnia 2025 r. uchylające rozporządzenie w sprawie obowiązku badania sprawozdań finansowych organizacji pożytku publicznego. Status: akt jednorazowy. Data ogłoszenia: 2025-12-29.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Ustawa z dnia 4 grudnia 2025 r. o zmianie niektórych ustaw w celu poprawy bezpieczeństwa ruchu drogowego",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2025-12-29",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2025/1872",
+    "content": "Akt prawny: Ustawa z dnia 4 grudnia 2025 r. o zmianie niektórych ustaw w celu poprawy bezpieczeństwa ruchu drogowego. Status: obowiązujący. Data ogłoszenia: 2025-12-29.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rozporządzenie Ministra Zdrowia z dnia 22 grudnia 2025 r. w sprawie centralnej elektronicznej rejestracji",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2025-12-29",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2025/1871",
+    "content": "Akt prawny: Rozporządzenie Ministra Zdrowia z dnia 22 grudnia 2025 r. w sprawie centralnej elektronicznej rejestracji. Status: obowiązujący. Data ogłoszenia: 2025-12-29.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rozporządzenie Rady Ministrów z dnia 30 grudnia 2024 r. zmieniające rozporządzenie w sprawie algorytmu przekazywania środków Państwowego Funduszu Rehabilitacji Osób Niepełnosprawnych samorządom wojewódzkim i powiatowym",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2024-12-31",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2024/1984",
+    "content": "Akt prawny: Rozporządzenie Rady Ministrów z dnia 30 grudnia 2024 r. zmieniające rozporządzenie w sprawie algorytmu przekazywania środków Państwowego Funduszu Rehabilitacji Osób Niepełnosprawnych samorządom wojewódzkim i powiatowym. Status: obowiązujący. Data ogłoszenia: 2024-12-31.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Obwieszczenie Ministra Obrony Narodowej z dnia 11 grudnia 2024 r. w sprawie ogłoszenia jednolitego tekstu rozporządzenia Ministra Obrony Narodowej w sprawie oddelegowania funkcjonariusza Służby Kontrwywiadu Wojskowego do wykonywania zadań służbowych poza Służbą Kontrwywiadu Wojskowego",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2024-12-31",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2024/1983",
+    "content": "Akt prawny: Obwieszczenie Ministra Obrony Narodowej z dnia 11 grudnia 2024 r. w sprawie ogłoszenia jednolitego tekstu rozporządzenia Ministra Obrony Narodowej w sprawie oddelegowania funkcjonariusza Służby Kontrwywiadu Wojskowego do wykonywania zadań służbowych poza Służbą Kontrwywiadu Wojskowego. Status: obowiązujący. Data ogłoszenia: 2024-12-31.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Obwieszczenie Ministra Obrony Narodowej z dnia 11 grudnia 2024 r. w sprawie ogłoszenia jednolitego tekstu rozporządzenia Ministra Obrony Narodowej w sprawie norm zakwaterowania żołnierzy we wspólnych kwaterach stałych oraz trybu ich kwaterowania",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2024-12-31",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2024/1982",
+    "content": "Akt prawny: Obwieszczenie Ministra Obrony Narodowej z dnia 11 grudnia 2024 r. w sprawie ogłoszenia jednolitego tekstu rozporządzenia Ministra Obrony Narodowej w sprawie norm zakwaterowania żołnierzy we wspólnych kwaterach stałych oraz trybu ich kwaterowania. Status: obowiązujący. Data ogłoszenia: 2024-12-31.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rozporządzenie Ministra Rolnictwa i Rozwoju Wsi z dnia 22 grudnia 2024 r. zmieniające rozporządzenie w sprawie wykazu punktów wjazdu podróżnych oraz warunków i sposobu współpracy organów Inspekcji Weterynaryjnej z organami celnymi przy kontroli przemieszczanych w celach niehandlowych zwierząt domowych towarzyszących podróżnym",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2024-12-31",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2024/1981",
+    "content": "Akt prawny: Rozporządzenie Ministra Rolnictwa i Rozwoju Wsi z dnia 22 grudnia 2024 r. zmieniające rozporządzenie w sprawie wykazu punktów wjazdu podróżnych oraz warunków i sposobu współpracy organów Inspekcji Weterynaryjnej z organami celnymi przy kontroli przemieszczanych w celach niehandlowych zwierząt domowych towarzyszących podróżnym. Status: obowiązujący. Data ogłoszenia: 2024-12-31.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rozporządzenie Ministra Przemysłu oraz Ministra Klimatu i Środowiska z dnia 30 grudnia 2024 r. zmieniające rozporządzenie w sprawie wymagań jakościowych dla paliw ciekłych",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2024-12-31",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2024/1980",
+    "content": "Akt prawny: Rozporządzenie Ministra Przemysłu oraz Ministra Klimatu i Środowiska z dnia 30 grudnia 2024 r. zmieniające rozporządzenie w sprawie wymagań jakościowych dla paliw ciekłych. Status: obowiązujący. Data ogłoszenia: 2024-12-31.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Obwieszczenie Prezesa Rady Ministrów z dnia 16 grudnia 2024 r. w sprawie ogłoszenia jednolitego tekstu rozporządzenia Prezesa Rady Ministrów w sprawie wykazu stanowisk, wymaganych kwalifikacji oraz zasad wynagradzania pracowników Instytutu Europy Środkowej",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2024-12-31",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2024/1979",
+    "content": "Akt prawny: Obwieszczenie Prezesa Rady Ministrów z dnia 16 grudnia 2024 r. w sprawie ogłoszenia jednolitego tekstu rozporządzenia Prezesa Rady Ministrów w sprawie wykazu stanowisk, wymaganych kwalifikacji oraz zasad wynagradzania pracowników Instytutu Europy Środkowej. Status: obowiązujący. Data ogłoszenia: 2024-12-31.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rozporządzenie Ministra Rolnictwa i Rozwoju Wsi z dnia 23 grudnia 2024 r. zmieniające rozporządzenie w sprawie szczegółowych warunków i trybu przyznawania oraz wypłaty pomocy finansowej na operacje typu \"Zarządzanie zasobami wodnymi\" w ramach poddziałania \"Wsparcie na inwestycje związane z rozwojem, modernizacją i dostosowywaniem rolnictwa i leśnictwa\" objętego Programem Rozwoju Obszarów Wiejskich na lata 2014-2020",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2024-12-31",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2024/1978",
+    "content": "Akt prawny: Rozporządzenie Ministra Rolnictwa i Rozwoju Wsi z dnia 23 grudnia 2024 r. zmieniające rozporządzenie w sprawie szczegółowych warunków i trybu przyznawania oraz wypłaty pomocy finansowej na operacje typu \"Zarządzanie zasobami wodnymi\" w ramach poddziałania \"Wsparcie na inwestycje związane z rozwojem, modernizacją i dostosowywaniem rolnictwa i leśnictwa\" objętego Programem Rozwoju Obszarów Wiejskich na lata 2014-2020. Status: obowiązujący. Data ogłoszenia: 2024-12-31.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rozporządzenie Ministra Zdrowia z dnia 30 grudnia 2024 r. zmieniające rozporządzenie w sprawie świadczeń gwarantowanych z zakresu ambulatoryjnej opieki specjalistycznej",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2024-12-31",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2024/1977",
+    "content": "Akt prawny: Rozporządzenie Ministra Zdrowia z dnia 30 grudnia 2024 r. zmieniające rozporządzenie w sprawie świadczeń gwarantowanych z zakresu ambulatoryjnej opieki specjalistycznej. Status: obowiązujący. Data ogłoszenia: 2024-12-31.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Ustawa z dnia 5 grudnia 2024 r. o wypowiedzeniu Porozumienia o zdolności prawnej, przywilejach i immunitetach Międzynarodowej Organizacji Łączności Kosmicznej \"Intersputnik\", sporządzonego w Berlinie dnia 20 września 1976 r.",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2024-12-31",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2024/1976",
+    "content": "Akt prawny: Ustawa z dnia 5 grudnia 2024 r. o wypowiedzeniu Porozumienia o zdolności prawnej, przywilejach i immunitetach Międzynarodowej Organizacji Łączności Kosmicznej \"Intersputnik\", sporządzonego w Berlinie dnia 20 września 1976 r.. Status: akt jednorazowy. Data ogłoszenia: 2024-12-31.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Ustawa z dnia 5 grudnia 2024 r. o wypowiedzeniu Porozumienia o utworzeniu międzynarodowego systemu i organizacji łączności kosmicznej \"Intersputnik\", sporządzonego w Moskwie dnia 15 listopada 1971 r., zmienionego Protokołem o wprowadzeniu zmian do Porozumienia sporządzonego w Moskwie dnia 15 listopada 1971 r. o utworzeniu międzynarodowego systemu i organizacji łączności kosmicznej \"Intersputnik\", przyjętym podczas XXV Jubileuszowej Sesji Rady INTERSPUTNIK w Moskwie dnia 30 listopada 1996 r.",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2024-12-31",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2024/1975",
+    "content": "Akt prawny: Ustawa z dnia 5 grudnia 2024 r. o wypowiedzeniu Porozumienia o utworzeniu międzynarodowego systemu i organizacji łączności kosmicznej \"Intersputnik\", sporządzonego w Moskwie dnia 15 listopada 1971 r., zmienionego Protokołem o wprowadzeniu zmian do Porozumienia sporządzonego w Moskwie dnia 15 listopada 1971 r. o utworzeniu międzynarodowego systemu i organizacji łączności kosmicznej \"Intersputnik\", przyjętym podczas XXV Jubileuszowej Sesji Rady INTERSPUTNIK w Moskwie dnia 30 listopada 1996 r.. Status: akt jednorazowy. Data ogłoszenia: 2024-12-31.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Ustawa z dnia 5 grudnia 2024 r. o ratyfikacji Porozumienia w sprawie Środkowoeuropejskiego Programu Wymiany Uniwersyteckiej (\"CEEPUS IV\"), podpisanego w Warszawie dnia 20 września 2023 r.",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2024-12-31",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2024/1974",
+    "content": "Akt prawny: Ustawa z dnia 5 grudnia 2024 r. o ratyfikacji Porozumienia w sprawie Środkowoeuropejskiego Programu Wymiany Uniwersyteckiej (\"CEEPUS IV\"), podpisanego w Warszawie dnia 20 września 2023 r.. Status: akt jednorazowy. Data ogłoszenia: 2024-12-31.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rozporządzenie Ministra Finansów z dnia 22 grudnia 2024 r. w sprawie oznaczania wyrobów akcyzowych znakami akcyzy",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2024-12-31",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2024/1973",
+    "content": "Akt prawny: Rozporządzenie Ministra Finansów z dnia 22 grudnia 2024 r. w sprawie oznaczania wyrobów akcyzowych znakami akcyzy. Status: obowiązujący. Data ogłoszenia: 2024-12-31.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rozporządzenie Ministra Infrastruktury z dnia 17 grudnia 2024 r. zmieniające rozporządzenie w sprawie szczegółowych czynności organów w sprawach związanych z dopuszczeniem pojazdu do ruchu oraz wzorów dokumentów w tych sprawach",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2024-12-31",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2024/1972",
+    "content": "Akt prawny: Rozporządzenie Ministra Infrastruktury z dnia 17 grudnia 2024 r. zmieniające rozporządzenie w sprawie szczegółowych czynności organów w sprawach związanych z dopuszczeniem pojazdu do ruchu oraz wzorów dokumentów w tych sprawach. Status: obowiązujący. Data ogłoszenia: 2024-12-31.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rozporządzenie Ministra Infrastruktury z dnia 27 grudnia 2024 r. w sprawie wysokości wpłaty lotniczej w 2025 r.",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2024-12-31",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2024/1971",
+    "content": "Akt prawny: Rozporządzenie Ministra Infrastruktury z dnia 27 grudnia 2024 r. w sprawie wysokości wpłaty lotniczej w 2025 r.. Status: akt jednorazowy. Data ogłoszenia: 2024-12-31.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rozporządzenie Rady Ministrów z dnia 24 grudnia 2024 r. zmieniające rozporządzenie w sprawie szczegółowego sposobu prowadzenia gospodarki finansowej Państwowego Gospodarstwa Wodnego Wody Polskie",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2024-12-31",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2024/1970",
+    "content": "Akt prawny: Rozporządzenie Rady Ministrów z dnia 24 grudnia 2024 r. zmieniające rozporządzenie w sprawie szczegółowego sposobu prowadzenia gospodarki finansowej Państwowego Gospodarstwa Wodnego Wody Polskie. Status: akt objęty tekstem jednolitym. Data ogłoszenia: 2024-12-31.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rozporządzenie Ministra Finansów z dnia 22 grudnia 2024 r. w sprawie danych zawartych w powiadomieniu o zamiarze skorzystania ze zwolnienia w państwie członkowskim innym niż Rzeczpospolita Polska oraz informacji kwartalnej",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2024-12-30",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2024/1969",
+    "content": "Akt prawny: Rozporządzenie Ministra Finansów z dnia 22 grudnia 2024 r. w sprawie danych zawartych w powiadomieniu o zamiarze skorzystania ze zwolnienia w państwie członkowskim innym niż Rzeczpospolita Polska oraz informacji kwartalnej. Status: akt posiada tekst jednolity. Data ogłoszenia: 2024-12-30.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rozporządzenie Ministra Sportu i Turystyki z dnia 20 grudnia 2024 r. w sprawie stypendiów sportowych",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2024-12-30",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2024/1968",
+    "content": "Akt prawny: Rozporządzenie Ministra Sportu i Turystyki z dnia 20 grudnia 2024 r. w sprawie stypendiów sportowych. Status: obowiązujący. Data ogłoszenia: 2024-12-30.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rozporządzenie Ministra Spraw Wewnętrznych i Administracji z dnia 27 grudnia 2024 r. w sprawie sposobu ustalania nadwyżki środków finansowych Rządowej Agencji Rezerw Strategicznych",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2024-12-30",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2024/1967",
+    "content": "Akt prawny: Rozporządzenie Ministra Spraw Wewnętrznych i Administracji z dnia 27 grudnia 2024 r. w sprawie sposobu ustalania nadwyżki środków finansowych Rządowej Agencji Rezerw Strategicznych. Status: obowiązujący. Data ogłoszenia: 2024-12-30.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rozporządzenie Ministra Przemysłu z dnia 27 grudnia 2024 r. zmieniające rozporządzenie w sprawie metod badania jakości paliw ciekłych",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2024-12-30",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2024/1966",
+    "content": "Akt prawny: Rozporządzenie Ministra Przemysłu z dnia 27 grudnia 2024 r. zmieniające rozporządzenie w sprawie metod badania jakości paliw ciekłych. Status: obowiązujący. Data ogłoszenia: 2024-12-30.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Ustawa z dnia 6 grudnia 2024 r. o zmianie ustawy o dniach wolnych od pracy oraz niektórych innych ustaw",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2024-12-30",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2024/1965",
+    "content": "Akt prawny: Ustawa z dnia 6 grudnia 2024 r. o zmianie ustawy o dniach wolnych od pracy oraz niektórych innych ustaw. Status: obowiązujący. Data ogłoszenia: 2024-12-30.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Ustawa z dnia 5 grudnia 2024 r. o zmianie ustawy o Funduszu Ochrony Rolnictwa oraz niektórych innych ustaw",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2024-12-30",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2024/1964",
+    "content": "Akt prawny: Ustawa z dnia 5 grudnia 2024 r. o zmianie ustawy o Funduszu Ochrony Rolnictwa oraz niektórych innych ustaw. Status: obowiązujący. Data ogłoszenia: 2024-12-30.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rozporządzenie Ministra Spraw Wewnętrznych i Administracji z dnia 27 grudnia 2024 r. zmieniające rozporządzenie w sprawie wysokości i warunków przyznawania policjantom równoważnika pieniężnego w zamian za umundurowanie",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2024-12-30",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2024/1963",
+    "content": "Akt prawny: Rozporządzenie Ministra Spraw Wewnętrznych i Administracji z dnia 27 grudnia 2024 r. zmieniające rozporządzenie w sprawie wysokości i warunków przyznawania policjantom równoważnika pieniężnego w zamian za umundurowanie. Status: obowiązujący. Data ogłoszenia: 2024-12-30.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rozporządzenie Ministra Finansów z dnia 22 grudnia 2024 r. w sprawie zwrotu utraconych przez gminy dochodów z tytułu zwolnienia z podatku od nieruchomości przedsiębiorców o statusie centrum badawczo-rozwojowego",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2024-12-30",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2024/1962",
+    "content": "Akt prawny: Rozporządzenie Ministra Finansów z dnia 22 grudnia 2024 r. w sprawie zwrotu utraconych przez gminy dochodów z tytułu zwolnienia z podatku od nieruchomości przedsiębiorców o statusie centrum badawczo-rozwojowego. Status: obowiązujący. Data ogłoszenia: 2024-12-30.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Ustawa z dnia 5 grudnia 2024 r. o zmianie ustawy o rehabilitacji zawodowej i społecznej oraz zatrudnianiu osób niepełnosprawnych",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2024-12-30",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2024/1961",
+    "content": "Akt prawny: Ustawa z dnia 5 grudnia 2024 r. o zmianie ustawy o rehabilitacji zawodowej i społecznej oraz zatrudnianiu osób niepełnosprawnych. Status: obowiązujący. Data ogłoszenia: 2024-12-30.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rozporządzenie Ministra Klimatu i Środowiska z dnia 24 grudnia 2024 r. zmieniające rozporządzenie w sprawie stawek opłat produktowych dla poszczególnych rodzajów opakowań",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2024-12-30",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2024/1960",
+    "content": "Akt prawny: Rozporządzenie Ministra Klimatu i Środowiska z dnia 24 grudnia 2024 r. zmieniające rozporządzenie w sprawie stawek opłat produktowych dla poszczególnych rodzajów opakowań. Status: obowiązujący. Data ogłoszenia: 2024-12-30.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rozporządzenie Rady Ministrów z dnia 27 grudnia 2024 r. w sprawie nadania Instytutowi Badań Edukacyjnych w Warszawie statusu państwowego instytutu badawczego",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2024-12-30",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2024/1959",
+    "content": "Akt prawny: Rozporządzenie Rady Ministrów z dnia 27 grudnia 2024 r. w sprawie nadania Instytutowi Badań Edukacyjnych w Warszawie statusu państwowego instytutu badawczego. Status: akt jednorazowy. Data ogłoszenia: 2024-12-30.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rozporządzenie Ministra Finansów z dnia 19 grudnia 2024 r. zmieniające rozporządzenie w sprawie zaliczenia gmin oraz miast do jednego z czterech okręgów podatkowych",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2024-12-30",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2024/1958",
+    "content": "Akt prawny: Rozporządzenie Ministra Finansów z dnia 19 grudnia 2024 r. zmieniające rozporządzenie w sprawie zaliczenia gmin oraz miast do jednego z czterech okręgów podatkowych. Status: akt objęty tekstem jednolitym. Data ogłoszenia: 2024-12-30.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rozporządzenie Ministra Obrony Narodowej z dnia 20 grudnia 2024 r. zmieniające rozporządzenie w sprawie przyznawania funkcjonariuszom Służby Wywiadu Wojskowego równoważnika pieniężnego oraz kwoty na zakup ubrania typu cywilnego w zamian za umundurowanie",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2024-12-30",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2024/1957",
+    "content": "Akt prawny: Rozporządzenie Ministra Obrony Narodowej z dnia 20 grudnia 2024 r. zmieniające rozporządzenie w sprawie przyznawania funkcjonariuszom Służby Wywiadu Wojskowego równoważnika pieniężnego oraz kwoty na zakup ubrania typu cywilnego w zamian za umundurowanie. Status: akt objęty tekstem jednolitym. Data ogłoszenia: 2024-12-30.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rozporządzenie Ministra Przemysłu z dnia 24 grudnia 2024 r. zmieniające rozporządzenie w sprawie szczegółowego wykazu surowców oraz produktów naftowych objętych systemem zapasów interwencyjnych oraz wykazu paliw stanowiących podstawę do wyliczenia opłaty zapasowej",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2024-12-30",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2024/1956",
+    "content": "Akt prawny: Rozporządzenie Ministra Przemysłu z dnia 24 grudnia 2024 r. zmieniające rozporządzenie w sprawie szczegółowego wykazu surowców oraz produktów naftowych objętych systemem zapasów interwencyjnych oraz wykazu paliw stanowiących podstawę do wyliczenia opłaty zapasowej. Status: akt objęty tekstem jednolitym. Data ogłoszenia: 2024-12-30.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rozporządzenie Ministra Przemysłu z dnia 24 grudnia 2024 r. zmieniające rozporządzenie w sprawie szczegółowego wykazu paliw ciekłych, których wytwarzanie, magazynowanie lub przeładunek, przesyłanie lub dystrybucja, obrót, w tym obrót z zagranicą, wymaga koncesji oraz których przywóz wymaga wpisu do rejestru podmiotów przywożących",
+    "publisher": "ISAP / Kancelaria Sejmu RP",
+    "domain": "isap.sejm.gov.pl",
+    "type": "urzędowe",
+    "date": "2024-12-30",
+    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=DU/2024/1955",
+    "content": "Akt prawny: Rozporządzenie Ministra Przemysłu z dnia 24 grudnia 2024 r. zmieniające rozporządzenie w sprawie szczegółowego wykazu paliw ciekłych, których wytwarzanie, magazynowanie lub przeładunek, przesyłanie lub dystrybucja, obrót, w tym obrót z zagranicą, wymaga koncesji oraz których przywóz wymaga wpisu do rejestru podmiotów przywożących. Status: akt objęty tekstem jednolitym. Data ogłoszenia: 2024-12-30.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Dane liczbowe dot. kontroli prowadzonych przez WIIH w 2014 r.",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2016-04-19",
+    "url": "https://dane.gov.pl/pl/dataset/1",
+    "content": "Dane liczbowe dot. kontroli prowadzonych przez WIIH w 2014 r.. Dane liczbowe dot. kontroli prowadzonych przez wojewódzkich inspektorów Inspekcji Handlowej (IH) w 2014 r.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Wykaz punktów, w których można wykonać szczepienia przed wyjazdem za granicę",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2016-10-25",
+    "url": "https://dane.gov.pl/pl/dataset/2",
+    "content": "Wykaz punktów, w których można wykonać szczepienia przed wyjazdem za granicę. ",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Dane adresowe Wojewódzkich Inspektoratów Inspekcji Handlowej",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2015-10-08",
+    "url": "https://dane.gov.pl/pl/dataset/6",
+    "content": "Dane adresowe Wojewódzkich Inspektoratów Inspekcji Handlowej. Dane adresowe Wojewódzkich Inspektoratów Inspekcji Handlowej",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rejestr Podmiotów Prowadzących Agencje Zatrudnienia",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2015-05-18",
+    "url": "https://dane.gov.pl/pl/dataset/7",
+    "content": "Rejestr Podmiotów Prowadzących Agencje Zatrudnienia. Rejestr Podmiotów Prowadzących Agencje Zatrudnienia (KRAZ) prowadzony jest zgodnie z ustawą z dnia 20 kwietna 2004 r. o promocji zatrudnienia i instytucjach rynku pracy. Wyszukiwanie agencji zatrudnienia można realizować po województwie lub danych agencji zatrudnienia.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Sprawozdania finansowe Funduszu Emerytur Pomostowych na 30.09.2015 r.",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2015-12-29",
+    "url": "https://dane.gov.pl/pl/dataset/8",
+    "content": "Sprawozdania finansowe Funduszu Emerytur Pomostowych na 30.09.2015 r.. Informacja o przychodach i kosztach Funduszu Emerytur Pomostowych na 30.09.2015 r.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Statystyki SG 2015, I-III kwartał 2016",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2015-12-29",
+    "url": "https://dane.gov.pl/pl/dataset/10",
+    "content": "Statystyki SG 2015, I-III kwartał 2016. Statystyki Straży Granicznej za 2015 r. oraz I-III kwartał 2016 r. Statystyki - począwszy od statystyk za cały 2016 r. - znajdują się w zasobach, których nazwy zaczynają się od \"Dane statystyczne...\"",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Lista Rzeczników",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2016-07-01",
+    "url": "https://dane.gov.pl/pl/dataset/12",
+    "content": "Lista Rzeczników. Lista Rzeczników Patentowych",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Lokalne Organizacje Turystyczne w Polsce",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2015-09-02",
+    "url": "https://dane.gov.pl/pl/dataset/13",
+    "content": "Lokalne Organizacje Turystyczne w Polsce. Zbór zawiera dane Lokalnych Organizacji Turystycznych w Polsce",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Profil wieku krwiodawców w 2017 roku",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2018-02-21",
+    "url": "https://dane.gov.pl/pl/dataset/15",
+    "content": "Profil wieku krwiodawców w 2017 roku. Profil wieku krwiodawców w 2017 roku",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Osądzenia (w tym skazania) w pierwszej instancji w sądach rejonowych i w sądach okręgowych",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2016-12-28",
+    "url": "https://dane.gov.pl/pl/dataset/16",
+    "content": "Osądzenia (w tym skazania) w pierwszej instancji w sądach rejonowych i w sądach okręgowych. Dane statystyczne prezentujące informacje na temat osób dorosłych osądzonych w I instancji, w tym skazanych, rodzaju orzeczonej kary, umorzeń, uniewinnień, które pozyskiwane są na podstawie sprawozdań MS-S6 z sądów rejonowych oraz z sądów okręgowych",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Sprawozdania finansowe ZUS/2014",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2015-12-29",
+    "url": "https://dane.gov.pl/pl/dataset/19",
+    "content": "Sprawozdania finansowe ZUS/2014. Bilans Zakładu Ubezpieczeń Społecznych oraz Rachunek zysków i strat Zakładu Ubezpieczeń Społecznych za rok zakończony 31 grudnia 2014.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Zrównoważony rozwój sektora rybołówstwa i nadbrzeżnych obszarów rybackich 2007-2013",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2016-07-07",
+    "url": "https://dane.gov.pl/pl/dataset/20",
+    "content": "Zrównoważony rozwój sektora rybołówstwa i nadbrzeżnych obszarów rybackich 2007-2013. Program Operacyjny „Zrównoważony rozwój sektora rybołówstwa i nadbrzeżnych obszarów rybackich 2007-2013\" został stworzony aby realizować cele polskiej polityki rybackiej, którymi są: racjonalna gospodarka żywymi zasobami wód i poprawa efektywności sektora rybackiego, podniesienie konkurencyjności polskiego rybołówstwa morskiego, rybactwa śródlądowego i przetwórstwa ryb, poprawa jakości życia na obszarach zależnych od rybactwa.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Dane dotyczące kontroli prowadzonych przez Inspekcję Handlową w 2014 r.",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2016-02-24",
+    "url": "https://dane.gov.pl/pl/dataset/22",
+    "content": "Dane dotyczące kontroli prowadzonych przez Inspekcję Handlową w 2014 r.. Dane dotyczące kontroli prowadzonych przez Inspekcję Handlową w 2014 r.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "INFOdoradca+ Informacje o zawodach",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2015-05-18",
+    "url": "https://dane.gov.pl/pl/dataset/25",
+    "content": "INFOdoradca+ Informacje o zawodach. Udostępnione zasoby bazodanowe zawierają przede wszystkim: opis zawodu, opis kompetencji zawodowych, odniesienie do sytuacji zawodu na rynku pracy i możliwości doskonalenia zawodowego, a także możliwości zatrudnienia osób niepełnosprawnych w zawodzie.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rejestr Systemów Kodowania",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2016-08-25",
+    "url": "https://dane.gov.pl/pl/dataset/27",
+    "content": "Rejestr Systemów Kodowania. Zbiór słowników medycznych. Ma eliminować nieporozumienia wynikające ze stosowania terminów medycznych.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Dawcy w bazie RCKiK Kielce z podziałem na rodzaje",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2018-02-21",
+    "url": "https://dane.gov.pl/pl/dataset/30",
+    "content": "Dawcy w bazie RCKiK Kielce z podziałem na rodzaje. Dawcy w bazie RCKiK Kielce z podziałem na rodzaje",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Związki powiatów i związki międzygminne",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2015-05-18",
+    "url": "https://dane.gov.pl/pl/dataset/31",
+    "content": "Związki powiatów i związki międzygminne. związki powiatów i związki międzygminne",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Sprawozdanie finansowe Funduszu Rezerwy Demograficznej/2014",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2015-12-29",
+    "url": "https://dane.gov.pl/pl/dataset/33",
+    "content": "Sprawozdanie finansowe Funduszu Rezerwy Demograficznej/2014. Bilans oraz Rachunek wyników działalności Funduszu Rezerwy Demograficznej za rok zakończony 31 grudnia 2014 roku",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Inspekcja Handlowa - raporty, informacje i sprawozdania",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2016-01-04",
+    "url": "https://dane.gov.pl/pl/dataset/37",
+    "content": "Inspekcja Handlowa - raporty, informacje i sprawozdania. Inspekcja Handlowa - raporty, informacje i sprawozdania",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Sprawozdania finansowe Funduszu Ubezpieczeń Społecznych - na 30.09.2015 r.",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2015-12-29",
+    "url": "https://dane.gov.pl/pl/dataset/38",
+    "content": "Sprawozdania finansowe Funduszu Ubezpieczeń Społecznych - na 30.09.2015 r.. Informacja o przychodach i kosztach Funduszu Ubezpieczeń Społecznych na 30.09.2015 r.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Liczba dawców i donacji względem liczby mieszkańców",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2018-02-21",
+    "url": "https://dane.gov.pl/pl/dataset/39",
+    "content": "Liczba dawców i donacji względem liczby mieszkańców. Liczba dawców i donacji względem liczby mieszkańców",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Wypadki w szkołach i placówkach oświatowych",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2015-05-18",
+    "url": "https://dane.gov.pl/pl/dataset/40",
+    "content": "Wypadki w szkołach i placówkach oświatowych. Zestawienie zawiera dane o liczbie wypadków w szkołach i placówkach oświatowych w podziale na typ szkoły/placówki, województwa oraz miejsce wypadku, przyczynę, rodzaj zajęć, w czasie których wypadek miał miejsce, rodzaj uszkodzenia ciała i część ciała, które uległa uszkodzeniu. Dane zostały opracowane na podstawie spisu SIO stan na 30.09. danego roku.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Wykaz przedsiębiorców wykreślonych z rejestru i objętych zakazem wykonywania działalności objętej wpisem do rejestru",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2015-05-18",
+    "url": "https://dane.gov.pl/pl/dataset/44",
+    "content": "Wykaz przedsiębiorców wykreślonych z rejestru i objętych zakazem wykonywania działalności objętej wpisem do rejestru. Wykaz przedsiębiorców, którzy zostali wykreśleni z Rejestru z urzędu lub na wniosek UFG i objęci zakazem wykonywania działalności objętej wpisem do Rejestru.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "PSR 2010 - Użytkowanie gruntów",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2015-06-30",
+    "url": "https://dane.gov.pl/pl/dataset/45",
+    "content": "PSR 2010 - Użytkowanie gruntów. Wyniki Powszechnego Spisu Rolnego 2010 z zakresu użytkowania gruntów wg rodzaju użytków rolnych prezentowane na tle wyników PSR 2002. \r\n\r\nPrzekroje: województwa, sektory własności, formy własności.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rozkład jazdy komunikacji publicznej",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2016-08-31",
+    "url": "https://dane.gov.pl/pl/dataset/49",
+    "content": "Rozkład jazdy komunikacji publicznej. Zawiera dane o rozkładach jazdy komunikacji publicznej \n\nDostęp do zbioru wymaga rejestracji na stronie https://api.um.warszawa.pl  \n\nWarunki korzystania z danych są dostępne na stronie https://api.um.warszawa.pl",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rejestr urządzeń radiowych używanych bez pozwolenia",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2016-05-09",
+    "url": "https://dane.gov.pl/pl/dataset/53",
+    "content": "Rejestr urządzeń radiowych używanych bez pozwolenia. Zgodnie z art. 144c ust. 1 ustawy Prawo telekomunikacyjne używanie urządzenia radiowego nadawczego lub nadawczo-odbiorczego, niewymagającego pozwolenia na podstawie art. 144 ust. 2 pkt 4, podlega wpisowi do rejestru urządzeń radiowych używanych bez pozwolenia, zwanego dalej „rejestrem urządzeń”. \n\nWpisowi do rejestru urządzeń podlegają te urządzenia radiowe nadawcze lub nadawczo-odbiorcze, które wykorzystują zakresy częstotliwości zarezerwowane na rzecz podmiotu uprawnionego do dysponowania częstotliwością, o ile rezerwacja częstotliwości przewiduje zwolnienie z obowiązku uzyskania pozwolenia i określa warunki wykorzystywania częstotliwości.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Sprawozdania finansowe Funduszu Alimentacyjnego na 30.09.2015 r.",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2015-12-29",
+    "url": "https://dane.gov.pl/pl/dataset/54",
+    "content": "Sprawozdania finansowe Funduszu Alimentacyjnego na 30.09.2015 r.. Informacja o przychodach i kosztach Funduszu Alimentacyjnego w likwidacji na 30.09.2015 r.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Instytucje systemu szkolnictwa wyższego i nauki w Polsce",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2015-05-18",
+    "url": "https://dane.gov.pl/pl/dataset/57",
+    "content": "Instytucje systemu szkolnictwa wyższego i nauki w Polsce. Wykaz zawiera publiczne dane podmiotów systemu szkolnictwa wyższego i nauki w Polsce, w tym uczelni publicznych i niepublicznych, uczelni kościelnych, instytucji naukowych.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Dane z Krajowego Rejestru Urzędowego Podziału Terytorialnego Kraju",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2016-07-04",
+    "url": "https://dane.gov.pl/pl/dataset/58",
+    "content": "Dane z Krajowego Rejestru Urzędowego Podziału Terytorialnego Kraju. Przestrzenne warstwy podziału statystycznego - granice rejonów statystycznych i obwodów spisowych w formacie Shapefile lub GML dla lat 2010-2015. \n\nDane udostępnione w formie usługi pobierania INSPIRE o profilu ATOM, pozwalającej na pobieranie predefiniowanych zbiorów danych przestrzennych.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rejestr organizacji zarejestrowanych w systemie ekozarządzania  i audytu (EMAS)",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2016-06-30",
+    "url": "https://dane.gov.pl/pl/dataset/60",
+    "content": "Rejestr organizacji zarejestrowanych w systemie ekozarządzania  i audytu (EMAS). Generalny Dyrektor Ochrony Środowiska prowadzi rejestr organizacji zarejestrowanych w systemie ekozarządzania i audytu (EMAS) na podstawie art. 5 ustawy z dnia 15 lipca 2011 r. o krajowym systemie ekozarządzania i audytu (EMAS)",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Sprzedaż gazu ziemnego do odbiorców końcowych w 2016 r. (dane w MWh)",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2017-12-13",
+    "url": "https://dane.gov.pl/pl/dataset/63",
+    "content": "Sprzedaż gazu ziemnego do odbiorców końcowych w 2016 r. (dane w MWh). Sprzedaż gazu do odbiorców końcowych",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Lista organizacji uprawnionych do wnoszenia środków ochrony prawnej",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2016-02-02",
+    "url": "https://dane.gov.pl/pl/dataset/70",
+    "content": "Lista organizacji uprawnionych do wnoszenia środków ochrony prawnej. Lista organizacji uprawnionych do wnoszenia środków ochrony prawnej prowadzona przez Prezesa UZP",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Mapa Litogenetyczna Polski w skali 1:50 000",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2018-06-26",
+    "url": "https://dane.gov.pl/pl/dataset/71",
+    "content": "Mapa Litogenetyczna Polski w skali 1:50 000. Mapa Litogenetyczna Polski jest to seryjna mapa całego kraju, przedstawiająca litologię i genezę utworów występujących na powierzchni terenu oraz wybrane zjawiska geodynamiczne, antropogeniczne i hydrogeologiczne. Mapa powinna być wykorzystywana do sporządzania ogólnych opracowań geologicznych, sozologicznych, planistycznych i geoturystycznych, do typowania obszarów występowania surowców skalnych oraz do waloryzacji i wyznaczania obszarów opracowań szczegółowych.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Program Operacyjny Infrastruktura i Środowisko - stan realizacji",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2015-05-18",
+    "url": "https://dane.gov.pl/pl/dataset/72",
+    "content": "Program Operacyjny Infrastruktura i Środowisko - stan realizacji. Informacje miesięczne dotyczące bieżących postępów w realizacji Programu oraz obszerniejsze dokumenty podsumowujące wdrażanie Programu, tj. sprawozdania okresowe i roczne z realizacji Programu.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Baza Rzeczników Konsumentów",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2016-04-22",
+    "url": "https://dane.gov.pl/pl/dataset/73",
+    "content": "Baza Rzeczników Konsumentów. Baza Rzeczników Konsumentów wraz z kontaktami",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rozkład jazdy transportu publicznego",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2016-08-17",
+    "url": "https://dane.gov.pl/pl/dataset/80",
+    "content": "Rozkład jazdy transportu publicznego. Zbiór zawiera aktualne informacje o rozkładach jazdy komunikacji publicznej Miasta Wrocławia",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Słownik pojęć stosowanych w statystyce publicznej",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2015-06-30",
+    "url": "https://dane.gov.pl/pl/dataset/87",
+    "content": "Słownik pojęć stosowanych w statystyce publicznej. Pojęcia używane przez statystykę publiczną do opisu zjawisk społeczno-ekonomicznych oraz ich definicje. \n\n<a href=\"http://stat.gov.pl/metainformacje/slownik-pojec/pojecia-stosowane-w-statystyce-publicznej/\">http://stat.gov.pl/metainformacje/slownik-pojec/pojecia-stosowane-w-statystyce-publicznej/</a>",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Liczba dawców według wieku z podziałem na płeć",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2018-02-21",
+    "url": "https://dane.gov.pl/pl/dataset/88",
+    "content": "Liczba dawców według wieku z podziałem na płeć. Liczba dawców według wieku z podziałem na płeć",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Wykaz krajowych podmiotów wytwarzających naprawiających i modernizujących uprawnionych przez UDT",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2016-08-17",
+    "url": "https://dane.gov.pl/pl/dataset/89",
+    "content": "Wykaz krajowych podmiotów wytwarzających naprawiających i modernizujących uprawnionych przez UDT. Uprawnianie zakładów \n\nWytwarzanie urządzeń technicznych, ich elementów oraz materiałów. \n\nZgodnie z art. 9, 20 i 20a ustawy o dozorze technicznym z dnia 21 grudnia 2000 r. (Dz. U. z 2024 r. poz. 1194)): \n\nKażdy podmiot z siedzibą na terenie Polski lub poza granicami Unii Europejskiej, Turcji oraz państw członkowskich Europejskiego Porozumienia o Wolnym Handlu (EFTA) będących stroną umowy o Europejskim Obszarze Gospodarczym, aby wytwarzać i wprowadzać do obrotu w Polsce: - urządzenia techniczne nie objęte dyrektywami UE - elementy nie objęte dyrektywami UE i materiały do naprawy i modernizacji urządzeń technicznych, - elementy nie objęte dyrektywami UE i materiały do wytwarzania urządzeń technicznych, musi posiadać uprawnienie wydane przez właściwą jednostkę dozoru technicznego. \n\nUprawnienia wydanego przez właściwą jednostkę dozoru technicznego wymaga również świadczenie na terenie Polski",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Biuletyny Informacyjne UZP 2016",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2016-04-22",
+    "url": "https://dane.gov.pl/pl/dataset/92",
+    "content": "Biuletyny Informacyjne UZP 2016. Biuletyny Informacyjne Urzędu Zamówień Publicznych - rok 2016",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Zestawienie danych statystycznych z rejestru zabytków - zabytki archeologiczne",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2016-10-10",
+    "url": "https://dane.gov.pl/pl/dataset/94",
+    "content": "Zestawienie danych statystycznych z rejestru zabytków - zabytki archeologiczne. Wpis obiektu do rejestru zabytków to jedna z ustawowych form prawnej ochrony zabytków. Właściciele obiektów wpisanych do rejestru zyskują określone przywileje, mają jednak także obowiązki związane z opieką nad posiadanym zabytkiem. Rejestr zabytków jest prowadzony w formie trzech ksiąg (księga A dla zabytków nieruchomych, księga B dla zabytków ruchomych i księga C dla zabytków archeologicznych) przez właściwego terytorialnie Wojewódzkiego Konserwatora Zabytków. Wpisu do rejestru dokonuje się na drodze decyzji administracyjnej. \n\nInformacje o wybranych zabytkach archeologicznych wraz z towarzyszącymi zasobami cyfrowymi znajdują się pod adresem internetowym <a href=\"https://zabytek.pl/pl/obiekty?sekcja=zabytki-archeologiczne\">https://zabytek.pl/pl/obiekty?sekcja=zabytki-archeologiczne</a>",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Przeznaczenia pomocy publicznej w latach 2013-2014",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2016-04-19",
+    "url": "https://dane.gov.pl/pl/dataset/99",
+    "content": "Przeznaczenia pomocy publicznej w latach 2013-2014. Przeznaczenia pomocy publicznej (z wyłączeniem transportu) w latach 2013-2014",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Dane teleadresowe oddziałów terenowych URE",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2017-10-23",
+    "url": "https://dane.gov.pl/pl/dataset/101",
+    "content": "Dane teleadresowe oddziałów terenowych URE. Dane teleadresowe oddziałów terenowych URE, zasięg działania",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Inwestycje podmiotów nauki i szkolnictwa wyższego",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2015-05-18",
+    "url": "https://dane.gov.pl/pl/dataset/103",
+    "content": "Inwestycje podmiotów nauki i szkolnictwa wyższego. Wykaz zawiera dane inwestycji podmiotów systemu szkolnictwa wyższego i nauki w Polsce, w tym inwestycje w aparaturę naukowo-badawczą oraz infrastrukturę informatyczną o wartości przekraczającej 500 000 zł, inwestycje współfinansowane ze źródeł zagranicznych.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Nauka w Polsce",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2015-05-18",
+    "url": "https://dane.gov.pl/pl/dataset/104",
+    "content": "Nauka w Polsce. Opracowanie zawiera informacje statystyczne z obszaru nauki, w tym m. in. strukturę wydatków przeznaczonych na naukę, kapitał ludzki w nauce, finansowanie projektów badawczych oraz finansowania w ramach 7.Programu Ramowego i ERC",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Infrastruktura jednostek naukowych",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2015-05-18",
+    "url": "https://dane.gov.pl/pl/dataset/106",
+    "content": "Infrastruktura jednostek naukowych. Wykaz obejmuje infrastrukturę jednostek naukowych obejmującą: - aparaturę, - sprzęt, - wartości niematerialne i prawne, - infrastrukturę informatyczną.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Laboratoria badawcze i aparatura jednostek naukowych",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2015-05-18",
+    "url": "https://dane.gov.pl/pl/dataset/108",
+    "content": "Laboratoria badawcze i aparatura jednostek naukowych. Zestawienie zawiera informację o laboratoriach badawczych i aparaturze jednostek naukowych w tym: - nazwę laboratorium, - profil działalności, - instytucję.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Szkoły wyższe i ich finanse",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2015-05-18",
+    "url": "https://dane.gov.pl/pl/dataset/109",
+    "content": "Szkoły wyższe i ich finanse. Publikacja zawiera dane statystyczne z obszaru szkolnictwa wyższego, w tym informacje o studentach, absolwentach, cudzoziemcach na uczelniach polskich, doktorantach, słuchaczach studiów podyplomowych, nauczycielach akademickich oraz o finansach szkół wyższych.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Baza miejsc i wydarzeń | Wrocław Go",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2016-08-17",
+    "url": "https://dane.gov.pl/pl/dataset/112",
+    "content": "Baza miejsc i wydarzeń | Wrocław Go. Wszystkie wydarzenia we Wrocławiu w jednym miejscu - dostęp poprzez API",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Wykaz rzeczoznawców ds. zabezpieczeń przeciwpożarowych",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2018-03-16",
+    "url": "https://dane.gov.pl/pl/dataset/113",
+    "content": "Wykaz rzeczoznawców ds. zabezpieczeń przeciwpożarowych. Komendant Główny Państwowej Straży Pożarnej zgodnie z art. 10 ust.1 pkt 7 ustawy z dnia 24 sierpnia 1991 roku o PSP z 24.08.1991 r. (Dz. U. z 2017 r. poz. 1204, 1321, 1567) powołuje i odwoływanie rzeczoznawców do spraw zabezpieczeń przeciwpożarowych oraz sprawuje nadzór nad ich działalnością. Zgodnie z art. 11h ust. 3 ustawy z dnia 24 sierpnia 1991 r. o ochronie przeciwpożarowej (Dz. U. z 2017, poz 736 z późn. zm.) udostępnia w BIP Komendy Głównej PSP informacje dotyczące wykazu rzeczoznawców ds. zabezpieczeń przeciwpożarowych. Aktualizacja jest prowadzona na bieżąco zgodnie ze zmianami stanu faktycznego. http://kgpsp.bip.gov.pl/rzeczoznawcy-do-spraw-zabezpieczen-przeciwpozarowych/",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Uprawnienia jednostek do nadawania stopni naukowych",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2015-05-18",
+    "url": "https://dane.gov.pl/pl/dataset/114",
+    "content": "Uprawnienia jednostek do nadawania stopni naukowych. Zestawienie zawiera wykaz jednostek uprawnionych do nadawania stopni naukowych doktora i doktora habilitowanego w poszczególnych dziedzinach nauki i sztuki",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Wykaz beneficjentów Wspólnej Polityki Rolnej",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2015-06-29",
+    "url": "https://dane.gov.pl/pl/dataset/118",
+    "content": "Wykaz beneficjentów Wspólnej Polityki Rolnej. Dane dot. beneficjentów, którzy otrzymali środki w ramach Wspólnej Polityki Rolnej w poprzednim roku budżetowym KE.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Regionalne Izby Obrachunkowe",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2015-05-18",
+    "url": "https://dane.gov.pl/pl/dataset/120",
+    "content": "Regionalne Izby Obrachunkowe. Dane teleadresowe regionalnych izb obrachunkowych",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Rejestr fundacji nadzorowanych przez MKiDN",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2016-11-24",
+    "url": "https://dane.gov.pl/pl/dataset/122",
+    "content": "Rejestr fundacji nadzorowanych przez MKiDN. Rejestr fundacji nadzorowanych przez MKiDN.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Konkurs „Współpraca z Polonią i Polakami za granicą w 2015 r.”",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2015-12-30",
+    "url": "https://dane.gov.pl/pl/dataset/123",
+    "content": "Konkurs „Współpraca z Polonią i Polakami za granicą w 2015 r.”. Dane dotyczące wyników konkursu Ministra Spraw Zagranicznych „Współpraca z Polonią i Polakami za granicą w 2015 r.”",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "EPU - elektroniczne postępowanie upominawcze (e-sąd)",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2016-12-28",
+    "url": "https://dane.gov.pl/pl/dataset/124",
+    "content": "EPU - elektroniczne postępowanie upominawcze (e-sąd). Dane statystyczne prezentujące ewidencję spraw cywilnych, gospodarczych i z zakresu prawa pracy dotyczących elektronicznego postępowania upominawczego realizowanych przez e-sąd - Wydział VI Sądu Rejonowego Lublin - Zachód w Lublinie",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Publicznie dostępny wykaz danych o dokumentach zawierających informacje o środowisku i jego ochronie  prowadzony przez Generalną Dyrekcję Ochrony Środowiska",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2016-06-30",
+    "url": "https://dane.gov.pl/pl/dataset/125",
+    "content": "Publicznie dostępny wykaz danych o dokumentach zawierających informacje o środowisku i jego ochronie  prowadzony przez Generalną Dyrekcję Ochrony Środowiska. Publicznie dostępny wykaz danych o dokumentach zawierających informacje o środowisku i jego ochronie prowadzony przez Generalną Dyrekcję Ochrony Środowiska jest obszerną bazą danych obejmującą informacje o dokumentach zgromadzonych w komórkach organizacyjnych GDOŚ. \n\nDo 1 czerwca 2025 r. wpisy publikowane były pod adresem: https://wykaz.ekoportal.pl. \n\nOd 1 czerwca 2025 r. wpisy publikowane są pod adresem: https://system.sios.pl/search/common.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Ranking 300 najlepszych przedsiębiorstw rolnych",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2017-03-08",
+    "url": "https://dane.gov.pl/pl/dataset/126",
+    "content": "Ranking 300 najlepszych przedsiębiorstw rolnych. Instytut Ekonomiki Rolnictwa i Gospodarki Żywnościowej - Państwowy Instytut Badawczy we współpracy z Krajowym Ośrodkiem Doradztwa Rolniczego, wcześniej z Agencją Nieruchomości Rolnych (Agencją Własności Rolnej Skarbu Państwa) od 1995 r. przygotowuje ranking najlepszych przedsiębiorstw rolniczych oraz gospodarstw rybackich. Ranking ten stanowi uszeregowanie przedsiębiorstw (gospodarstw) według ściśle określonego kryterium, co pozwala na obiektywną ocenę uzyskanych wyników finansowych. Publikacja rankingu pozwala jego uczestnikom na znalezienie odpowiednich partnerów do przyszłej współpracy, oraz innym przedsiębiorcom na uczenie się od najlepszych.",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Samorządowe Kolegia Odwoławcze",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2015-05-18",
+    "url": "https://dane.gov.pl/pl/dataset/127",
+    "content": "Samorządowe Kolegia Odwoławcze. Dane teleadresowe samorządowych kolegiów odwoławczych",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  },
+  {
+    "title": "Statystyki dotyczące nadanych uprawnień przewodników górskich",
+    "publisher": "dane.gov.pl",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2015-05-18",
+    "url": "https://dane.gov.pl/pl/dataset/129",
+    "content": "Statystyki dotyczące nadanych uprawnień przewodników górskich. Statystyka uprawnień przewodnika górskiego nadanych przez poszczególnych marszałków województw w układzie wojewódzkim",
+    "fetched_at": "2026-11-21T12:43:45.866017Z"
+  }
+]
