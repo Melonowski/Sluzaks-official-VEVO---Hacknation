@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prawdowid — Pełna analiza i wizualizacja dowodów</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="top-bar">
+      <div class="brand">
+        <span class="brand-badge">☕ PRAWDOWID</span>
+        <div>
+          <h1>Panel analityczny weryfikacji</h1>
+          <p id="sessionMeta">Sesja: podgląd lokalny • Źródło: wycinek ekranu</p>
+        </div>
+      </div>
+      <div class="top-actions">
+        <button id="toggleAuditBtn" class="btn-secondary" type="button">📊 Jakość i audyt (logs)</button>
+        <button id="reloadDataBtn" class="btn-secondary" type="button">🔄 Odśwież dane</button>
+      </div>
+    </header>
+
+    <main class="main-grid">
+      <section class="left-column">
+        <div class="charts-row">
+          <article class="circle-card" id="w1Card">
+            <div class="circle-tag">W1</div>
+            <h2>Siła przesłanek</h2>
+            <p class="circle-sub">Rozbicie <code>confidence_score</code> (0–100%)</p>
+            <div class="circle-visual-wrap">
+              <canvas id="w1Chart" width="240" height="240"></canvas>
+            </div>
+            <ul class="metric-list" id="w1Legend"></ul>
+          </article>
+
+          <article class="circle-card" id="w2Card">
+            <div class="circle-tag">W2</div>
+            <h2>Typy i pochodzenie źródeł</h2>
+            <p class="circle-sub">Rejestry, fact-check, informacje</p>
+            <div class="circle-visual-wrap">
+              <canvas id="w2Chart" width="240" height="240"></canvas>
+            </div>
+            <ul class="metric-list" id="w2Legend"></ul>
+          </article>
+        </div>
+
+        <section class="audit-panel" id="auditPanel">
+          <div class="audit-header">
+            <div>
+              <h3>Statystyki jakości i audytu systemu</h3>
+              <p>Źródło: <code>GET /api/export/logs</code> • Próg MSZ: <strong>30 000 ms</strong></p>
+            </div>
+            <span class="kpi-pill" id="auditCostKpi">Koszt: 0,004 zł / zapytanie</span>
+          </div>
+          <div class="kpi-grid" id="auditKpis"></div>
+          <div class="audit-bars" id="auditVerdicts"></div>
+          <div class="latency-box" id="auditLatency"></div>
+        </section>
+      </section>
+
+      <aside class="right-column">
+        <section class="panel-box analysis-box">
+          <div class="analysis-top">
+            <span id="verdictBadge" class="verdict-badge">W TRAKCIE ANALIZY</span>
+            <span id="confidenceText" class="confidence-pill">Pewność: --%</span>
+          </div>
+          <h2 id="analysisTitle">Szczegóły weryfikacji</h2>
+          <p id="analysisSummary" class="analysis-summary">
+            Ładowanie danych sesji weryfikacji...
+          </p>
+
+          <div id="previewBox" class="preview-box" style="display: none;">
+            <span class="small-label">Przechwycony fragment strony:</span>
+            <img id="previewImg" alt="Wycinek zrzutu ekranu" />
+          </div>
+
+          <div class="sources-section">
+            <span class="small-label">Kluczowe źródła i cytaty</span>
+            <div id="sourcesList" class="sources-list"></div>
+          </div>
+
+          <div id="limitationsBox" class="limitations-box">
+            <strong>Ograniczenia:</strong> <span>—</span>
+          </div>
+        </section>
+
+        <section class="panel-box chat-box">
+          <div class="chat-header">
+            <div>
+              <h3>AI CHAT</h3>
+              <p>Dopytaj o przesłanki, źródła lub kontekst werdyktu</p>
+            </div>
+            <span class="chat-status" id="chatStatus">Gotowy</span>
+          </div>
+
+          <div class="chat-messages" id="chatMessages"></div>
+
+          <form class="chat-form" id="chatForm">
+            <input
+              id="chatInput"
+              type="text"
+              placeholder="Np. Dlaczego aktualność źródeł ma taki wynik?"
+              autocomplete="off"
+              required
+            />
+            <button type="submit" class="btn-primary">Wyślij</button>
+          </form>
+        </section>
+      </aside>
+    </main>
+
+    <button class="mascot-corner" id="mascotBtn" type="button" title="Profesorek Prawdowid">
+      <span class="mascot-stick">🕺</span>
+      <span class="mascot-label">Profesorek</span>
+    </button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
