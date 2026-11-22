@@ -123,8 +123,32 @@
     "case_id": "MOD-1795293903",
     "normalized_key": "artykuł na medal",
     "claim_preview": "Artykuł na Medal",
-    "report_count": 3,
+    "report_count": 4,
     "created_at": "2026-11-21T20:45:03.403685Z",
-    "last_seen": "2026-11-21T23:30:58.256615Z"
+    "last_seen": "2026-11-22T04:12:23.842134Z"
+  },
+  {
+    "case_id": "MOD-1795319836",
+    "normalized_key": "danelogowania",
+    "claim_preview": "Danelogowania",
+    "report_count": 1,
+    "created_at": "2026-11-22T03:57:16.403920Z",
+    "last_seen": "2026-11-22T03:57:16.403920Z"
+  },
+  {
+    "case_id": "MOD-1795321527",
+    "normalized_key": "nadrodzina czarnuchy (tenebrionoidea) obejmuje około 34 tysięcy opisanych gatunków owadów z rzędu chrząszczy.",
+    "claim_preview": "Nadrodzina Czarnuchy (Tenebrionoidea) obejmuje około 34 tysięcy opisanych gatunków owadów z rzędu chrząszczy.",
+    "report_count": 1,
+    "created_at": "2026-11-22T04:25:27.001756Z",
+    "last_seen": "2026-11-22T04:25:27.001756Z"
+  },
+  {
+    "case_id": "MOD-1795322419",
+    "normalized_key": "identyfikator zwycięzcy inicjaly,tag. itmie lub email",
+    "claim_preview": "Identyfikator zwycięzcy inicjaly,tag. itmie lub email",
+    "report_count": 1,
+    "created_at": "2026-11-22T04:40:19.310618Z",
+    "last_seen": "2026-11-22T04:40:19.310618Z"
   }
 ]

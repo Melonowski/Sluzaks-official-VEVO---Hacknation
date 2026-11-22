@@ -83,6 +83,14 @@ async def verify(req: VerifyRequest):
             status_code=503,
             detail="Brak skonfigurowanego klucza API – sprawdzenie niemożliwe."
         )
+
+    # Swagger (/docs) wstawia domyślnie "string" w polach – to nie jest prawdziwy obraz.
+    # Prawdziwy zrzut ekranu ma zawsze tysiące znaków.
+    if req.image_base64 is not None and len(req.image_base64.strip()) < 100:
+        req.image_base64 = None
+    if req.input_text is not None and req.input_text.strip().lower() == "string":
+        req.input_text = None
+
     if (not req.input_text or len(req.input_text.strip()) < 5) and not req.image_base64:
         raise HTTPException(
             status_code=400,
@@ -107,8 +115,11 @@ async def verify(req: VerifyRequest):
             req.input_text or f"[OCR zrzutu z {req.page_url or 'strony'}]"
         )
         return result
+    except ValueError as e:
+        # błąd danych wejściowych (np. uszkodzony obraz), nie awaria AI
+        raise HTTPException(status_code=400, detail=str(e))
     except Exception as e:
-        raise HTTPException(status_code=502, detail=f"Błąd komunikacji z usługą AI: {str(e)}")
+        raise HTTPException(status_code=502, detail=f"Błąd usługi weryfikacji: {str(e)}")
 
 
 @app.get("/api/session/{session_id}")

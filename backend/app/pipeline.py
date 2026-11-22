@@ -35,9 +35,11 @@ def safe_parse_json(raw_content: str | None) -> dict:
         return {}
 
 async def extract_text_from_image(image_base64: str) -> str:
-    """Lokalny OCR (RapidOCR) - bez wysyłania zrzutów ekranu poza serwer."""
     b64_data = image_base64.split(",", 1)[1] if "," in image_base64 else image_base64
-    img_bytes = base64.b64decode(b64_data)
+    try:
+        img_bytes = base64.b64decode(b64_data.strip(), validate=True)
+    except Exception:
+        raise ValueError("Nieprawidłowe dane obrazu (base64).")
     result, _ = _ocr_engine(img_bytes)
     if not result:
         return ""

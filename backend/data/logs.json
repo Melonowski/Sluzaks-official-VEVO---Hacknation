@@ -366,5 +366,96 @@
     "sources": [],
     "latency_ms": 12313,
     "security_alert": null
+  },
+  {
+    "session_id": "sess-1795319836",
+    "timestamp": "2026-11-22T03:57:16.411117Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://console.cloud.google.com/apis/credentials?project=hacknationai2]",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [],
+    "latency_ms": 11024,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795320694",
+    "timestamp": "2026-11-22T04:11:34.041056Z",
+    "channel": "web",
+    "query_masked": "Czy tede kurwa jest",
+    "verdict": "NIE PODLEGA WERYFIKACJI",
+    "sources": [],
+    "latency_ms": 4240,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795320743",
+    "timestamp": "2026-11-22T04:12:23.885100Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://pl.wikipedia.org/wiki/Wikipedia:Strona_g%C5%82%C3%B3wna]",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [
+      "https://dane.gov.pl/pl/common/53615"
+    ],
+    "latency_ms": 14796,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795321527",
+    "timestamp": "2026-11-22T04:25:27.009805Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://pl.wikipedia.org/wiki/Czarnuchy]",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [],
+    "latency_ms": 18793,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795322419",
+    "timestamp": "2026-11-22T04:40:19.332435Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://gra-saper.pl/minewin.php]",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [],
+    "latency_ms": 12839,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795323001",
+    "timestamp": "2026-11-22T04:50:01.129972Z",
+    "channel": "web",
+    "query_masked": "Czy tede kurwa jest",
+    "verdict": "NIE PODLEGA WERYFIKACJI",
+    "sources": [],
+    "latency_ms": 3106,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795323165",
+    "timestamp": "2026-11-22T04:52:45.139833Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://pl.wikipedia.org/wiki/Inwazja_Rosji_na_Ukrain%C4%99]",
+    "verdict": "POTWIERDZONE",
+    "sources": [
+      "https://dane.gov.pl/pl/common/65949",
+      "https://demagog.org.pl/fake_news/wojna-w-ukrainie-to-spektakl-to-sie-dzieje-naprawde/",
+      "https://demagog.org.pl/fake_news/rosyjska-inwazja-spiskiem-swiatowych-elit-to-falszywa-teoria-spiskowa/"
+    ],
+    "latency_ms": 12164,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795323321",
+    "timestamp": "2026-11-22T04:55:21.486002Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://pl.wikipedia.org/wiki/Inwazja_Rosji_na_Ukrain%C4%99]",
+    "verdict": "POTWIERDZONE",
+    "sources": [
+      "https://demagog.org.pl/fake_news/wojna-w-ukrainie-to-spektakl-to-sie-dzieje-naprawde/",
+      "https://demagog.org.pl/fake_news/inwazja-rosji-na-ukraine-jest-wojna-zastepcza-nato-falsz/",
+      "https://demagog.org.pl/fake_news/rosyjska-inwazja-spiskiem-swiatowych-elit-to-falszywa-teoria-spiskowa/",
+      "https://demagog.org.pl/wypowiedzi/wojna-w-ukrainie-jak-rosja-wykorzystuje-terytorium-bialorusi/"
+    ],
+    "latency_ms": 16918,
+    "security_alert": null
   }
 ]
