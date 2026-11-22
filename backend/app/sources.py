@@ -8,7 +8,7 @@ from email.utils import parsedate_to_datetime
 from bs4 import BeautifulSoup
 from pathlib import Path
 from datetime import datetime, timezone
-from urllib.parse import quote_plus
+from urllib.parse import quote_plus, unquote, parse_qs, urlparse
 
 CORPUS_PATH = Path(__file__).resolve().parent.parent / "data" / "corpus.json"
 
@@ -26,14 +26,17 @@ PL_STOPWORDS = {
     "dla", "przy", "przez", "przed", "ponad", "pod", "nad", "jako", "jak",
     "czy", "że", "się", "nie", "tak", "tylko", "bardzo", "może", "mogą",
     "miał", "miała", "miało", "mieli", "miały", "wobec", "według", "temat",
-    "sprawie", "nowy", "nowa", "nowe", "polsce", "polski", "polska", "roku"
+    "sprawie", "nowy", "nowa", "nowe", "polsce", "polski", "polska", "roku",
+    "ten", "ta", "to", "te", "tym", "tej", "tych", "na", "do", "od", "po", "za", "we"
 }
+
 
 def _clean_html(raw_html: str) -> str:
     if not raw_html:
         return ""
     soup = BeautifulSoup(raw_html, "html.parser")
     return " ".join(soup.get_text(" ").split())
+
 
 def _normalize_date(raw_date: str | None) -> str:
     if not raw_date:
@@ -51,10 +54,12 @@ def _normalize_date(raw_date: str | None) -> str:
         return f"{m.group(1)}-01-01"
     return datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
+
 def _extract_search_tokens(text: str) -> list[str]:
-    words = re.findall(r"[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ0-9]{3,}", text.lower())
+    words = re.findall(r"[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ0-9]{2,}", text.lower())
     tokens = [w for w in words if w not in PL_STOPWORDS]
     return tokens or words
+
 
 def _append_to_live_corpus(new_docs: list[dict]):
     if not new_docs:
@@ -85,6 +90,7 @@ def _append_to_live_corpus(new_docs: list[dict]):
         with open(CORPUS_PATH, "w", encoding="utf-8") as f:
             json.dump(existing, f, ensure_ascii=False, indent=2)
 
+
 def search_local_corpus(keywords: str, limit: int = 5) -> list[dict]:
     if not CORPUS_PATH.exists():
         return []
@@ -92,7 +98,7 @@ def search_local_corpus(keywords: str, limit: int = 5) -> list[dict]:
         with open(CORPUS_PATH, "r", encoding="utf-8") as f:
             docs = json.load(f)
         tokens = _extract_search_tokens(keywords)
-        stems = [t[:5] for t in tokens if len(t) >= 3]
+        stems = [t[:4] if len(t) >= 4 else t for t in tokens if len(t) >= 2]
         if not stems:
             return []
         scored = []
@@ -106,14 +112,15 @@ def search_local_corpus(keywords: str, limit: int = 5) -> list[dict]:
     except Exception:
         return []
 
+
 async def fetch_live_rss_factchecks(query: str) -> list[dict]:
     tokens = _extract_search_tokens(query)
-    stems = [t[:5] for t in tokens if len(t) >= 3]
+    stems = [t[:4] if len(t) >= 4 else t for t in tokens if len(t) >= 2]
     results = []
     all_fetched = []
 
     async with httpx.AsyncClient(timeout=7.0, follow_redirects=True) as client:
-        tasks = [client.get(feed["url"], headers={"User-Agent": "PrawdowidBot/1.1"}) for feed in LIVE_RSS_FEEDS]
+        tasks = [client.get(feed["url"], headers={"User-Agent": "PrawdowidBot/1.2"}) for feed in LIVE_RSS_FEEDS]
         responses = await asyncio.gather(*tasks, return_exceptions=True)
 
         for feed, resp in zip(LIVE_RSS_FEEDS, responses):
@@ -121,7 +128,7 @@ async def fetch_live_rss_factchecks(query: str) -> list[dict]:
                 continue
             try:
                 root = ET.fromstring(resp.text)
-                for item in root.findall(".//item")[:30]:
+                for item in root.findall(".//item")[:35]:
                     title = _clean_html(item.findtext("title") or "")
                     link = (item.findtext("link") or "").strip()
                     desc = _clean_html(item.findtext("description") or "")
@@ -147,13 +154,14 @@ async def fetch_live_rss_factchecks(query: str) -> list[dict]:
     _append_to_live_corpus(all_fetched)
     return results[:6]
 
+
 async def fetch_demagog_live_search(query: str) -> list[dict]:
     tokens = _extract_search_tokens(query)
     search_q = " ".join(tokens[:4]) if tokens else query[:60]
     url = f"https://demagog.org.pl/?s={quote_plus(search_q)}"
     try:
         async with httpx.AsyncClient(timeout=7.0, follow_redirects=True) as client:
-            r = await client.get(url, headers={"User-Agent": "PrawdowidBot/1.1"})
+            r = await client.get(url, headers={"User-Agent": "PrawdowidBot/1.2"})
             if r.status_code != 200:
                 return []
             soup = BeautifulSoup(r.text, "html.parser")
@@ -181,6 +189,7 @@ async def fetch_demagog_live_search(query: str) -> list[dict]:
             return results
     except Exception:
         return []
+
 
 async def fetch_dane_gov(query: str) -> list[dict]:
     tokens = _extract_search_tokens(query)
@@ -212,10 +221,11 @@ async def fetch_dane_gov(query: str) -> list[dict]:
     except Exception:
         return []
 
+
 async def fetch_sejm_acts(query: str) -> list[dict]:
     tokens = [t for t in _extract_search_tokens(query) if t not in {"ustawa", "ustawę", "ustawy", "kodeks", "rozporządzenie"}]
     clean_q = " ".join(tokens[:4])[:60]
-    if len(clean_q) < 3:
+    if len(clean_q) < 2:
         return []
 
     url = "https://api.sejm.gov.pl/eli/acts/search"
@@ -246,6 +256,7 @@ async def fetch_sejm_acts(query: str) -> list[dict]:
     except Exception:
         return []
 
+
 async def fetch_sejm_interpellations(query: str) -> list[dict]:
     tokens = _extract_search_tokens(query)
     search_q = " ".join(tokens[:3]) if tokens else query[:50]
@@ -274,6 +285,7 @@ async def fetch_sejm_interpellations(query: str) -> list[dict]:
             return results
     except Exception:
         return []
+
 
 async def fetch_google_factcheck(query: str, lang: str = "pl") -> list[dict]:
     api_key = os.getenv("GOOGLE_FACTCHECK_API_KEY")
@@ -308,6 +320,7 @@ async def fetch_google_factcheck(query: str, lang: str = "pl") -> list[dict]:
     except Exception:
         return []
 
+
 async def fetch_wikipedia_pl(query: str) -> list[dict]:
     tokens = _extract_search_tokens(query)
     search_q = " ".join(tokens[:5]) if tokens else query[:80]
@@ -317,11 +330,11 @@ async def fetch_wikipedia_pl(query: str) -> list[dict]:
         "list": "search",
         "srsearch": search_q,
         "format": "json",
-        "srlimit": 3
+        "srlimit": 4
     }
     try:
         async with httpx.AsyncClient(timeout=5.0) as client:
-            r = await client.get(url, params=params, headers={"User-Agent": "PrawdowidBot/1.1"})
+            r = await client.get(url, params=params, headers={"User-Agent": "PrawdowidBot/1.2"})
             if r.status_code != 200:
                 return []
             items = r.json().get("query", {}).get("search", [])
@@ -342,6 +355,52 @@ async def fetch_wikipedia_pl(query: str) -> list[dict]:
     except Exception:
         return []
 
+
+async def fetch_web_search_fallback(query: str) -> list[dict]:
+    """Dodatkowe wyszukiwanie sieciowe (DuckDuckGo HTML) przy krótkich wycinkach i nietypowych tematach."""
+    tokens = _extract_search_tokens(query)
+    search_q = " ".join(tokens[:5]) if tokens else query[:80]
+    if not search_q:
+        return []
+    url = f"https://html.duckduckgo.com/html/?q={quote_plus(search_q)}"
+    try:
+        async with httpx.AsyncClient(timeout=6.0, follow_redirects=True) as client:
+            r = await client.get(url, headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"})
+            if r.status_code != 200:
+                return []
+            soup = BeautifulSoup(r.text, "html.parser")
+            results = []
+            for res in soup.select(".result")[:4]:
+                a_tag = res.select_one("a.result__a")
+                snip_el = res.select_one(".result__snippet")
+                if not a_tag:
+                    continue
+                raw_href = a_tag.get("href", "")
+                clean_href = raw_href
+                if "uddg=" in raw_href:
+                    parsed = urlparse(raw_href)
+                    qs = parse_qs(parsed.query)
+                    if qs.get("uddg"):
+                        clean_href = unquote(qs["uddg"][0])
+                if not clean_href.startswith("http"):
+                    continue
+                domain = urlparse(clean_href).netloc.replace("www.", "")
+                title = _clean_html(a_tag.get_text())
+                snippet = _clean_html(snip_el.get_text()) if snip_el else ""
+                results.append({
+                    "title": title or domain,
+                    "publisher": f"Źródło sieciowe ({domain})",
+                    "domain": domain,
+                    "type": "wiarygodne wtórne",
+                    "date": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
+                    "url": clean_href,
+                    "content": f"{title}. {snippet}"[:1500]
+                })
+            return results
+    except Exception:
+        return []
+
+
 async def gather_all_sources(keywords: str) -> list[dict]:
     local_docs = search_local_corpus(keywords)
     api_results = await asyncio.gather(
@@ -352,7 +411,8 @@ async def gather_all_sources(keywords: str) -> list[dict]:
         fetch_sejm_interpellations(keywords),
         fetch_google_factcheck(keywords, lang="pl"),
         fetch_google_factcheck(keywords, lang="en"),
-        fetch_wikipedia_pl(keywords)
+        fetch_wikipedia_pl(keywords),
+        fetch_web_search_fallback(keywords),
     )
     live_docs = [doc for sublist in api_results for doc in sublist]
 

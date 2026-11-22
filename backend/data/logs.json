@@ -761,5 +761,20 @@
     "sources": [],
     "latency_ms": 33050,
     "security_alert": null
+  },
+  {
+    "session_id": "sess-1795337605",
+    "timestamp": "2026-11-22T08:53:25.979295Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://pl.wikipedia.org/wiki/Inwazja_Rosji_na_Ukrain%C4%99]",
+    "verdict": "POTWIERDZONE",
+    "sources": [
+      "https://pl.wikipedia.org/wiki/Inwazja_Rosji_na_Ukrain%C4%99",
+      "https://pl.wikipedia.org/wiki/Inwazja_Rosji_na_Ukrain%C4%99",
+      "https://fakenews.pl/spoleczenstwo/uczestnikami-incydentu-na-pokladzie-flydubai-byli-omanczyk-i-hindus-a-nie-rosjanin-z-ukraincem/",
+      "https://fakenews.pl/polityka/ukrainskie-biuro-antykorupcyjne-nie-znalazlo-140-mln-dolarow-u-bylego-szefa-agencji-zamowien-obronnych/"
+    ],
+    "latency_ms": 33079,
+    "security_alert": null
   }
 ]

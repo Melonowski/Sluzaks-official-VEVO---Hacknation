@@ -3,7 +3,7 @@
   window.__prawdowidInjected = true;
 
   const extApi = typeof browser !== "undefined" && browser.runtime ? browser : chrome;
-  const DEFAULT_BACKEND_URL = "https://schools-political-purchase-estimates.trycloudflare.com";
+  const DEFAULT_BACKEND_URL = "https://optimize-waiver-sol-although.trycloudflare.com";
 
   function normalizeBaseUrl(rawUrl) {
     const trimmed = String(rawUrl || "").trim();

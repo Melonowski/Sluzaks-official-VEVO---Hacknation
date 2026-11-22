@@ -4088,5 +4088,95 @@
     "url": "https://dane.gov.pl/pl/common/32581",
     "content": "Liczba obsłużonych <mark>statków</mark></mark>. Liczba obsłużonych statków",
     "fetched_at": "2026-11-22T08:40:16.235427+00:00"
+  },
+  {
+    "title": "Podatności w oprogramowaniu YunoHost-Apps sogo_yhn",
+    "publisher": "CERT Polska / NASK",
+    "domain": "cert.pl",
+    "type": "urzędowe",
+    "date": "2026-09-30",
+    "url": "https://cert.pl/posts/2026/09/CVE-2026-74864/",
+    "content": "Podatności w oprogramowaniu YunoHost-Apps sogo_yhn. W oprogramowaniu YunoHost-Apps sogo_yhn wykryto 2 podatności umożliwiające obejście uwierzytelnienia (CVE-2026-74864 oraz CVE-2026-74865)",
+    "fetched_at": "2026-11-22T08:53:21.218186+00:00"
+  },
+  {
+    "title": "Podatność w oprogramowaniu Quick.Cart",
+    "publisher": "CERT Polska / NASK",
+    "domain": "cert.pl",
+    "type": "urzędowe",
+    "date": "2026-09-29",
+    "url": "https://cert.pl/posts/2026/09/CVE-2026-41875/",
+    "content": "Podatność w oprogramowaniu Quick.Cart. W oprogramowaniu Quick.Cart wykryto podatność typu Cross-Site Request Forgery (CSRF) (CVE-2026-41875).",
+    "fetched_at": "2026-11-22T08:53:21.218186+00:00"
+  },
+  {
+    "title": "Podatność w oprogramowaniu MyPresta Google Merchant Center Feed",
+    "publisher": "CERT Polska / NASK",
+    "domain": "cert.pl",
+    "type": "urzędowe",
+    "date": "2026-09-29",
+    "url": "https://cert.pl/posts/2026/09/CVE-2026-85520/",
+    "content": "Podatność w oprogramowaniu MyPresta Google Merchant Center Feed. W oprogramowaniu MyPresta Google Merchant Center Feed wykryto podatność typu External control of file name or path (CVE-2026-85520).",
+    "fetched_at": "2026-11-22T08:53:21.218186+00:00"
+  },
+  {
+    "title": "Podatność w oprogramowaniu Ghostscript",
+    "publisher": "CERT Polska / NASK",
+    "domain": "cert.pl",
+    "type": "urzędowe",
+    "date": "2026-09-29",
+    "url": "https://cert.pl/posts/2026/09/CVE-2026-19547/",
+    "content": "Podatność w oprogramowaniu Ghostscript. W oprogramowaniu Ghostscript wykryto podatność typu Untrusted Search Path (CVE-2026-19547).",
+    "fetched_at": "2026-11-22T08:53:21.218186+00:00"
+  },
+  {
+    "title": "Podatność w oprogramowaniu Das U-Boot",
+    "publisher": "CERT Polska / NASK",
+    "domain": "cert.pl",
+    "type": "urzędowe",
+    "date": "2026-09-29",
+    "url": "https://cert.pl/posts/2026/09/CVE-2026-15390/",
+    "content": "Podatność w oprogramowaniu Das U-Boot. W oprogramowaniu DENX Software Engineering Das U-Boot wykryto podatność zapisu poza dozwolonym zakresem pamięci (CVE-2026-15390).",
+    "fetched_at": "2026-11-22T08:53:21.218186+00:00"
+  },
+  {
+    "title": "Inwazja Rosji na Ukrainę - Wikipedia, wolna encyklopedia",
+    "publisher": "Źródło sieciowe (pl.wikipedia.org)",
+    "domain": "pl.wikipedia.org",
+    "type": "wiarygodne wtórne",
+    "date": "2026-11-22",
+    "url": "https://pl.wikipedia.org/wiki/Inwazja_Rosji_na_Ukrainę",
+    "content": "Inwazja Rosji na Ukrainę - Wikipedia, wolna encyklopedia. Inwazja Rosji na Ukrainę, wojna rosyjsko-ukraińska (w rosyjskiej propagandzie „ specjalna operacja wojskowa \" [4]) - pełnoskalowa inwazja na Ukrainę rozpoczęta 24 lutego 2022 roku przez Rosję, stanowiąca eskalację wojny trwającej od 2014 roku.",
+    "fetched_at": "2026-11-22T08:53:22.781303+00:00"
+  },
+  {
+    "title": "Kalendarium inwazji Rosji na Ukrainę - luty i marzec 2022",
+    "publisher": "Źródło sieciowe (pl.wikipedia.org)",
+    "domain": "pl.wikipedia.org",
+    "type": "wiarygodne wtórne",
+    "date": "2026-11-22",
+    "url": "https://pl.wikipedia.org/wiki/Kalendarium_inwazji_Rosji_na_Ukrainę_–_luty_i_marzec_2022",
+    "content": "Kalendarium inwazji Rosji na Ukrainę - luty i marzec 2022. Mapa pokazująca rozmieszczenie sił ukraińskich i rosyjskich na początku rosyjskiej inwazji na Ukrainę, 24 lutego 2022 roku.",
+    "fetched_at": "2026-11-22T08:53:22.781303+00:00"
+  },
+  {
+    "title": "Rosyjska inwazja na Ukrainie. Relacje reporterów z Lwowa i Kijowa",
+    "publisher": "Źródło sieciowe (youtube.com)",
+    "domain": "youtube.com",
+    "type": "wiarygodne wtórne",
+    "date": "2026-11-22",
+    "url": "https://www.youtube.com/watch?v=WVNHhMzomLU",
+    "content": "Rosyjska inwazja na Ukrainie. Relacje reporterów z Lwowa i Kijowa. 24 lutego po godzinie czwartej nad ranem rosyjskie wojska zaatakowały Ukrainę, rozpoczynając tym samym otwarty, zbrojny konflikt i realizując czarny scenariusz, o którym informowały zachodnie...",
+    "fetched_at": "2026-11-22T08:53:22.781303+00:00"
+  },
+  {
+    "title": "Inwazja Rosji na Ukrainę - relacja na żywo z 24 lutego - rp.pl",
+    "publisher": "Źródło sieciowe (rp.pl)",
+    "domain": "rp.pl",
+    "type": "wiarygodne wtórne",
+    "date": "2026-11-22",
+    "url": "https://www.rp.pl/konflikty-zbrojne/art35747241-inwazja-rosji-na-ukraine",
+    "content": "Inwazja Rosji na Ukrainę - relacja na żywo z 24 lutego - rp.pl. Od 24 lutego trwa inwazja Rosji na Ukrainę. Prezydent Ukrainy, Wołodymyr Zełenski, wezwał prezydenta Władimira Putina do rozmów.",
+    "fetched_at": "2026-11-22T08:53:22.781303+00:00"
   }
 ]
