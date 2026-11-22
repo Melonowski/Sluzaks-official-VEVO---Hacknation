@@ -166,5 +166,13 @@
     "report_count": 1,
     "created_at": "2026-11-22T06:16:12.674116Z",
     "last_seen": "2026-11-22T06:16:12.674116Z"
+  },
+  {
+    "case_id": "MOD-1795329259",
+    "normalized_key": "sonda kosmiczna nasa voyager 1 osiągnęła odległość jednego dnia świetlnego od ziemi, stając się pierwszym obiektem stwor",
+    "claim_preview": "Sonda kosmiczna NASA Voyager 1 osiągnęła odległość jednego dnia świetlnego od Ziemi, stając się pierwszym obiektem stworzonym przez człowieka, który dotarł tak daleko",
+    "report_count": 3,
+    "created_at": "2026-11-22T06:34:19.942726Z",
+    "last_seen": "2026-11-22T06:36:59.385908Z"
   }
 ]

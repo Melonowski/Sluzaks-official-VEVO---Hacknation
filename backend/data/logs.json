@@ -548,5 +548,55 @@
     ],
     "latency_ms": 19724,
     "security_alert": null
+  },
+  {
+    "session_id": "sess-1795329242",
+    "timestamp": "2026-11-22T06:34:02.806875Z",
+    "channel": "web",
+    "query_masked": "https://pl.wikipedia.org/wiki/Wikipedia:Strona_g%C5%82%C3%B3wna",
+    "verdict": "NIE PODLEGA WERYFIKACJI",
+    "sources": [],
+    "latency_ms": 5421,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795329259",
+    "timestamp": "2026-11-22T06:34:19.946226Z",
+    "channel": "web",
+    "query_masked": "https://pl.wikipedia.org/wiki/Wikipedia:Strona_g%C5%82%C3%B3wna",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [],
+    "latency_ms": 3660,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795329295",
+    "timestamp": "2026-11-22T06:34:55.991975Z",
+    "channel": "web",
+    "query_masked": "https://pl.wikipedia.org/wiki/Wikipedia:Strona_g%C5%82%C3%B3wna",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [],
+    "latency_ms": 4574,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795329419",
+    "timestamp": "2026-11-22T06:36:59.390370Z",
+    "channel": "web",
+    "query_masked": "https://pl.wikipedia.org/wiki/Wikipedia:Strona_g%C5%82%C3%B3wna",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [],
+    "latency_ms": 5708,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795330414",
+    "timestamp": "2026-11-22T06:53:34.156237Z",
+    "channel": "web",
+    "query_masked": "https://pl.wikipedia.org/wiki/Stany_Zjednoczone",
+    "verdict": "NIE PODLEGA WERYFIKACJI",
+    "sources": [],
+    "latency_ms": 3800,
+    "security_alert": null
   }
 ]

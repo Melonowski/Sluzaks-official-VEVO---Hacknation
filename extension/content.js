@@ -3,9 +3,13 @@
   window.__prawdowidInjected = true;
 
   const extApi = typeof browser !== "undefined" && browser.runtime ? browser : chrome;
-  const API_URL = "https://mai-pattern-des-clicking.trycloudflare.com/api/verify";
-  const CHAT_API_URL = "https://mai-pattern-des-clicking.trycloudflare.com/api/chat";
-  const WEB_APP_URL = "https://mai-pattern-des-clicking.trycloudflare.com";
+  const DEFAULT_BACKEND_URL = "https://developers.cloudflare.com/cloudflare-one/connections/connect-apps";
+
+  function normalizeBaseUrl(rawUrl) {
+    const trimmed = String(rawUrl || "").trim();
+    if (!trimmed) return DEFAULT_BACKEND_URL;
+    return trimmed.replace(/\/+$/, "");
+  }
 
   function clampPct(v) {
     const n = Number(v);
@@ -13,13 +17,35 @@
     return Math.max(0, Math.min(100, Math.round(n)));
   }
 
-  function init() {
+  function readStoredBackendUrl() {
+    return new Promise((resolve) => {
+      try {
+        if (!extApi.storage?.local?.get) {
+          resolve(DEFAULT_BACKEND_URL);
+          return;
+        }
+        const maybePromise = extApi.storage.local.get(["prawdowid_backend_url"], (res) => {
+          resolve(normalizeBaseUrl(res?.prawdowid_backend_url || DEFAULT_BACKEND_URL));
+        });
+        if (maybePromise && typeof maybePromise.then === "function") {
+          maybePromise
+            .then((res) => resolve(normalizeBaseUrl(res?.prawdowid_backend_url || DEFAULT_BACKEND_URL)))
+            .catch(() => resolve(DEFAULT_BACKEND_URL));
+        }
+      } catch (_) {
+        resolve(DEFAULT_BACKEND_URL);
+      }
+    });
+  }
+
+  async function init() {
     if (!document.body) {
       document.addEventListener("DOMContentLoaded", init, { once: true });
       return;
     }
     if (document.getElementById("prawdowid-root")) return;
 
+    let backendUrl = await readStoredBackendUrl();
     let selectMode = false;
     let isDragging = false;
     let startX = 0;
@@ -27,6 +53,14 @@
     let currentRect = null;
     let lastResult = null;
     let overlayChatBusy = false;
+
+    function getVerifyUrl() {
+      return `${normalizeBaseUrl(backendUrl)}/api/verify`;
+    }
+
+    function getChatUrl() {
+      return `${normalizeBaseUrl(backendUrl)}/api/chat`;
+    }
 
     const host = document.createElement("div");
     host.id = "prawdowid-root";
@@ -293,7 +327,6 @@
           margin-bottom: 10px;
         }
 
-        /* OVERLAY NA TEJ SAMEJ STRONIE (PALETA ZE STYLES.CSS) */
         .page-overlay {
           display: none;
           position: fixed;
@@ -435,7 +468,6 @@
           color: #ffffff;
         }
 
-        /* CHAT Z AI W OVERLAYU */
         .overlay-chat-card {
           background: #161616;
           border: 1px solid #333333;
@@ -596,8 +628,14 @@
     } catch (_) {}
 
     extApi.storage?.onChanged?.addListener((changes) => {
-      if (changes && changes.prawdowid_enabled) {
+      if (changes?.prawdowid_enabled) {
         applyEnabledState(changes.prawdowid_enabled.newValue);
+      }
+      if (changes?.prawdowid_backend_url) {
+        backendUrl = normalizeBaseUrl(changes.prawdowid_backend_url.newValue);
+        if (lastResult && pageOverlay.classList.contains("active")) {
+          overlaySubtitle.textContent = `Sesja: ${lastResult.data?.session_id || "—"} • ${backendUrl}`;
+        }
       }
     });
 
@@ -732,7 +770,7 @@
       appendOverlayChatMessage("user", question);
 
       try {
-        const resp = await fetch(CHAT_API_URL, {
+        const resp = await fetch(getChatUrl(), {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -766,7 +804,7 @@
       const vClass = getVerdictClass(data.verdict);
       const metrics = data.metrics || {};
 
-      overlaySubtitle.textContent = `Sesja: ${data.session_id || "—"} • ${WEB_APP_URL}`;
+      overlaySubtitle.textContent = `Sesja: ${data.session_id || "—"} • ${normalizeBaseUrl(backendUrl)}`;
 
       const radarAxes = [
         { label: "Autorytet źródeł", val: clampPct(premises.source_authority), color: "#ef4444" },
@@ -1105,6 +1143,7 @@
     }
 
     async function verifySelectedArea(imageDataUrl, rect) {
+      backendUrl = await readStoredBackendUrl();
       setProfState("thinking");
       resultCard.classList.add("active");
       cardBody.innerHTML = `
@@ -1117,7 +1156,7 @@
       `;
 
       try {
-        const resp = await fetch(API_URL, {
+        const resp = await fetch(getVerifyUrl(), {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -1134,8 +1173,12 @@
         });
 
         if (!resp.ok) {
-          const err = await resp.json();
-          throw new Error(err.detail || "Błąd połączenia z serwerem Prawdowid.");
+          let detail = "Błąd połączenia z serwerem Prawdowid.";
+          try {
+            const err = await resp.json();
+            detail = err.detail || detail;
+          } catch (_) {}
+          throw new Error(detail);
         }
 
         const data = await resp.json();
@@ -1198,7 +1241,7 @@
           <img src="${imageDataUrl}" alt="Zaznaczony wycinek" class="preview-thumb" />
           <div class="alert-sec">
             <strong>Komunikat techniczny (nie jest to werdykt):</strong><br/>
-            ${e.message}
+            ${e.message} (serwer: ${normalizeBaseUrl(backendUrl)})
           </div>
         `;
       }
