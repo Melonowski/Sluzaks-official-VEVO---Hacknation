@@ -1,0 +1,21 @@
+# Sekrety
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Node / Next.js
+node_modules/
+.next/
+
+# Binarki
+cloudflared.exe
+
+# Dane robocze (moga zawierac tresci zapytan uzytkownikow)
+backend/data/logs.json
+backend/data/moderator_cases.json
