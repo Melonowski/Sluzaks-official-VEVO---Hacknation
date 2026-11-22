@@ -638,5 +638,128 @@
     "sources": [],
     "latency_ms": 26740,
     "security_alert": null
+  },
+  {
+    "session_id": "sess-1795335384",
+    "timestamp": "2026-11-22T08:16:24.826468Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://pl.wikipedia.org/wiki/Lucky_Star_(singel)]",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [],
+    "latency_ms": 57561,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795335500",
+    "timestamp": "2026-11-22T08:18:20.498076Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://pl.wikipedia.org/wiki/Utw%C3%B3r_muzyczny]",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [],
+    "latency_ms": 51623,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795335562",
+    "timestamp": "2026-11-22T08:19:22.092229Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://pl.wikipedia.org/wiki/Komponowanie]",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [],
+    "latency_ms": 21008,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795335671",
+    "timestamp": "2026-11-22T08:21:11.967744Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://pl.wikipedia.org/wiki/Lata_20._XXI_wieku]",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [],
+    "latency_ms": 27542,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795335746",
+    "timestamp": "2026-11-22T08:22:26.610857Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://pl.wikipedia.org/wiki/Inwazja_Rosji_na_Ukrain%C4%99]",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [
+      "https://demagog.org.pl/fake_news/bazy-nato-wokol-rosji-manipulacja-ma-uzasadnic-inwazje-na-ukraine/",
+      "https://demagog.org.pl/fake_news/inwazja-rosji-na-ukraine-jest-wojna-zastepcza-nato-falsz/"
+    ],
+    "latency_ms": 32343,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795335780",
+    "timestamp": "2026-11-22T08:23:00.596144Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://pl.wikipedia.org/wiki/Inwazja_Rosji_na_Ukrain%C4%99]",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [],
+    "latency_ms": 16899,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795335822",
+    "timestamp": "2026-11-22T08:23:42.285411Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://pl.wikipedia.org/wiki/Inwazja_Rosji_na_Ukrain%C4%99]",
+    "verdict": "NIE PODLEGA WERYFIKACJI",
+    "sources": [],
+    "latency_ms": 14156,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795336176",
+    "timestamp": "2026-11-22T08:29:36.234835Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://pl.wikipedia.org/wiki/Inwazja_Rosji_na_Ukrain%C4%99]",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [],
+    "latency_ms": 15961,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795336238",
+    "timestamp": "2026-11-22T08:30:38.306489Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://pl.wikipedia.org/wiki/Inwazja_Rosji_na_Ukrain%C4%99]",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [],
+    "latency_ms": 43471,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795336742",
+    "timestamp": "2026-11-22T08:39:02.629304Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://pl.wikipedia.org/wiki/Inwazja_Rosji_na_Ukrain%C4%99]",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [],
+    "latency_ms": 62445,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795336818",
+    "timestamp": "2026-11-22T08:40:18.566979Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://wiadomosci.wp.pl/tag/wojna%20w%20ukrainie]",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [],
+    "latency_ms": 18962,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795336917",
+    "timestamp": "2026-11-22T08:41:57.712613Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://wiadomosci.wp.pl/polacy-nie-wierza-w-szybki-koniec-wojny-to-pokazal-nowy-sondaz-7353546498586624a]",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [],
+    "latency_ms": 33050,
+    "security_alert": null
   }
 ]

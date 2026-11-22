@@ -182,5 +182,93 @@
     "report_count": 1,
     "created_at": "2026-11-22T08:08:18.374840Z",
     "last_seen": "2026-11-22T08:08:18.374840Z"
+  },
+  {
+    "case_id": "MOD-1795335384",
+    "normalized_key": "lucky star to utwór madonny z 1983 roku, wydany jako singel z jej debiutanckiego albumu, który osiągnął 4. miejsce na li",
+    "claim_preview": "Lucky Star to utwór Madonny z 1983 roku, wydany jako singel z jej debiutanckiego albumu, który osiągnął 4. miejsce na liście Billboard Hot 100.",
+    "report_count": 1,
+    "created_at": "2026-11-22T08:16:24.818523Z",
+    "last_seen": "2026-11-22T08:16:24.818523Z"
+  },
+  {
+    "case_id": "MOD-1795335500",
+    "normalized_key": "pojęcie dzieła muzycznego zaczęło regulować praktykę muzyki klasycznej około 1800 roku wraz z utrwaleniem rozróżnienia m",
+    "claim_preview": "Pojęcie dzieła muzycznego zaczęło regulować praktykę muzyki klasycznej około 1800 roku wraz z utrwaleniem rozróżnienia między trwałym dziełem a jego przemijającymi wykonaniami.",
+    "report_count": 1,
+    "created_at": "2026-11-22T08:18:20.469436Z",
+    "last_seen": "2026-11-22T08:18:20.469436Z"
+  },
+  {
+    "case_id": "MOD-1795335562",
+    "normalized_key": "komponowanie określonych utworów muzycznych przed ich wykonaniem jest odróżniane od improwizowania, w którym decyzje dot",
+    "claim_preview": "Komponowanie określonych utworów muzycznych przed ich wykonaniem jest odróżniane od improwizowania, w którym decyzje dotyczące kształtu muzyki zapadają podczas wykonania.",
+    "report_count": 1,
+    "created_at": "2026-11-22T08:19:22.056818Z",
+    "last_seen": "2026-11-22T08:19:22.056818Z"
+  },
+  {
+    "case_id": "MOD-1795335671",
+    "normalized_key": "karol nawrocki wygrał wybory prezydenckie w polsce, otrzymując 50,89% głosów, pokonując rafała trzaskowskiego",
+    "claim_preview": "Karol Nawrocki wygrał wybory prezydenckie w Polsce, otrzymując 50,89% głosów, pokonując Rafała Trzaskowskiego",
+    "report_count": 1,
+    "created_at": "2026-11-22T08:21:11.947168Z",
+    "last_seen": "2026-11-22T08:21:11.947168Z"
+  },
+  {
+    "case_id": "MOD-1795335746",
+    "normalized_key": "inwazja rosji na ukrainę stanowi eskalację wojny trwającej od 2014 roku i została poprzedzona rosyjskimi zadaniami wyklu",
+    "claim_preview": "Inwazja Rosji na Ukrainę stanowi eskalację wojny trwającej od 2014 roku i została poprzedzona rosyjskimi zadaniami wykluczenia możliwości dalszego poszerzania NATO oraz redukcji potencjału militarnego",
+    "report_count": 1,
+    "created_at": "2026-11-22T08:22:26.564910Z",
+    "last_seen": "2026-11-22T08:22:26.564910Z"
+  },
+  {
+    "case_id": "MOD-1795335780",
+    "normalized_key": "rosja rozpoczęła inwazję na ukrainę 24 lutego 2022 roku, nazywając ją specjalną operacją wojskową.",
+    "claim_preview": "Rosja rozpoczęła inwazję na Ukrainę 24 lutego 2022 roku, nazywając ją specjalną operacją wojskową.",
+    "report_count": 1,
+    "created_at": "2026-11-22T08:23:00.552464Z",
+    "last_seen": "2026-11-22T08:23:00.552464Z"
+  },
+  {
+    "case_id": "MOD-1795336176",
+    "normalized_key": "rosja przeprowadziła inwazję na ukrainę, co doprowadziło do wybuchu wojny rosyjsko-ukraińskiej.",
+    "claim_preview": "Rosja przeprowadziła inwazję na Ukrainę, co doprowadziło do wybuchu wojny rosyjsko-ukraińskiej.",
+    "report_count": 1,
+    "created_at": "2026-11-22T08:29:36.179340+00:00",
+    "last_seen": "2026-11-22T08:29:36.179340+00:00"
+  },
+  {
+    "case_id": "MOD-1795336238",
+    "normalized_key": "rosja rozpoczęła pełnoskalową inwazję na ukrainę 24 lutego 2022 roku, co stanowiło eskalację konfliktu trwającego od 201",
+    "claim_preview": "Rosja rozpoczęła pełnoskalową inwazję na Ukrainę 24 lutego 2022 roku, co stanowiło eskalację konfliktu trwającego od 2014 roku, poprzedzonego gromadzeniem wojsk i uznaniem niepodległości separatystycz",
+    "report_count": 1,
+    "created_at": "2026-11-22T08:30:38.177950+00:00",
+    "last_seen": "2026-11-22T08:30:38.177950+00:00"
+  },
+  {
+    "case_id": "MOD-1795336742",
+    "normalized_key": "pełnoskalowa inwazja rosji na ukrainę rozpoczęła się 24 lutego 2022 roku, stanowiąc eskalację konfliktu trwającego od 20",
+    "claim_preview": "Pełnoskalowa inwazja Rosji na Ukrainę rozpoczęła się 24 lutego 2022 roku, stanowiąc eskalację konfliktu trwającego od 2014 roku, a w odpowiedzi na agresję Ukraina otrzymała od stycznia 2022 do marca 2",
+    "report_count": 1,
+    "created_at": "2026-11-22T08:39:02.589410+00:00",
+    "last_seen": "2026-11-22T08:39:02.589410+00:00"
+  },
+  {
+    "case_id": "MOD-1795336818",
+    "normalized_key": "finlandia zabiera głos i statek po ataku na rosyjski obiekt, wskazując, że sprawcami prawdopodobnie były siły ukraińskie",
+    "claim_preview": "Finlandia zabiera głos i statek po ataku na rosyjski obiekt, wskazując, że sprawcami prawdopodobnie były siły ukraińskie, co poinformowały Siły Obrony Finlandii w sobotę 21 listopada 2026 roku.",
+    "report_count": 1,
+    "created_at": "2026-11-22T08:40:18.530494+00:00",
+    "last_seen": "2026-11-22T08:40:18.530494+00:00"
+  },
+  {
+    "case_id": "MOD-1795336917",
+    "normalized_key": "według sondażu przeprowadzonego dla onetu w listopadzie 2026 roku, 59 proc. polaków sceptycznie ocenia możliwość zakończ",
+    "claim_preview": "Według sondażu przeprowadzonego dla Onetu w listopadzie 2026 roku, 59 proc. Polaków sceptycznie ocenia możliwość zakończenia wojny w Ukrainie w ciągu najbliższych 12 miesięcy, z czego 21 proc. wskazuj",
+    "report_count": 1,
+    "created_at": "2026-11-22T08:41:57.673828+00:00",
+    "last_seen": "2026-11-22T08:41:57.673828+00:00"
   }
 ]

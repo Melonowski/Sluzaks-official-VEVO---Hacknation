@@ -1123,6 +1123,7 @@
               canvas.width = sw;
               canvas.height = sh;
               const ctx = canvas.getContext("2d");
+              ctx.imageSmoothingEnabled = false;
               ctx.drawImage(img, sx, sy, sw, sh, 0, 0, sw, sh);
 
               resolve(canvas.toDataURL("image/png"));
