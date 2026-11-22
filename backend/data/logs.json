@@ -500,5 +500,53 @@
     "sources": [],
     "latency_ms": 2843,
     "security_alert": null
+  },
+  {
+    "session_id": "sess-1795327870",
+    "timestamp": "2026-11-22T06:11:11.037892Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://pl.wikipedia.org/wiki/Wikipedia:Strona_g%C5%82%C3%B3wna]",
+    "verdict": "NIE PODLEGA WERYFIKACJI",
+    "sources": [
+      "https://dane.gov.pl/pl/common/2132185",
+      "https://dane.gov.pl/pl/common/959113"
+    ],
+    "latency_ms": 8847,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795328126",
+    "timestamp": "2026-11-22T06:15:26.178775Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://pl.wikipedia.org/wiki/Wikipedia:Strona_g%C5%82%C3%B3wna]",
+    "verdict": "NIE PODLEGA WERYFIKACJI",
+    "sources": [],
+    "latency_ms": 12656,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795328172",
+    "timestamp": "2026-11-22T06:16:12.721438Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://pl.wikipedia.org/wiki/Wikipedia:Strona_g%C5%82%C3%B3wna]",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [
+      "https://konkret24.tvn24.pl/polska/ludzi-w-krakowie-zastrzelil-wielbiciel-ukrainy-rosyjska-dezinformacja-w-akcji-st9329687?source=rss",
+      "https://konkret24.tvn24.pl/polska/fejki-o-strzelaninie-st9328446?source=rss"
+    ],
+    "latency_ms": 19874,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795328596",
+    "timestamp": "2026-11-22T06:23:16.743189Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://pl.wikipedia.org/wiki/Inwazja_Rosji_na_Ukrain%C4%99]",
+    "verdict": "POTWIERDZONE",
+    "sources": [
+      "https://demagog.org.pl/fake_news/inwazja-rosji-na-ukraine-jest-wojna-zastepcza-nato-falsz/"
+    ],
+    "latency_ms": 19724,
+    "security_alert": null
   }
 ]

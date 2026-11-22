@@ -158,5 +158,13 @@
     "report_count": 1,
     "created_at": "2026-11-22T05:03:48.994335Z",
     "last_seen": "2026-11-22T05:03:48.994335Z"
+  },
+  {
+    "case_id": "MOD-1795328172",
+    "normalized_key": "w wyniku strzelaniny w krakowie zginęło 6 osób, a kilkanaście zostało rannych",
+    "claim_preview": "W wyniku strzelaniny w Krakowie zginęło 6 osób, a kilkanaście zostało rannych",
+    "report_count": 1,
+    "created_at": "2026-11-22T06:16:12.674116Z",
+    "last_seen": "2026-11-22T06:16:12.674116Z"
   }
 ]

@@ -3,8 +3,9 @@
   window.__prawdowidInjected = true;
 
   const extApi = typeof browser !== "undefined" && browser.runtime ? browser : chrome;
-  const API_URL = "https://absence-newbie-july-elementary.trycloudflare.com/api/verify";
-  const WEB_APP_URL = "https://absence-newbie-july-elementary.trycloudflare.com";
+  const API_URL = "https://mai-pattern-des-clicking.trycloudflare.com/api/verify";
+  const CHAT_API_URL = "https://mai-pattern-des-clicking.trycloudflare.com/api/chat";
+  const WEB_APP_URL = "https://mai-pattern-des-clicking.trycloudflare.com";
 
   function clampPct(v) {
     const n = Number(v);
@@ -25,6 +26,7 @@
     let startY = 0;
     let currentRect = null;
     let lastResult = null;
+    let overlayChatBusy = false;
 
     const host = document.createElement("div");
     host.id = "prawdowid-root";
@@ -280,6 +282,7 @@
           text-decoration: none;
         }
         .btn-primary:hover { background: #ef4444; }
+        .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
         .alert-sec {
           background: #161616;
           border: 1px solid #ef4444;
@@ -310,7 +313,7 @@
         }
         .overlay-box {
           width: 100%;
-          max-width: 1040px;
+          max-width: 1080px;
           background: linear-gradient(180deg, #121212 0%, #080808 100%);
           border: 1px solid #333333;
           border-radius: 22px;
@@ -412,6 +415,7 @@
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           gap: 10px;
+          margin-bottom: 14px;
         }
         .overlay-kpi {
           background: #161616;
@@ -430,6 +434,87 @@
           font-size: 15px;
           color: #ffffff;
         }
+
+        /* CHAT Z AI W OVERLAYU */
+        .overlay-chat-card {
+          background: #161616;
+          border: 1px solid #333333;
+          border-radius: 18px;
+          padding: 14px;
+          display: flex;
+          flex-direction: column;
+        }
+        .overlay-chat-head {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 10px;
+        }
+        .overlay-chat-head h4 {
+          margin: 0;
+          font-size: 14px;
+          color: #ffffff;
+        }
+        .overlay-chat-status {
+          font-size: 10px;
+          font-weight: 700;
+          padding: 3px 8px;
+          border-radius: 999px;
+          background: #ffffff;
+          color: #080808;
+        }
+        .overlay-chat-messages {
+          min-height: 120px;
+          max-height: 190px;
+          overflow-y: auto;
+          background: #111111;
+          border: 1px solid #333333;
+          border-radius: 12px;
+          padding: 10px;
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          margin-bottom: 10px;
+        }
+        .ov-msg {
+          max-width: 88%;
+          padding: 8px 11px;
+          border-radius: 12px;
+          font-size: 12px;
+          line-height: 1.45;
+          word-break: break-word;
+        }
+        .ov-msg-ai {
+          align-self: flex-start;
+          background: #222222;
+          color: #ffffff;
+          border: 1px solid #333333;
+        }
+        .ov-msg-user {
+          align-self: flex-end;
+          background: #dc2626;
+          color: #ffffff;
+          border: 1px solid #ffffff;
+        }
+        .overlay-chat-form {
+          display: flex;
+          gap: 8px;
+        }
+        .overlay-chat-input {
+          flex: 1;
+          background: #111111;
+          color: #ffffff;
+          border: 1px solid #333333;
+          border-radius: 10px;
+          padding: 9px 12px;
+          font-size: 12px;
+          font-family: inherit;
+        }
+        .overlay-chat-input:focus {
+          outline: none;
+          border-color: #ef4444;
+        }
+
         @media (max-width: 860px) {
           .overlay-grid, .overlay-charts-row { grid-template-columns: 1fr; }
         }
@@ -626,6 +711,51 @@
       ctx.fillText("źródeł", cx, cy + 10);
     }
 
+    function appendOverlayChatMessage(role, text) {
+      const list = shadow.getElementById("ovChatMessages");
+      if (!list) return;
+      const div = document.createElement("div");
+      div.className = `ov-msg ${role === "user" ? "ov-msg-user" : "ov-msg-ai"}`;
+      div.textContent = text;
+      list.appendChild(div);
+      list.scrollTop = list.scrollHeight;
+    }
+
+    async function sendOverlayChatQuestion(question, data) {
+      if (overlayChatBusy) return;
+      overlayChatBusy = true;
+      const statusEl = shadow.getElementById("ovChatStatus");
+      const sendBtn = shadow.getElementById("ovChatSendBtn");
+      if (statusEl) statusEl.textContent = "Myśli...";
+      if (sendBtn) sendBtn.disabled = true;
+
+      appendOverlayChatMessage("user", question);
+
+      try {
+        const resp = await fetch(CHAT_API_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            session_id: data?.session_id || "",
+            question
+          })
+        });
+        if (!resp.ok) throw new Error("Błąd połączenia z czatem AI.");
+        const payload = await resp.json();
+        appendOverlayChatMessage("ai", payload.answer || "Brak odpowiedzi z serwera.");
+      } catch (_) {
+        const verdictLabel = data?.verdict || "brak werdyktu";
+        appendOverlayChatMessage(
+          "ai",
+          `W kontekście werdyktu (${verdictLabel}): sprawdź daty publikacji źródeł, ich zgodność z cytowanym fragmentem oraz ograniczenia wskazane w panelu obok.`
+        );
+      } finally {
+        overlayChatBusy = false;
+        if (statusEl) statusEl.textContent = "Gotowy";
+        if (sendBtn) sendBtn.disabled = false;
+      }
+    }
+
     function openOverlay() {
       if (!lastResult) return;
       const { data, imageDataUrl } = lastResult;
@@ -720,6 +850,27 @@
               <div class="overlay-kpi"><span>Czas analizy</span><strong>${metrics.latency_ms ?? 0} ms</strong></div>
               <div class="overlay-kpi"><span>Szac. koszt</span><strong>${metrics.estimated_cost_pln ?? "0,004"} zł</strong></div>
             </div>
+
+            <div class="overlay-chat-card">
+              <div class="overlay-chat-head">
+                <h4>💬 AI Chat o tym temacie</h4>
+                <span class="overlay-chat-status" id="ovChatStatus">Gotowy</span>
+              </div>
+              <div class="overlay-chat-messages" id="ovChatMessages">
+                <div class="ov-msg ov-msg-ai">Zadaj pytanie o ten werdykt, źródła, daty lub kontekst zaznaczonego fragmentu.</div>
+              </div>
+              <form class="overlay-chat-form" id="ovChatForm">
+                <input
+                  type="text"
+                  class="overlay-chat-input"
+                  id="ovChatInput"
+                  placeholder="Np. Dlaczego ten werdykt ma taką siłę lub czego brakuje?"
+                  autocomplete="off"
+                  required
+                />
+                <button type="submit" class="btn-primary" id="ovChatSendBtn">Wyślij</button>
+              </form>
+            </div>
           </div>
 
           <div class="overlay-panel">
@@ -740,6 +891,18 @@
         drawW1Radar(shadow.getElementById("ovW1Canvas"), premises);
         drawW2Donut(shadow.getElementById("ovW2Canvas"), breakdown);
       });
+
+      const chatForm = shadow.getElementById("ovChatForm");
+      if (chatForm) {
+        chatForm.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const inputEl = shadow.getElementById("ovChatInput");
+          const q = (inputEl?.value || "").trim();
+          if (!q) return;
+          inputEl.value = "";
+          await sendOverlayChatQuestion(q, data);
+        });
+      }
     }
 
     closeOverlay.addEventListener("click", () => {

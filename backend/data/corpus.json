@@ -3148,5 +3148,125 @@
     "url": "https://dane.gov.pl/pl/common/1279488",
     "content": "Rynek <mark>jaj</mark> spożywczych - notowania za okres: 09-15.02.2026 r.</mark>. Badane są ceny skupu oraz ceny sprzedaży jaj spożywczych.",
     "fetched_at": "2026-11-22T05:17:24.300194Z"
+  },
+  {
+    "title": "Wyniki programu Społeczna Odpowiedzialność <mark>Nauki</mark> III - Popularyzacja <mark>nauki</mark></mark>",
+    "publisher": "Portal Otwartych Danych dane.gov.pl (Źródło urzędowe)",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2026-06-23",
+    "url": "https://dane.gov.pl/pl/common/2132185",
+    "content": "Wyniki programu Społeczna Odpowiedzialność <mark>Nauki</mark> III - Popularyzacja <mark>nauki</mark></mark>. Wnioski, które uzyskały dofinansowania w programie Społeczna Odpowiedzialność Nauki III - Popularyzacja Nauki",
+    "fetched_at": "2026-11-22T06:11:09.290068Z"
+  },
+  {
+    "title": "Wnioski skierowane do finansowania Społeczna odpowiedzialność <mark>nauki</mark> II - Popularyzacja <mark>nauki</mark></mark>",
+    "publisher": "Portal Otwartych Danych dane.gov.pl (Źródło urzędowe)",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2025-06-30",
+    "url": "https://dane.gov.pl/pl/common/67918",
+    "content": "Wnioski skierowane do finansowania Społeczna odpowiedzialność <mark>nauki</mark> II - Popularyzacja <mark>nauki</mark></mark>. Wnioski skierowane do finansowania w pierwszej edycji programu Społeczna odpowiedzialność nauki II - Popularyzacja nauki .",
+    "fetched_at": "2026-11-22T06:11:09.290068Z"
+  },
+  {
+    "title": "Program Ministra Edukacji i <mark>Nauki</mark> Perły <mark>Nauki</mark> II</mark>",
+    "publisher": "Portal Otwartych Danych dane.gov.pl (Źródło urzędowe)",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2025-12-22",
+    "url": "https://dane.gov.pl/pl/common/959113",
+    "content": "Program Ministra Edukacji i <mark>Nauki</mark> Perły <mark>Nauki</mark> II</mark>. Program Ministra Edukacji i Nauki pn. Perły nauki II … został ustanowiony Komunikatem Ministra Edukacji i Nauki z dnia 25 lipca 2025 r. (z późn. zm … szkolnictwa wyższego i nauki w tworzeniu wybitnie uzdolnionym studentom studiów drugiego stopnia … Akademii Nauk , instytuty badawcze, międzynarodowe instytuty naukowe utworzone",
+    "fetched_at": "2026-11-22T06:11:09.290068Z"
+  },
+  {
+    "title": "zasób do Projekty naukowe realizowane przez podmioty szkolnictwa wyższego i <mark>nauki</mark></mark>",
+    "publisher": "Portal Otwartych Danych dane.gov.pl (Źródło urzędowe)",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2023-12-29",
+    "url": "https://dane.gov.pl/pl/common/53553",
+    "content": "zasób do Projekty naukowe realizowane przez podmioty szkolnictwa wyższego i <mark>nauki</mark></mark>. wyższego i nauki w Polsce, w tym badania naukowe i prace rozwojowe, upowszechnianie nauki . Dane pochodzą … ze zintegrowanej sieci informacji o nauce i szkolnictwie wyższym POL-on .",
+    "fetched_at": "2026-11-22T06:11:09.290068Z"
+  },
+  {
+    "title": "pięć wybranych <mark>kategorii</mark></mark>",
+    "publisher": "Portal Otwartych Danych dane.gov.pl (Źródło urzędowe)",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2026-04-27",
+    "url": "https://dane.gov.pl/pl/common/1723658",
+    "content": "pięć wybranych <mark>kategorii</mark></mark>. pięć wybranych kategorii",
+    "fetched_at": "2026-11-22T06:15:24.814420Z"
+  },
+  {
+    "title": "Lista <mark>kategorii</mark> linii</mark>",
+    "publisher": "Portal Otwartych Danych dane.gov.pl (Źródło urzędowe)",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2025-05-05",
+    "url": "https://dane.gov.pl/pl/common/66631",
+    "content": "Lista <mark>kategorii</mark> linii</mark>. Zasób zawiera przyporządkowanie identyfikatorów linii do kategorii . Jest wykorzystywany w serwisie … się z następujących pól: - title: \"Lista kategorii linii\" – tytuł zasobu, - generationDate: data aktualizacji … zasobu podana w formacie ISO-8601 (UTC), + count - pole wskazujące liczbę obiektów z kategoriami ; wartość …: liczba całkowita; + results - zawiera obiekty reprezentujące kategorie . Każdy obiekt składa … się z następujących pól: * category - nazwa kategorii ; ciąg znaków + routeIdRange - zawiera informację",
+    "fetched_at": "2026-11-22T06:15:24.814420Z"
+  },
+  {
+    "title": "Konsultacje społeczne <mark>kategorie</mark></mark>",
+    "publisher": "Portal Otwartych Danych dane.gov.pl (Źródło urzędowe)",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2025-10-27",
+    "url": "https://dane.gov.pl/pl/common/2512050",
+    "content": "Konsultacje społeczne <mark>kategorie</mark></mark>. Zbiór zawiera słownik kategorii konsultacji społecznych. Zasób stanowi uzupełnienie zasobu \"Konsultacje społeczne\".",
+    "fetched_at": "2026-11-22T06:15:24.814420Z"
+  },
+  {
+    "title": "Załącznik nr.55 <mark>kategoria</mark>  - religia</mark>",
+    "publisher": "Portal Otwartych Danych dane.gov.pl (Źródło urzędowe)",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2022-08-29",
+    "url": "https://dane.gov.pl/pl/common/40983",
+    "content": "Załącznik nr.55 <mark>kategoria</mark>  - religia</mark>. Kategoria zainteresowań tematycznych występująca wśród internatów",
+    "fetched_at": "2026-11-22T06:15:24.814420Z"
+  },
+  {
+    "title": "<mark>Ofiary</mark> - rodzaj użytkownika drogi</mark>",
+    "publisher": "Portal Otwartych Danych dane.gov.pl (Źródło urzędowe)",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2026-03-20",
+    "url": "https://dane.gov.pl/pl/common/1458531",
+    "content": "<mark>Ofiary</mark> - rodzaj użytkownika drogi</mark>. Ofiary - rodzaj użytkownika drogi",
+    "fetched_at": "2026-11-22T06:16:10.824029Z"
+  },
+  {
+    "title": "<mark>Ofiary</mark> - rodzaj użytkownika drogi</mark>",
+    "publisher": "Portal Otwartych Danych dane.gov.pl (Źródło urzędowe)",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2026-03-20",
+    "url": "https://dane.gov.pl/pl/common/1458532",
+    "content": "<mark>Ofiary</mark> - rodzaj użytkownika drogi</mark>. Ofiary - rodzaj użytkownika drogi",
+    "fetched_at": "2026-11-22T06:16:10.824029Z"
+  },
+  {
+    "title": "<mark>Ofiary</mark> - grupy wiekowe uczestnika</mark>",
+    "publisher": "Portal Otwartych Danych dane.gov.pl (Źródło urzędowe)",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2026-03-20",
+    "url": "https://dane.gov.pl/pl/common/1458539",
+    "content": "<mark>Ofiary</mark> - grupy wiekowe uczestnika</mark>. Ofiary - grupy wiekowe uczestnika",
+    "fetched_at": "2026-11-22T06:16:10.824029Z"
+  },
+  {
+    "title": "<mark>Ofiary</mark> - grupy wiekowe uczestnika</mark>",
+    "publisher": "Portal Otwartych Danych dane.gov.pl (Źródło urzędowe)",
+    "domain": "dane.gov.pl",
+    "type": "urzędowe",
+    "date": "2026-03-20",
+    "url": "https://dane.gov.pl/pl/common/1458543",
+    "content": "<mark>Ofiary</mark> - grupy wiekowe uczestnika</mark>. Ofiary - grupy wiekowe uczestnika",
+    "fetched_at": "2026-11-22T06:16:10.824029Z"
   }
 ]
