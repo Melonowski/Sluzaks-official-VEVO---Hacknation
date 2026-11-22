@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prawdowid — Pełna analiza i wizualizacja dowodów</title>
-  <link rel="stylesheet" href="styles.css?v=2" />
+  <title>Prawdowid — Weryfikacja informacji i wizualizacja dowodów</title>
+  <link rel="stylesheet" href="styles.css?v=4" />
 </head>
 <body>
   <div class="page-shell">
@@ -13,14 +13,74 @@
         <span class="brand-badge">☕ PRAWDOWID</span>
         <div>
           <h1>Panel analityczny weryfikacji</h1>
-          <p id="sessionMeta">Sesja: podgląd lokalny • Źródło: wycinek ekranu</p>
+          <p id="sessionMeta">Sesja: podgląd lokalny • Kanał: web</p>
         </div>
       </div>
       <div class="top-actions">
         <button id="toggleAuditBtn" class="btn-secondary" type="button">📊 Jakość i audyt (logs)</button>
+        <a id="exportCsvLink" class="btn-secondary btn-link" href="/api/export/logs?format=csv">⬇️ Eksport CSV</a>
         <button id="reloadDataBtn" class="btn-secondary" type="button">🔄 Odśwież dane</button>
       </div>
     </header>
+
+    <section class="verify-bar panel-box" aria-label="Szybka weryfikacja tekstu lub adresu URL">
+      <div class="verify-bar-head">
+        <div>
+          <h2>Kanał WWW — sprawdź twierdzenie, artykuł lub link</h2>
+          <p>Wklej treść albo adres <code>https://...</code> — wynik od razu zaktualizuje werdykt, źródła i wykresy W1/W2.</p>
+        </div>
+        <span class="verify-status" id="verifyStatus">Gotowy</span>
+      </div>
+      <form id="quickVerifyForm" class="verify-form">
+        <textarea
+          id="verifyInput"
+          rows="2"
+          placeholder="Np. Wpisz twierdzenie do sprawdzenia albo wklej link do artykułu / komunikatu..."
+          required
+        ></textarea>
+        <button id="verifySubmitBtn" type="submit" class="btn-primary">🔍 Zweryfikuj</button>
+      </form>
+      <div id="verifyError" class="inline-alert" style="display: none;"></div>
+    </section>
+
+    <section class="panel-box channel-box" aria-label="Adapter drugiego kanału komunikacji">
+      <div class="verify-bar-head">
+        <div>
+          <h2>Drugi kanał (adapter demonstracyjny)</h2>
+          <p>Symulacja wiadomości z komunikatora (WhatsApp / SMS / Messenger) używająca tej samej logiki weryfikacji co kanał WWW.</p>
+        </div>
+        <div class="channel-controls">
+          <select id="channelSelect" class="channel-select" aria-label="Wybierz kanał">
+            <option value="whatsapp_demo">WhatsApp (adapter demo)</option>
+            <option value="sms_demo">SMS (adapter demo)</option>
+            <option value="messenger_demo">Messenger (adapter demo)</option>
+          </select>
+          <span class="verify-status" id="channelStatus">Kanał gotowy</span>
+        </div>
+      </div>
+
+      <div class="channel-feed" id="channelFeed"></div>
+
+      <form id="channelForm" class="channel-form">
+        <input
+          id="channelSender"
+          type="text"
+          class="channel-sender"
+          placeholder="Nadawca (np. +48 600 *** 123)"
+          value="+48 600 *** 123"
+          autocomplete="off"
+        />
+        <input
+          id="channelInput"
+          type="text"
+          placeholder="Wpisz wiadomość przesłaną w komunikatorze do sprawdzenia..."
+          autocomplete="off"
+          required
+        />
+        <button id="channelSubmitBtn" type="submit" class="btn-primary">📨 Wyślij do weryfikacji</button>
+      </form>
+      <div id="channelError" class="inline-alert" style="display: none;"></div>
+    </section>
 
     <main class="main-grid">
       <section class="left-column">
@@ -78,6 +138,10 @@
           <p id="analysisSummary" class="analysis-summary">
             Ładowanie danych sesji weryfikacji...
           </p>
+
+          <div id="securityAlertBox" class="inline-alert" style="display: none;"></div>
+          <div id="incidentContextBox" class="info-strip" style="display: none;"></div>
+          <div id="moderatorCaseBox" class="info-strip" style="display: none;"></div>
 
           <div id="previewBox" class="preview-box" style="display: none;">
             <span class="small-label">Przechwycony fragment strony:</span>
@@ -155,6 +219,6 @@
     </div>
   </div>
 
-  <script src="app.js?v=2"></script>
+  <script src="app.js?v=4"></script>
 </body>
 </html>

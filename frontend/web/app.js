@@ -70,6 +70,21 @@ const MOCK_LOGS = {
   },
 };
 
+function escapeHtml(value = "") {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function sanitizeUrl(url = "") {
+  const trimmed = String(url || "").trim();
+  if (/^https?:\/\//i.test(trimmed)) return trimmed;
+  return "#";
+}
+
 function getQueryParams() {
   const params = new URLSearchParams(window.location.search);
   return {
@@ -236,7 +251,7 @@ function renderW1Radar(premises) {
       <li class="metric-item">
         <div class="metric-dot-wrap">
           <span class="dot" style="background:${ax.color}"></span>
-          <span>${ax.label}</span>
+          <span>${escapeHtml(ax.label)}</span>
         </div>
         <strong>${ax.val}%</strong>
       </li>
@@ -303,11 +318,12 @@ function renderW2Donut(breakdown) {
     .map((it) => {
       const count = Number(it.count || 0);
       const pct = total ? Math.round((count / safeTotal) * 100) : 0;
+      const safeDotColor = /^#[0-9a-fA-F]{3,6}$/.test(it.color || "") ? it.color : "#ef4444";
       return `
         <li class="metric-item">
           <div class="metric-dot-wrap">
-            <span class="dot" style="background:${it.color || "#ef4444"}"></span>
-            <span>${it.label}</span>
+            <span class="dot" style="background:${safeDotColor}"></span>
+            <span>${escapeHtml(it.label)}</span>
           </div>
           <strong>${count} (${pct}%)</strong>
         </li>
@@ -451,6 +467,37 @@ function renderAnalysis(sessionData, isMock) {
   }
   document.getElementById("analysisSummary").textContent = sessionData.summary || "";
 
+  const secBox = document.getElementById("securityAlertBox");
+  if (secBox) {
+    if (sessionData.security_alert) {
+      secBox.textContent = `⚠️ ${sessionData.security_alert}`;
+      secBox.style.display = "block";
+    } else {
+      secBox.style.display = "none";
+    }
+  }
+
+  const incBox = document.getElementById("incidentContextBox");
+  if (incBox) {
+    if (sessionData.incident_context) {
+      incBox.textContent = `🗂️ ${sessionData.incident_context}`;
+      incBox.style.display = "block";
+    } else {
+      incBox.style.display = "none";
+    }
+  }
+
+  const modBox = document.getElementById("moderatorCaseBox");
+  if (modBox) {
+    const mc = sessionData.moderator_case;
+    if (mc && mc.case_id) {
+      modBox.textContent = `🛡️ Kolejka analityka: ${mc.case_id} (${mc.status}, zgłoszeń: ${mc.report_count || 1}) — ${mc.notice || ""}`;
+      modBox.style.display = "block";
+    } else {
+      modBox.style.display = "none";
+    }
+  }
+
   const sources = (sessionData.claims || []).flatMap((c) => c.sources || []);
   const sourcesEl = document.getElementById("sourcesList");
   if (sources.length) {
@@ -458,9 +505,9 @@ function renderAnalysis(sessionData, isMock) {
       .map(
         (s) => `
         <div class="source-item">
-          <a href="${s.url || "#"}" target="_blank" rel="noopener">${s.title || "Źródło"} (${s.date || ""}) ↗</a>
-          <div style="font-size:11px;color:#b8b8b8;">${s.publisher || ""}</div>
-          <p>"${s.quote || ""}"</p>
+          <a href="${escapeHtml(sanitizeUrl(s.url))}" target="_blank" rel="noopener">${escapeHtml(s.title || "Źródło")} (${escapeHtml(s.date || "")}) ↗</a>
+          <div style="font-size:11px;color:#b8b8b8;">${escapeHtml(s.publisher || "")}</div>
+          ${s.quote ? `<p>"${escapeHtml(s.quote)}"</p>` : ""}
         </div>
       `
       )
@@ -475,7 +522,7 @@ function renderAnalysis(sessionData, isMock) {
   const previewBox = document.getElementById("previewBox");
   const previewImg = document.getElementById("previewImg");
   const shotSrc = sessionData.image_base64 || sessionStorage.getItem("prawdowid_last_shot");
-  if (shotSrc) {
+  if (shotSrc && /^data:image\/(png|jpeg|jpg|webp);base64,/i.test(shotSrc)) {
     previewBox.style.display = "block";
     previewImg.src = shotSrc;
   } else {
@@ -503,7 +550,7 @@ function renderAudit(logsData) {
       const pct = Math.round((Number(count || 0) / total) * 100);
       return `
         <div class="v-row">
-          <div class="v-row-top"><span>${name}</span><strong>${count} (${pct}%)</strong></div>
+          <div class="v-row-top"><span>${escapeHtml(name)}</span><strong>${count} (${pct}%)</strong></div>
           <div class="v-track"><div class="v-fill" style="width:${pct}%;"></div></div>
         </div>
       `;
@@ -564,6 +611,132 @@ async function askAiChat(question) {
   }
 }
 
+async function runVerifyRequest(rawInput, channelKey, onErrorTargetId, onStatusTargetId, onButtonId) {
+  const statusEl = document.getElementById(onStatusTargetId);
+  const errorEl = document.getElementById(onErrorTargetId);
+  const submitBtn = document.getElementById(onButtonId);
+
+  if (errorEl) {
+    errorEl.style.display = "none";
+    errorEl.textContent = "";
+  }
+  if (statusEl) statusEl.textContent = "Weryfikuję...";
+  if (submitBtn) submitBtn.disabled = true;
+
+  try {
+    const resp = await fetch(`${API_BASE}/api/verify`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        input_text: rawInput,
+        channel: channelKey,
+      }),
+    });
+    const payload = await resp.json().catch(() => ({}));
+    if (!resp.ok) {
+      throw new Error(payload.detail || "Nie udało się zweryfikować treści.");
+    }
+
+    const merged = { ...MOCK_SESSION, ...payload };
+    currentSessionData = merged;
+
+    const url = new URL(window.location.href);
+    if (merged.session_id) {
+      url.searchParams.set("session", merged.session_id);
+      url.searchParams.set("source", channelKey);
+      window.history.replaceState({}, "", url.toString());
+    }
+
+    renderAnalysis(merged, false);
+    renderW1Radar(merged.premises || MOCK_SESSION.premises);
+    renderW2Donut(merged.source_breakdown || MOCK_SESSION.source_breakdown);
+
+    const { data: logsData } = await fetchAuditLogs();
+    renderAudit(logsData);
+
+    return merged;
+  } catch (err) {
+    const msg = err.message || "Błąd weryfikacji.";
+    if (errorEl) {
+      errorEl.textContent = `⚠️ ${msg}`;
+      errorEl.style.display = "block";
+    }
+    throw new Error(msg);
+  } finally {
+    if (statusEl) statusEl.textContent = "Gotowy";
+    if (submitBtn) submitBtn.disabled = false;
+  }
+}
+
+function appendChannelBubble(sender, text, channelName, isBotReply = false) {
+  const feed = document.getElementById("channelFeed");
+  if (!feed) return;
+
+  const bubble = document.createElement("div");
+  bubble.className = isBotReply ? "ch-msg ch-msg-bot" : "ch-msg ch-msg-incoming";
+
+  const meta = document.createElement("div");
+  meta.className = "ch-meta";
+  meta.textContent = `${channelName} • ${sender}`;
+
+  const body = document.createElement("div");
+  body.textContent = text;
+
+  bubble.appendChild(meta);
+  bubble.appendChild(body);
+  feed.appendChild(bubble);
+  feed.scrollTop = feed.scrollHeight;
+}
+
+function bindChannelAdapter() {
+  const form = document.getElementById("channelForm");
+  const selectEl = document.getElementById("channelSelect");
+  const feed = document.getElementById("channelFeed");
+
+  if (feed && feed.childElementCount === 0) {
+    appendChannelBubble(
+      "Prawdowid Bot",
+      "Adapter aktywny. Wyślij treść lub link, aby sprawdzić spójność wyniku z kanałem WWW.",
+      selectEl?.value || "whatsapp_demo",
+      true
+    );
+  }
+
+  if (form) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const inputEl = document.getElementById("channelInput");
+      const senderEl = document.getElementById("channelSender");
+      const text = (inputEl?.value || "").trim();
+      const sender = (senderEl?.value || "").trim() || "Anonim";
+      const channelKey = selectEl?.value || "whatsapp_demo";
+      if (!text) return;
+      inputEl.value = "";
+
+      appendChannelBubble(sender, text, channelKey, false);
+
+      try {
+        const res = await runVerifyRequest(
+          text,
+          channelKey,
+          "channelError",
+          "channelStatus",
+          "channelSubmitBtn"
+        );
+        const pct = Math.round(Number(res.confidence_score || 0) * 100);
+        appendChannelBubble(
+          "Prawdowid Bot",
+          `[${res.verdict || "BRAK WERYFIKACJI"} • Siła: ${pct}%] ${res.summary || ""}`,
+          channelKey,
+          true
+        );
+      } catch (err) {
+        appendChannelBubble("System", `Błąd techniczny: ${err.message}`, channelKey, true);
+      }
+    });
+  }
+}
+
 function bindUiListenersOnce() {
   if (uiListenersBound) return;
   uiListenersBound = true;
@@ -572,6 +745,21 @@ function bindUiListenersOnce() {
     "ai",
     "Cześć! Tutaj AI Chat do tej weryfikacji. Możesz dopytać o siłę przesłanek (W1), typy źródeł (W2) albo ograniczenia werdyktu."
   );
+
+  const quickForm = document.getElementById("quickVerifyForm");
+  if (quickForm) {
+    quickForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const inputEl = document.getElementById("verifyInput");
+      const val = (inputEl?.value || "").trim();
+      if (!val) return;
+      try {
+        await runVerifyRequest(val, "web", "verifyError", "verifyStatus", "verifySubmitBtn");
+      } catch (_) {}
+    });
+  }
+
+  bindChannelAdapter();
 
   document.getElementById("chatForm").addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -595,6 +783,7 @@ function bindUiListenersOnce() {
       "ai",
       "Profesorek przypomina: zawsze sprawdzaj datę aktu lub komunikatu oraz niezależne potwierdzenia."
     );
+    document.getElementById("chatInput")?.focus();
   });
 
   const confBtn = document.getElementById("confidenceBtn") || document.getElementById("confidenceText");

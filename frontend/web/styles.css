@@ -36,7 +36,7 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 16px;
-  margin-bottom: 22px;
+  margin-bottom: 18px;
   padding-bottom: 14px;
   border-bottom: 2px solid var(--accent-red);
 }
@@ -71,6 +71,7 @@ body {
 
 .top-actions {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
@@ -95,6 +96,12 @@ button {
   border-color: var(--accent-red);
 }
 
+.btn-link {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
 .btn-primary {
   background: var(--accent-red);
   color: #ffffff;
@@ -103,10 +110,202 @@ button {
   border-radius: 10px;
   font-size: 13px;
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .btn-primary:hover {
   background: var(--accent-red-bright);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.verify-bar {
+  margin-bottom: 18px;
+}
+
+.verify-bar-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.verify-bar-head h2 {
+  margin: 0;
+  font-size: 15px;
+  color: #ffffff;
+}
+
+.verify-bar-head p {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.verify-bar-head code {
+  color: #ffffff;
+  background: var(--bg-soft);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+.verify-status {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #080808;
+}
+
+.verify-form {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.verify-form textarea {
+  flex: 1;
+  background: var(--bg-card);
+  color: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-family: inherit;
+  font-size: 13px;
+  resize: vertical;
+  min-height: 46px;
+}
+
+.verify-form textarea:focus {
+  outline: none;
+  border-color: var(--accent-red);
+}
+
+.channel-box {
+  margin-bottom: 20px;
+}
+
+.channel-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.channel-select {
+  background: var(--bg-card);
+  color: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.channel-select:focus {
+  outline: none;
+  border-color: var(--accent-red);
+}
+
+.channel-feed {
+  min-height: 110px;
+  max-height: 190px;
+  overflow-y: auto;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.ch-msg {
+  max-width: 88%;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.ch-msg-incoming {
+  align-self: flex-end;
+  background: var(--accent-red);
+  color: #ffffff;
+  border: 1px solid #ffffff;
+}
+
+.ch-msg-bot {
+  align-self: flex-start;
+  background: var(--bg-soft);
+  color: #ffffff;
+  border: 1px solid var(--border);
+}
+
+.ch-meta {
+  font-size: 10px;
+  color: #d4d4d4;
+  margin-bottom: 3px;
+  font-weight: 700;
+}
+
+.channel-form {
+  display: flex;
+  gap: 8px;
+}
+
+.channel-sender {
+  width: 190px;
+  background: var(--bg-card);
+  color: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 12px;
+}
+
+.channel-form input[type="text"]:not(.channel-sender) {
+  flex: 1;
+  background: var(--bg-card);
+  color: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 13px;
+}
+
+.channel-form input:focus {
+  outline: none;
+  border-color: var(--accent-red);
+}
+
+.inline-alert {
+  margin-top: 10px;
+  background: rgba(220, 38, 38, 0.16);
+  border: 1px solid var(--accent-red-bright);
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 9px 12px;
+  font-size: 12px;
+}
+
+.info-strip {
+  margin-bottom: 10px;
+  background: var(--bg-card);
+  border-left: 3px solid var(--accent-red);
+  border-top: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 12px;
+  color: #e5e5e5;
 }
 
 .main-grid {
@@ -802,5 +1001,12 @@ button {
   }
   .charts-row {
     grid-template-columns: 1fr;
+  }
+  .verify-form,
+  .channel-form {
+    flex-direction: column;
+  }
+  .channel-sender {
+    width: 100%;
   }
 }

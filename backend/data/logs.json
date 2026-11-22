@@ -457,5 +457,48 @@
     ],
     "latency_ms": 16918,
     "security_alert": null
+  },
+  {
+    "session_id": "sess-1795323828",
+    "timestamp": "2026-11-22T05:03:48.997335Z",
+    "channel": "web",
+    "query_masked": "https://pl.wikipedia.org/wiki/Inwazja_Rosji_na_Ukrainę",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [
+      "https://demagog.org.pl/fake_news/rosyjska-inwazja-spiskiem-swiatowych-elit-to-falszywa-teoria-spiskowa/",
+      "https://demagog.org.pl/fake_news/bazy-nato-wokol-rosji-manipulacja-ma-uzasadnic-inwazje-na-ukraine/"
+    ],
+    "latency_ms": 6890,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795324645",
+    "timestamp": "2026-11-22T05:17:25.499682Z",
+    "channel": "whatsapp_demo",
+    "query_masked": "wez napisz bajo jajo jakes",
+    "verdict": "NIE PODLEGA WERYFIKACJI",
+    "sources": [],
+    "latency_ms": 7764,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795324780",
+    "timestamp": "2026-11-22T05:19:40.012112Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://pl.wikipedia.org/wiki/Inwazja_Rosji_na_Ukrain%C4%99]",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [],
+    "latency_ms": 2647,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795325250",
+    "timestamp": "2026-11-22T05:27:30.222702Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://www.streamladder.com/emotes/uuh]",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [],
+    "latency_ms": 2843,
+    "security_alert": null
   }
 ]
