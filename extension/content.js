@@ -3,7 +3,7 @@
   window.__prawdowidInjected = true;
 
   const extApi = typeof browser !== "undefined" && browser.runtime ? browser : chrome;
-  const DEFAULT_BACKEND_URL = "https://developers.cloudflare.com/cloudflare-one/connections/connect-apps";
+  const DEFAULT_BACKEND_URL = "https://schools-political-purchase-estimates.trycloudflare.com";
 
   function normalizeBaseUrl(rawUrl) {
     const trimmed = String(rawUrl || "").trim();
