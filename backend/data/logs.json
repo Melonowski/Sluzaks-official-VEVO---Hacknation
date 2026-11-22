@@ -598,5 +598,45 @@
     "sources": [],
     "latency_ms": 3800,
     "security_alert": null
+  },
+  {
+    "session_id": "sess-1795334439",
+    "timestamp": "2026-11-22T08:00:39.136365Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://pl.wikipedia.org/wiki/Wikipedia:Strona_g%C5%82%C3%B3wna]",
+    "verdict": "NIE PODLEGA WERYFIKACJI",
+    "sources": [],
+    "latency_ms": 12251,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795334566",
+    "timestamp": "2026-11-22T08:02:46.073705Z",
+    "channel": "web",
+    "query_masked": "asasdasasdasdas",
+    "verdict": "NIE PODLEGA WERYFIKACJI",
+    "sources": [],
+    "latency_ms": 2061,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795334763",
+    "timestamp": "2026-11-22T08:06:03.902261Z",
+    "channel": "web",
+    "query_masked": "https://schools-political-purchase-estimates.trycloudflare.com",
+    "verdict": "NIE PODLEGA WERYFIKACJI",
+    "sources": [],
+    "latency_ms": 2999,
+    "security_alert": null
+  },
+  {
+    "session_id": "sess-1795334898",
+    "timestamp": "2026-11-22T08:08:18.382895Z",
+    "channel": "extension_screenshot",
+    "query_masked": "[OCR zrzutu z https://schools-political-purchase-estimates.trycloudflare.com/?session=sess-1795334763&source=web]",
+    "verdict": "BRAK WYSTARCZAJĄCYCH DOWODÓW",
+    "sources": [],
+    "latency_ms": 26740,
+    "security_alert": null
   }
 ]
